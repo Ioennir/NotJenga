@@ -19,8 +19,7 @@ public class Pool : MonoBehaviour
 	
 	[Header("Testing and logs")]
 	[SerializeField] private bool printErrorLogs = false;
-
-	private GameObject _test;
+	
 	#endregion
 
 	#region Public Variables
