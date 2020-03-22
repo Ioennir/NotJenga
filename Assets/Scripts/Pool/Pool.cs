@@ -90,8 +90,8 @@ public class Pool : MonoBehaviour
 	    }
 	    int i;
 	    // Try to find the target
-	    for (i = 0; i < maxSize && _pool[i] != target; ++i) {};
-		if (i == maxSize)
+	    for (i = 0; i < maxSize && _pool[i] != target; ++i) {}
+	    if (i == maxSize)
 	    {
 		    DebugError($"{target} not found in the pool!");
 		    return false;
