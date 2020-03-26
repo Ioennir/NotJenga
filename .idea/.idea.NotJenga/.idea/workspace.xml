@@ -1,66 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cc53d859-0d7f-4654-9a8f-8045bbc46a51" name="Default Changelist" comment="" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <list default="true" id="cc53d859-0d7f-4654-9a8f-8045bbc46a51" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.NotJenga/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.NotJenga/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.NotJenga/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.NotJenga/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Assets/Scripts/Pool/Pool.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1659">
-              <caret line="140" column="53" selection-start-line="140" selection-start-column="53" selection-end-line="140" selection-end-column="53" />
-              <folding>
-                <marker date="1584905844677" expanded="true" signature="6:32" ph="..." />
-                <marker date="1584905844677" expanded="true" signature="67:3328" ph="{...}" />
-                <marker date="1584905844677" expanded="true" signature="71:494" ph="Private Variables" />
-                <marker date="1584905844677" expanded="true" signature="497:534" ph="Public Variables" />
-                <marker date="1584905844677" expanded="true" signature="537:815" ph="Properties" />
-                <marker date="1584905844677" expanded="true" signature="559:609" ph="/// Current maxSize ... " />
-                <marker date="1584905844677" expanded="true" signature="646:747" ph="/// The current number of active gameObjects in the scene of this pool ... " />
-                <marker date="1584905844677" expanded="true" signature="818:1025" ph="MonoBehaviour" />
-                <marker date="1584905844677" expanded="true" signature="862:1012" ph="{...}" />
-                <marker date="1584905844677" expanded="true" signature="936:1009" ph="{...}" />
-                <marker date="1584905844677" expanded="true" signature="1031:2415" ph="Public Methods" />
-                <marker date="1584905844677" expanded="true" signature="1059:1213" ph="/// Instantiate a GameObject. If the pool is full of active objects the pool will resize. ... " />
-                <marker date="1584905844677" expanded="true" signature="1249:1592" ph="{...}" />
-                <marker date="1584905844677" expanded="true" signature="1261:1335" ph="/* TODO: (GABI) Maybe give the option to destroy an object? ... */" />
-                <marker date="1584905844677" expanded="true" signature="1375:1405" ph="{...}" />
-                <marker date="1584905844677" expanded="true" signature="1598:1823" ph="/// Destroys the specified target ... " />
-                <marker date="1584905844677" expanded="true" signature="1866:2395" ph="{...}" />
-                <marker date="1584905844677" expanded="true" signature="1906:1991" ph="{...}" />
-                <marker date="1584905844677" expanded="true" signature="2115:2203" ph="{...}" />
-                <marker date="1584905844677" expanded="true" signature="2239:2312" ph="{...}" />
-                <marker date="1584905844677" expanded="true" signature="2421:3326" ph="Private Methods" />
-                <marker date="1584905844677" expanded="true" signature="2450:2517" ph="/// Resizes the pool size by 2 ... " />
-                <marker date="1584905844677" expanded="true" signature="2543:2788" ph="{...}" />
-                <marker date="1584905844677" expanded="true" signature="2673:2758" ph="{...}" />
-                <marker date="1584905844677" expanded="true" signature="2794:2895" ph="/// Advance _currentGameObject to the next one that is available ... " />
-                <marker date="1584905844677" expanded="true" signature="2919:3055" ph="{...}" />
-                <marker date="1584905844677" expanded="true" signature="3061:3186" ph="/// Debug errors if printErrorLogs is set to true ... " />
-                <marker date="1584905844677" expanded="true" signature="3230:3306" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Util/CylindricCoordinates.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Pool/Pool.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Camera/CameraController.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/Pool/Pool.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Util/CylCoordinates.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Util/CylindricCoordinates.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Camera/CameraController.cs" />
       </list>
     </option>
   </component>
@@ -72,61 +36,53 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="width" value="1680" />
-    <option name="height" value="1050" />
-  </component>
-  <component name="ProjectView">
-    <navigator currentView="UnityExplorer" proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="AssemblyExplorer" />
-      <pane id="SolutionExplorer">
-        <option name="show-all-files" value="false" />
-      </pane>
-      <pane id="FileSystemExplorer" />
-      <pane id="UnityExplorer">
-        <option name="show-hidden-items" value="false" />
-        <option name="show-project-names" value="true" />
-      </pane>
-    </panes>
+  <component name="ProjectId" id="1ZcmVvarELkJNMslQO8Kqaoodzc" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="Discover.Launch.Via.Unity" value="true" />
     <property name="Rider.DefaultBreakpoints.AreToggled" value="true" />
     <property name="Rider.ProjectViewActivator.IsNotFirstRun" value="true" />
+    <property name="TWShift.4" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
-      <option name="userSelectedPid" value="false" />
       <method v="2" />
     </configuration>
     <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
-      <option name="userSelectedPid" value="false" />
       <method v="2" />
     </configuration>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -139,57 +95,30 @@
       <option name="presentableId" value="Default" />
       <updated>1584896788025</updated>
       <workItem from="1584896793020" duration="3216000" />
+      <workItem from="1585146868404" duration="102000" />
+      <workItem from="1585147125357" duration="4811000" />
+      <workItem from="1585244759254" duration="3240000" />
     </task>
     <servers />
-  </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3216000" />
-  </component>
-  <component name="TodoView">
-    <todo-panel id="selected-file">
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="true" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
-    <editor active="true" />
-    <layout>
-      <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2863248" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="NuGet" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Unity" />
-      <window_info anchor="bottom" id="Database Changes" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Unit Tests" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="bottom" id="Performance Profiler" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Errors In Solution" />
-      <window_info anchor="right" id="Database" />
-      <window_info anchor="right" id="Unit Tests Coverage" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-    </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
@@ -199,44 +128,5 @@
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Pool/Pool.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1659">
-          <caret line="140" column="53" selection-start-line="140" selection-start-column="53" selection-end-line="140" selection-end-column="53" />
-          <folding>
-            <marker date="1584905844677" expanded="true" signature="6:32" ph="..." />
-            <marker date="1584905844677" expanded="true" signature="67:3328" ph="{...}" />
-            <marker date="1584905844677" expanded="true" signature="71:494" ph="Private Variables" />
-            <marker date="1584905844677" expanded="true" signature="497:534" ph="Public Variables" />
-            <marker date="1584905844677" expanded="true" signature="537:815" ph="Properties" />
-            <marker date="1584905844677" expanded="true" signature="559:609" ph="/// Current maxSize ... " />
-            <marker date="1584905844677" expanded="true" signature="646:747" ph="/// The current number of active gameObjects in the scene of this pool ... " />
-            <marker date="1584905844677" expanded="true" signature="818:1025" ph="MonoBehaviour" />
-            <marker date="1584905844677" expanded="true" signature="862:1012" ph="{...}" />
-            <marker date="1584905844677" expanded="true" signature="936:1009" ph="{...}" />
-            <marker date="1584905844677" expanded="true" signature="1031:2415" ph="Public Methods" />
-            <marker date="1584905844677" expanded="true" signature="1059:1213" ph="/// Instantiate a GameObject. If the pool is full of active objects the pool will resize. ... " />
-            <marker date="1584905844677" expanded="true" signature="1249:1592" ph="{...}" />
-            <marker date="1584905844677" expanded="true" signature="1261:1335" ph="/* TODO: (GABI) Maybe give the option to destroy an object? ... */" />
-            <marker date="1584905844677" expanded="true" signature="1375:1405" ph="{...}" />
-            <marker date="1584905844677" expanded="true" signature="1598:1823" ph="/// Destroys the specified target ... " />
-            <marker date="1584905844677" expanded="true" signature="1866:2395" ph="{...}" />
-            <marker date="1584905844677" expanded="true" signature="1906:1991" ph="{...}" />
-            <marker date="1584905844677" expanded="true" signature="2115:2203" ph="{...}" />
-            <marker date="1584905844677" expanded="true" signature="2239:2312" ph="{...}" />
-            <marker date="1584905844677" expanded="true" signature="2421:3326" ph="Private Methods" />
-            <marker date="1584905844677" expanded="true" signature="2450:2517" ph="/// Resizes the pool size by 2 ... " />
-            <marker date="1584905844677" expanded="true" signature="2543:2788" ph="{...}" />
-            <marker date="1584905844677" expanded="true" signature="2673:2758" ph="{...}" />
-            <marker date="1584905844677" expanded="true" signature="2794:2895" ph="/// Advance _currentGameObject to the next one that is available ... " />
-            <marker date="1584905844677" expanded="true" signature="2919:3055" ph="{...}" />
-            <marker date="1584905844677" expanded="true" signature="3061:3186" ph="/// Debug errors if printErrorLogs is set to true ... " />
-            <marker date="1584905844677" expanded="true" signature="3230:3306" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
   </component>
 </project>
