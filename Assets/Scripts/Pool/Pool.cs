@@ -7,7 +7,10 @@ public class Pool : MonoBehaviour
 	
 	private uint _activeGameObjects = 0;
 	private GameObject[] _pool;
-	
+
+    //NOTE(Ioennir): Added a parent to contain the pool prefabs
+    private GameObject _poolContainer;
+
 	// Keep track of the next gameObject
 	private uint _currentGameObject = 0;
 	
@@ -44,10 +47,13 @@ public class Pool : MonoBehaviour
 
 	private void Awake()
 	{
+        _poolContainer = new GameObject(prefab.name + " Pool");
+
 		_pool = new GameObject[maxSize];
 		for (int i = 0; i < maxSize; ++i)
 		{
 			_pool[i] = Instantiate(prefab);
+            _pool[i].transform.parent = _poolContainer.transform;
 			_pool[i].SetActive(false);
 		}
 	}
