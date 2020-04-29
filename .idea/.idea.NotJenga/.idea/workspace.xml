@@ -13,37 +13,37 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/Pool/Pool.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1659">
-              <caret line="140" column="53" selection-start-line="140" selection-start-column="53" selection-end-line="140" selection-end-column="53" />
+            <state relative-caret-position="340">
+              <caret line="17" column="19" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
               <folding>
-                <marker date="1584905844677" expanded="true" signature="6:32" ph="..." />
-                <marker date="1584905844677" expanded="true" signature="67:3328" ph="{...}" />
-                <marker date="1584905844677" expanded="true" signature="71:494" ph="Private Variables" />
-                <marker date="1584905844677" expanded="true" signature="497:534" ph="Public Variables" />
-                <marker date="1584905844677" expanded="true" signature="537:815" ph="Properties" />
-                <marker date="1584905844677" expanded="true" signature="559:609" ph="/// Current maxSize ... " />
-                <marker date="1584905844677" expanded="true" signature="646:747" ph="/// The current number of active gameObjects in the scene of this pool ... " />
-                <marker date="1584905844677" expanded="true" signature="818:1025" ph="MonoBehaviour" />
-                <marker date="1584905844677" expanded="true" signature="862:1012" ph="{...}" />
-                <marker date="1584905844677" expanded="true" signature="936:1009" ph="{...}" />
-                <marker date="1584905844677" expanded="true" signature="1031:2415" ph="Public Methods" />
-                <marker date="1584905844677" expanded="true" signature="1059:1213" ph="/// Instantiate a GameObject. If the pool is full of active objects the pool will resize. ... " />
-                <marker date="1584905844677" expanded="true" signature="1249:1592" ph="{...}" />
-                <marker date="1584905844677" expanded="true" signature="1261:1335" ph="/* TODO: (GABI) Maybe give the option to destroy an object? ... */" />
-                <marker date="1584905844677" expanded="true" signature="1375:1405" ph="{...}" />
-                <marker date="1584905844677" expanded="true" signature="1598:1823" ph="/// Destroys the specified target ... " />
-                <marker date="1584905844677" expanded="true" signature="1866:2395" ph="{...}" />
-                <marker date="1584905844677" expanded="true" signature="1906:1991" ph="{...}" />
-                <marker date="1584905844677" expanded="true" signature="2115:2203" ph="{...}" />
-                <marker date="1584905844677" expanded="true" signature="2239:2312" ph="{...}" />
-                <marker date="1584905844677" expanded="true" signature="2421:3326" ph="Private Methods" />
-                <marker date="1584905844677" expanded="true" signature="2450:2517" ph="/// Resizes the pool size by 2 ... " />
-                <marker date="1584905844677" expanded="true" signature="2543:2788" ph="{...}" />
-                <marker date="1584905844677" expanded="true" signature="2673:2758" ph="{...}" />
-                <marker date="1584905844677" expanded="true" signature="2794:2895" ph="/// Advance _currentGameObject to the next one that is available ... " />
-                <marker date="1584905844677" expanded="true" signature="2919:3055" ph="{...}" />
-                <marker date="1584905844677" expanded="true" signature="3061:3186" ph="/// Debug errors if printErrorLogs is set to true ... " />
-                <marker date="1584905844677" expanded="true" signature="3230:3306" ph="{...}" />
+                <marker date="1584905988932" expanded="true" signature="6:32" ph="..." />
+                <marker date="1584905988932" expanded="true" signature="67:3304" ph="{...}" />
+                <marker date="1584905988932" expanded="true" signature="71:468" ph="Private Variables" />
+                <marker date="1584905988932" expanded="true" signature="471:508" ph="Public Variables" />
+                <marker date="1584905988932" expanded="true" signature="511:789" ph="Properties" />
+                <marker date="1584905988932" expanded="true" signature="533:583" ph="/// Current maxSize ... " />
+                <marker date="1584905988932" expanded="true" signature="620:721" ph="/// The current number of active gameObjects in the scene of this pool ... " />
+                <marker date="1584905988932" expanded="true" signature="792:999" ph="MonoBehaviour" />
+                <marker date="1584905988932" expanded="true" signature="836:986" ph="{...}" />
+                <marker date="1584905988932" expanded="true" signature="910:983" ph="{...}" />
+                <marker date="1584905988932" expanded="true" signature="1005:2391" ph="Public Methods" />
+                <marker date="1584905988932" expanded="true" signature="1033:1187" ph="/// Instantiate a GameObject. If the pool is full of active objects the pool will resize. ... " />
+                <marker date="1584905988932" expanded="true" signature="1223:1566" ph="{...}" />
+                <marker date="1584905988932" expanded="true" signature="1235:1309" ph="/* TODO: (GABI) Maybe give the option to destroy an object? ... */" />
+                <marker date="1584905988932" expanded="true" signature="1349:1379" ph="{...}" />
+                <marker date="1584905988932" expanded="true" signature="1572:1797" ph="/// Destroys the specified target ... " />
+                <marker date="1584905988932" expanded="true" signature="1840:2371" ph="{...}" />
+                <marker date="1584905988932" expanded="true" signature="1880:1965" ph="{...}" />
+                <marker date="1584905988932" expanded="true" signature="2091:2179" ph="{...}" />
+                <marker date="1584905988932" expanded="true" signature="2215:2288" ph="{...}" />
+                <marker date="1584905988932" expanded="true" signature="2397:3302" ph="Private Methods" />
+                <marker date="1584905988932" expanded="true" signature="2426:2493" ph="/// Resizes the pool size by 2 ... " />
+                <marker date="1584905988932" expanded="true" signature="2519:2764" ph="{...}" />
+                <marker date="1584905988932" expanded="true" signature="2649:2734" ph="{...}" />
+                <marker date="1584905988932" expanded="true" signature="2770:2871" ph="/// Advance _currentGameObject to the next one that is available ... " />
+                <marker date="1584905988932" expanded="true" signature="2895:3031" ph="{...}" />
+                <marker date="1584905988932" expanded="true" signature="3037:3162" ph="/// Debug errors if printErrorLogs is set to true ... " />
+                <marker date="1584905988932" expanded="true" signature="3206:3282" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -138,12 +138,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1584896788025</updated>
-      <workItem from="1584896793020" duration="3216000" />
+      <workItem from="1584896793020" duration="3679000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3216000" />
+    <option name="totallyTimeSpent" value="3679000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -203,37 +203,37 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/Pool/Pool.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1659">
-          <caret line="140" column="53" selection-start-line="140" selection-start-column="53" selection-end-line="140" selection-end-column="53" />
+        <state relative-caret-position="340">
+          <caret line="17" column="19" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
           <folding>
-            <marker date="1584905844677" expanded="true" signature="6:32" ph="..." />
-            <marker date="1584905844677" expanded="true" signature="67:3328" ph="{...}" />
-            <marker date="1584905844677" expanded="true" signature="71:494" ph="Private Variables" />
-            <marker date="1584905844677" expanded="true" signature="497:534" ph="Public Variables" />
-            <marker date="1584905844677" expanded="true" signature="537:815" ph="Properties" />
-            <marker date="1584905844677" expanded="true" signature="559:609" ph="/// Current maxSize ... " />
-            <marker date="1584905844677" expanded="true" signature="646:747" ph="/// The current number of active gameObjects in the scene of this pool ... " />
-            <marker date="1584905844677" expanded="true" signature="818:1025" ph="MonoBehaviour" />
-            <marker date="1584905844677" expanded="true" signature="862:1012" ph="{...}" />
-            <marker date="1584905844677" expanded="true" signature="936:1009" ph="{...}" />
-            <marker date="1584905844677" expanded="true" signature="1031:2415" ph="Public Methods" />
-            <marker date="1584905844677" expanded="true" signature="1059:1213" ph="/// Instantiate a GameObject. If the pool is full of active objects the pool will resize. ... " />
-            <marker date="1584905844677" expanded="true" signature="1249:1592" ph="{...}" />
-            <marker date="1584905844677" expanded="true" signature="1261:1335" ph="/* TODO: (GABI) Maybe give the option to destroy an object? ... */" />
-            <marker date="1584905844677" expanded="true" signature="1375:1405" ph="{...}" />
-            <marker date="1584905844677" expanded="true" signature="1598:1823" ph="/// Destroys the specified target ... " />
-            <marker date="1584905844677" expanded="true" signature="1866:2395" ph="{...}" />
-            <marker date="1584905844677" expanded="true" signature="1906:1991" ph="{...}" />
-            <marker date="1584905844677" expanded="true" signature="2115:2203" ph="{...}" />
-            <marker date="1584905844677" expanded="true" signature="2239:2312" ph="{...}" />
-            <marker date="1584905844677" expanded="true" signature="2421:3326" ph="Private Methods" />
-            <marker date="1584905844677" expanded="true" signature="2450:2517" ph="/// Resizes the pool size by 2 ... " />
-            <marker date="1584905844677" expanded="true" signature="2543:2788" ph="{...}" />
-            <marker date="1584905844677" expanded="true" signature="2673:2758" ph="{...}" />
-            <marker date="1584905844677" expanded="true" signature="2794:2895" ph="/// Advance _currentGameObject to the next one that is available ... " />
-            <marker date="1584905844677" expanded="true" signature="2919:3055" ph="{...}" />
-            <marker date="1584905844677" expanded="true" signature="3061:3186" ph="/// Debug errors if printErrorLogs is set to true ... " />
-            <marker date="1584905844677" expanded="true" signature="3230:3306" ph="{...}" />
+            <marker date="1584905988932" expanded="true" signature="6:32" ph="..." />
+            <marker date="1584905988932" expanded="true" signature="67:3304" ph="{...}" />
+            <marker date="1584905988932" expanded="true" signature="71:468" ph="Private Variables" />
+            <marker date="1584905988932" expanded="true" signature="471:508" ph="Public Variables" />
+            <marker date="1584905988932" expanded="true" signature="511:789" ph="Properties" />
+            <marker date="1584905988932" expanded="true" signature="533:583" ph="/// Current maxSize ... " />
+            <marker date="1584905988932" expanded="true" signature="620:721" ph="/// The current number of active gameObjects in the scene of this pool ... " />
+            <marker date="1584905988932" expanded="true" signature="792:999" ph="MonoBehaviour" />
+            <marker date="1584905988932" expanded="true" signature="836:986" ph="{...}" />
+            <marker date="1584905988932" expanded="true" signature="910:983" ph="{...}" />
+            <marker date="1584905988932" expanded="true" signature="1005:2391" ph="Public Methods" />
+            <marker date="1584905988932" expanded="true" signature="1033:1187" ph="/// Instantiate a GameObject. If the pool is full of active objects the pool will resize. ... " />
+            <marker date="1584905988932" expanded="true" signature="1223:1566" ph="{...}" />
+            <marker date="1584905988932" expanded="true" signature="1235:1309" ph="/* TODO: (GABI) Maybe give the option to destroy an object? ... */" />
+            <marker date="1584905988932" expanded="true" signature="1349:1379" ph="{...}" />
+            <marker date="1584905988932" expanded="true" signature="1572:1797" ph="/// Destroys the specified target ... " />
+            <marker date="1584905988932" expanded="true" signature="1840:2371" ph="{...}" />
+            <marker date="1584905988932" expanded="true" signature="1880:1965" ph="{...}" />
+            <marker date="1584905988932" expanded="true" signature="2091:2179" ph="{...}" />
+            <marker date="1584905988932" expanded="true" signature="2215:2288" ph="{...}" />
+            <marker date="1584905988932" expanded="true" signature="2397:3302" ph="Private Methods" />
+            <marker date="1584905988932" expanded="true" signature="2426:2493" ph="/// Resizes the pool size by 2 ... " />
+            <marker date="1584905988932" expanded="true" signature="2519:2764" ph="{...}" />
+            <marker date="1584905988932" expanded="true" signature="2649:2734" ph="{...}" />
+            <marker date="1584905988932" expanded="true" signature="2770:2871" ph="/// Advance _currentGameObject to the next one that is available ... " />
+            <marker date="1584905988932" expanded="true" signature="2895:3031" ph="{...}" />
+            <marker date="1584905988932" expanded="true" signature="3037:3162" ph="/// Debug errors if printErrorLogs is set to true ... " />
+            <marker date="1584905988932" expanded="true" signature="3206:3282" ph="{...}" />
           </folding>
         </state>
       </provider>
