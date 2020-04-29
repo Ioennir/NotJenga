@@ -3,14 +3,20 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEngine;
 
+/// <summary>
+/// Helper class that will init every sound that you pass to it.
+/// Also you can get the sounds that this AudioController has reference to via its name.
+/// Check an example on how to use it in Sound.cs or read the methods.
+/// </summary>
 public class AudioController : MonoBehaviour
 {
+	// A custom action so you can set custom things to a sound before playing it
 	public delegate void AudioAction(Sound sound);
 	
 	#region Private Variables
 
 	[SerializeField] private Sound[] sounds;
-
+	// We use a dictionary instead of an array because memory is already a mess in C# and its strings.
 	private readonly Dictionary<string, Sound> _soundsDict = new Dictionary<string, Sound>();
 	#endregion
 
@@ -46,8 +52,7 @@ public class AudioController : MonoBehaviour
     /// <returns>The sound if it was found.</returns>
     public Sound Play(string name)
     {
-	    Sound value;
-	    bool success = _soundsDict.TryGetValue(name, out value);
+	    bool success = _soundsDict.TryGetValue(name, out Sound value);
 	    if (!success) return null;
 	    value.UpdateSource();
 	    if (value.Source.isPlaying) return value;
@@ -62,8 +67,7 @@ public class AudioController : MonoBehaviour
     /// <returns></returns>
     public Sound ForcePlay(string name)
     {
-	    Sound value;
-	    bool success = _soundsDict.TryGetValue(name, out value);
+	    bool success = _soundsDict.TryGetValue(name, out Sound value);
 	    if (!success) return null;
 	    value.UpdateSource();
 	    if (value.Source.isPlaying)
@@ -81,30 +85,28 @@ public class AudioController : MonoBehaviour
     /// <returns></returns>
     public Sound Stop(string name)
     {
-	    Sound value;
-	    bool success = _soundsDict.TryGetValue(name, out value);
+	    bool success = _soundsDict.TryGetValue(name, out Sound value);
 	    if (!success) return null;
 	    value.Stop();
 	    return value;
     } 
 
     /// <summary>
-    /// Custom action.
+    /// Custom action, won't do anything else except execute your custom action on a sound.
     /// </summary>
     /// <param name="name"></param>
     /// <param name="action"></param>
     /// <returns></returns>
     public Sound CustomAction(string name, AudioAction action)
     {
-	    Sound value;
-	    bool success = _soundsDict.TryGetValue(name, out value);
+	    bool success = _soundsDict.TryGetValue(name, out Sound value);
 	    if (!success) return null;
 	    action(value);
 	    return value;
     }
 
     /// <summary>
-    /// Calls the callback <param name="action"></param> before playing the sound, so you can change the
+    /// Calls the callback <param name="action"></param> before updating and playing the sound, so you can change the
     /// attributes of a sound if you want.
     /// </summary>
     /// <param name="name"></param>
@@ -112,19 +114,17 @@ public class AudioController : MonoBehaviour
     /// <returns></returns>
     public Sound ChangeAndPlay(string name, AudioAction action)
     {
-	    Sound value;
-	    bool success = _soundsDict.TryGetValue(name, out value);
+	    bool success = _soundsDict.TryGetValue(name, out Sound value);
 	    if (!success) return null;
 	    action(value);
-	    print(value.volume);
-		value.UpdateSource();
+	    value.UpdateSource();
 		if (value.Source.isPlaying) return value;
 		value.Play();
 	    return value;
     }
 
     /// <summary>
-    /// Removes a sound
+    /// Removes a sound from the array reference and dictionary.
     /// </summary>
     /// <param name="soundName"></param>
     /// <returns></returns>

@@ -6,12 +6,13 @@
 /// and there is a single class to deal with the sounds (The AudioController)
 ///
 /// How to use:
-/// 1. Create a Sound component in the desired GameObject (which you want to emit sounds)
-/// 2. Add it to the AudioController
-/// 3. When you want to play (or another action) that sound you must get the AudioController, pass the name of the sound
-///    and play it. Or you can use the sound directly.
-/// 4. Example: FindObject <AudioController>().Play("cool_sound_01"); (There are more functions in the AudioController, you can read them to see how they work)
-/// 5. There is no need to use the AudioController when you have the Sound in your gameObject and you want to play it in your gameObject;
+/// 1. Create an AudioController gameObject.
+/// 2. Create a Sound component in the desired GameObject (in which you want to emit sounds)
+/// 3. Add it to the AudioController
+/// 4. When you want to play a sound (or do another action) you must get the AudioController, pass the name of the sound
+///    and play it. Or you can use the sound reference directly if you already have it.
+/// 5. Example: FindObject <AudioController>().Play("cool_sound_01"); (There are more functions in the AudioController, you can read them to see how they work)
+/// 6. There is no need to use the AudioController when you have the Sound in your gameObject and you want to play it in your gameObject;
 /// 	but sometimes you need to play a general sound without having the specified Sound reference.
 /// </summary>
 public class Sound : MonoBehaviour
@@ -50,7 +51,7 @@ public class Sound : MonoBehaviour
 
 	/// <summary>
 	/// Unity AudioSource (here you can change more advance things)
-	/// If you wanna change the loop, the volume or the pitch you can change it here before playing.
+	/// If you wanna change the loop, the volume, the minDistance or the pitch you can change it here before playing.
 	/// </summary>
 	public AudioSource Source => _source;
 	
@@ -88,7 +89,7 @@ public class Sound : MonoBehaviour
 
     
     /// <summary>
-    /// Update source applies audioClip, volume, loop and pitch changes.
+    /// Update source applies audioClip, minDistance, maxDistance volume, loop and pitch changes.
     /// </summary>
     public void UpdateSource()
     {
@@ -97,7 +98,7 @@ public class Sound : MonoBehaviour
 	    _source.loop = loop;
 	    _source.pitch = pitch;
 	    _source.minDistance = minDistance;
-	    _source.maxDistance= maxDistance;
+	    _source.maxDistance = maxDistance;
     }
 
     /// <summary>
