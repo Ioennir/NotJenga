@@ -14,6 +14,8 @@
 /// 5. Example: FindObject <AudioController>().Play("cool_sound_01"); (There are more functions in the AudioController, you can read them to see how they work)
 /// 6. There is no need to use the AudioController when you have the Sound in your gameObject and you want to play it in your gameObject;
 /// 	but sometimes you need to play a general sound without having the specified Sound reference.
+/// 7. Example: if (!sound.Source.isPlaying) sound.Play();
+/// 8. If you really don't want bugs and things to work well without knowing how to use Unity Sound API, I recommend using the methods in AudioController instead.
 /// </summary>
 public class Sound : MonoBehaviour
 {
@@ -75,6 +77,7 @@ public class Sound : MonoBehaviour
 
     public void Init()
     {
+	    // Create an AudioSource
 	    _source = gameObject.AddComponent<AudioSource>();
 	    // Set 3D sound
 	    _source.spatialBlend = 1;

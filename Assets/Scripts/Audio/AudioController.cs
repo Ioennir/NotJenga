@@ -45,7 +45,7 @@ public class AudioController : MonoBehaviour
     #region Public Methods
 
     /// <summary>
-    /// Tries to play a sound, won't play the sound if it's already playing (so there is no reset).
+    /// Tries to play a sound, won't play the sound if it's already playing (so there is no reset or undefined behaviour).
     /// If the sound was found, it will return it.
     /// </summary>
     /// <param name="name"></param>

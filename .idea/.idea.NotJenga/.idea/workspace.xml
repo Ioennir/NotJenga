@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="61260b3a-f00f-400d-9f96-6a3c78a17868" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Audio/AudioController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Audio/AudioController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Audio/Sound.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Audio/Sound.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,8 +15,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/Audio/AudioController.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="434">
-              <caret line="126" column="64" selection-start-line="126" selection-start-column="64" selection-end-line="126" selection-end-column="64" />
+            <state relative-caret-position="516">
+              <caret line="130" column="45" lean-forward="true" selection-start-line="130" selection-start-column="45" selection-end-line="130" selection-end-column="45" />
               <folding>
                 <marker date="1588174006250" expanded="true" signature="6:92" ph="..." />
                 <marker date="1588174006250" expanded="true" signature="94:347" ph="/// Helper class that will init every sound that you pass to it. ... " />
@@ -52,27 +51,27 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/Audio/Sound.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="22" column="4" lean-forward="true" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
+            <state relative-caret-position="730">
+              <caret line="79" column="32" selection-start-line="79" selection-start-column="32" selection-end-line="79" selection-end-column="32" />
               <folding>
-                <marker date="1588173588990" expanded="true" signature="20:1097" ph="/// Sound represents a sound emitter controller inside a gameObject ... " />
-                <marker date="1588173588990" expanded="true" signature="1132:3144" ph="{...}" />
-                <marker date="1588173588990" expanded="true" signature="1136:1298" ph="Private Variables" />
-                <marker date="1588173588990" expanded="false" signature="1301:1612" ph="Public Variables" />
-                <marker date="1588173588990" expanded="true" signature="1412:1482" ph="/// Min Distance To Play maximum volume ... " />
-                <marker date="1588173588990" expanded="true" signature="1615:1971" ph="Properties" />
-                <marker date="1588173588990" expanded="true" signature="1709:1918" ph="/// Unity AudioSource (here you can change more advance things) ... " />
-                <marker date="1588173588990" expanded="false" signature="1974:2103" ph="MonoBehaviour" />
-                <marker date="1588173588990" expanded="true" signature="2021:2042" ph="{...}" />
-                <marker date="1588173588990" expanded="true" signature="2066:2087" ph="{...}" />
-                <marker date="1588173588990" expanded="true" signature="2109:3097" ph="Public Methods" />
-                <marker date="1588173588990" expanded="true" signature="2155:2523" ph="{...}" />
-                <marker date="1588173588990" expanded="true" signature="2534:2664" ph="/// Update source applies audioClip, minDistance, maxDistance volume, loop and pitch changes. ... " />
-                <marker date="1588173588990" expanded="true" signature="2695:2902" ph="{...}" />
-                <marker date="1588173588990" expanded="true" signature="2908:2964" ph="/// Plays the sound ... " />
-                <marker date="1588173588990" expanded="true" signature="2987:3020" ph="{...}" />
-                <marker date="1588173588990" expanded="true" signature="3044:3077" ph="{...}" />
-                <marker date="1588173588990" expanded="true" signature="3103:3142" ph="Private Methods" />
+                <marker date="1588174228035" expanded="true" signature="20:1319" ph="/// Sound represents a sound emitter controller inside a gameObject ... " />
+                <marker date="1588174228035" expanded="true" signature="1354:3396" ph="{...}" />
+                <marker date="1588174228035" expanded="true" signature="1358:1520" ph="Private Variables" />
+                <marker date="1588174228035" expanded="false" signature="1523:1834" ph="Public Variables" />
+                <marker date="1588174228035" expanded="true" signature="1634:1704" ph="/// Min Distance To Play maximum volume ... " />
+                <marker date="1588174228035" expanded="true" signature="1837:2193" ph="Properties" />
+                <marker date="1588174228035" expanded="true" signature="1931:2140" ph="/// Unity AudioSource (here you can change more advance things) ... " />
+                <marker date="1588174228035" expanded="false" signature="2196:2325" ph="MonoBehaviour" />
+                <marker date="1588174228035" expanded="true" signature="2243:2264" ph="{...}" />
+                <marker date="1588174228035" expanded="true" signature="2288:2309" ph="{...}" />
+                <marker date="1588174228035" expanded="true" signature="2331:3349" ph="Public Methods" />
+                <marker date="1588174228035" expanded="true" signature="2377:2775" ph="{...}" />
+                <marker date="1588174228035" expanded="true" signature="2786:2916" ph="/// Update source applies audioClip, minDistance, maxDistance volume, loop and pitch changes. ... " />
+                <marker date="1588174228035" expanded="true" signature="2947:3154" ph="{...}" />
+                <marker date="1588174228035" expanded="true" signature="3160:3216" ph="/// Plays the sound ... " />
+                <marker date="1588174228035" expanded="true" signature="3239:3272" ph="{...}" />
+                <marker date="1588174228035" expanded="true" signature="3296:3329" ph="{...}" />
+                <marker date="1588174228035" expanded="true" signature="3355:3394" ph="Private Methods" />
               </folding>
             </state>
           </provider>
@@ -81,7 +80,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/Audio/Test/TestCube.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
+            <state relative-caret-position="533">
               <caret line="38" column="91" lean-forward="true" selection-start-line="38" selection-start-column="91" selection-end-line="38" selection-end-column="91" />
               <folding>
                 <marker date="1588173283293" expanded="true" signature="20:91" ph="/// Example on how the controller can work ... " />
@@ -114,8 +113,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/Audio/Test/TestCube.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Audio/Sound.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Audio/AudioController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Audio/Sound.cs" />
       </list>
     </option>
   </component>
@@ -193,12 +192,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1588168948790</updated>
-      <workItem from="1588168953408" duration="4939000" />
+      <workItem from="1588168953408" duration="5179000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4939000" />
+    <option name="totallyTimeSpent" value="5179000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -256,36 +255,9 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Audio/Sound.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="22" column="4" lean-forward="true" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
-          <folding>
-            <marker date="1588173588990" expanded="true" signature="20:1097" ph="/// Sound represents a sound emitter controller inside a gameObject ... " />
-            <marker date="1588173588990" expanded="true" signature="1132:3144" ph="{...}" />
-            <marker date="1588173588990" expanded="true" signature="1136:1298" ph="Private Variables" />
-            <marker date="1588173588990" expanded="false" signature="1301:1612" ph="Public Variables" />
-            <marker date="1588173588990" expanded="true" signature="1412:1482" ph="/// Min Distance To Play maximum volume ... " />
-            <marker date="1588173588990" expanded="true" signature="1615:1971" ph="Properties" />
-            <marker date="1588173588990" expanded="true" signature="1709:1918" ph="/// Unity AudioSource (here you can change more advance things) ... " />
-            <marker date="1588173588990" expanded="false" signature="1974:2103" ph="MonoBehaviour" />
-            <marker date="1588173588990" expanded="true" signature="2021:2042" ph="{...}" />
-            <marker date="1588173588990" expanded="true" signature="2066:2087" ph="{...}" />
-            <marker date="1588173588990" expanded="true" signature="2109:3097" ph="Public Methods" />
-            <marker date="1588173588990" expanded="true" signature="2155:2523" ph="{...}" />
-            <marker date="1588173588990" expanded="true" signature="2534:2664" ph="/// Update source applies audioClip, minDistance, maxDistance volume, loop and pitch changes. ... " />
-            <marker date="1588173588990" expanded="true" signature="2695:2902" ph="{...}" />
-            <marker date="1588173588990" expanded="true" signature="2908:2964" ph="/// Plays the sound ... " />
-            <marker date="1588173588990" expanded="true" signature="2987:3020" ph="{...}" />
-            <marker date="1588173588990" expanded="true" signature="3044:3077" ph="{...}" />
-            <marker date="1588173588990" expanded="true" signature="3103:3142" ph="Private Methods" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/Audio/Test/TestCube.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
+        <state relative-caret-position="533">
           <caret line="38" column="91" lean-forward="true" selection-start-line="38" selection-start-column="91" selection-end-line="38" selection-end-column="91" />
           <folding>
             <marker date="1588173283293" expanded="true" signature="20:91" ph="/// Example on how the controller can work ... " />
@@ -303,10 +275,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Audio/Sound.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="730">
+          <caret line="79" column="32" selection-start-line="79" selection-start-column="32" selection-end-line="79" selection-end-column="32" />
+          <folding>
+            <marker date="1588174228035" expanded="true" signature="20:1319" ph="/// Sound represents a sound emitter controller inside a gameObject ... " />
+            <marker date="1588174228035" expanded="true" signature="1354:3396" ph="{...}" />
+            <marker date="1588174228035" expanded="true" signature="1358:1520" ph="Private Variables" />
+            <marker date="1588174228035" expanded="false" signature="1523:1834" ph="Public Variables" />
+            <marker date="1588174228035" expanded="true" signature="1634:1704" ph="/// Min Distance To Play maximum volume ... " />
+            <marker date="1588174228035" expanded="true" signature="1837:2193" ph="Properties" />
+            <marker date="1588174228035" expanded="true" signature="1931:2140" ph="/// Unity AudioSource (here you can change more advance things) ... " />
+            <marker date="1588174228035" expanded="false" signature="2196:2325" ph="MonoBehaviour" />
+            <marker date="1588174228035" expanded="true" signature="2243:2264" ph="{...}" />
+            <marker date="1588174228035" expanded="true" signature="2288:2309" ph="{...}" />
+            <marker date="1588174228035" expanded="true" signature="2331:3349" ph="Public Methods" />
+            <marker date="1588174228035" expanded="true" signature="2377:2775" ph="{...}" />
+            <marker date="1588174228035" expanded="true" signature="2786:2916" ph="/// Update source applies audioClip, minDistance, maxDistance volume, loop and pitch changes. ... " />
+            <marker date="1588174228035" expanded="true" signature="2947:3154" ph="{...}" />
+            <marker date="1588174228035" expanded="true" signature="3160:3216" ph="/// Plays the sound ... " />
+            <marker date="1588174228035" expanded="true" signature="3239:3272" ph="{...}" />
+            <marker date="1588174228035" expanded="true" signature="3296:3329" ph="{...}" />
+            <marker date="1588174228035" expanded="true" signature="3355:3394" ph="Private Methods" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/Audio/AudioController.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="434">
-          <caret line="126" column="64" selection-start-line="126" selection-start-column="64" selection-end-line="126" selection-end-column="64" />
+        <state relative-caret-position="516">
+          <caret line="130" column="45" lean-forward="true" selection-start-line="130" selection-start-column="45" selection-end-line="130" selection-end-column="45" />
           <folding>
             <marker date="1588174006250" expanded="true" signature="6:92" ph="..." />
             <marker date="1588174006250" expanded="true" signature="94:347" ph="/// Helper class that will init every sound that you pass to it. ... " />
