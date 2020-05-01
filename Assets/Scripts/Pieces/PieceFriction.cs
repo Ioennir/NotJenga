@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+public class PieceFriction : MonoBehaviour
 {
     #region Public Variables
     public float mass;
@@ -21,12 +21,15 @@ public class NewBehaviourScript : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         coll = GetComponent<Collider>();
+        physicsMaterial = new PhysicMaterial();
         physicsMaterial.staticFriction = frictionStatic;
         physicsMaterial.dynamicFriction = frictionDynamic;
 
         coll.material = physicsMaterial;
 
         rb.mass = mass;
+
+
     }
     
 }

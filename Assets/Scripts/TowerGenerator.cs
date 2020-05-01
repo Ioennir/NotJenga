@@ -15,7 +15,7 @@ public class TowerGenerator : MonoBehaviour
     #endregion
 
     #region Public Variables
-
+    public Material[] pieceMaterials;
     #endregion
 
     #region Properties
@@ -47,6 +47,7 @@ public class TowerGenerator : MonoBehaviour
             {
                 GameObject piece = _piecePool.Instantiate();
                 piece.transform.parent = _tower.transform;
+                piece.GetComponent<MeshRenderer>().material = pieceMaterials[x % 2];
                 if (y % 2 == 0)
                 {
                     piece.transform.localPosition = new Vector3(x, pieceHeight + pieceHeight * y, 0.0f);
@@ -58,6 +59,9 @@ public class TowerGenerator : MonoBehaviour
                 }
                 yield return new WaitForSeconds(secondInterval);
             }
+            Material temp = pieceMaterials[0];
+            pieceMaterials[0] = pieceMaterials[1];
+            pieceMaterials[1] = temp;
         }
 
         yield return 0;
