@@ -12,6 +12,8 @@ public class TowerGenerator : MonoBehaviour
     [SerializeField] private uint towerHeight = 17;
     [SerializeField] [Range(0.0f, 1.0f)] private float buildInterval = 0.5f;
     [SerializeField] private float pieceHeight = 0.5f;
+
+    private Tower _towerData;
     #endregion
 
     #region Public Variables
@@ -25,6 +27,7 @@ public class TowerGenerator : MonoBehaviour
     #region MonoBehaviour
     private void Start()
     {
+        _towerData = gameObject.AddComponent<Tower>();
         _tower = new GameObject("Tower");
         _tower.transform.parent = transform;
         _piecePool = GetComponent<Pool>();
@@ -56,9 +59,12 @@ public class TowerGenerator : MonoBehaviour
                     piece.transform.localRotation = Quaternion.AngleAxis(90.0f, piece.transform.up);
                     piece.transform.localPosition = new Vector3(1.0f, pieceHeight + pieceHeight * y, x - 1.0f);
                 }
+                _towerData.AddPiece(piece);
+                
                 yield return new WaitForSeconds(secondInterval);
             }
         }
+        _towerData.canBuild = true;
 
         yield return 0;
     }
