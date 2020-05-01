@@ -60,5 +60,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   towerHeight: 17
-  secInterval: 0.5
+  buildInterval: 0.5
   pieceHeight: 0.5
+  pieceMaterials:
+  - {fileID: 2100000, guid: 03e79413390da1f42b3f2fc2c4d3b44e, type: 2}
+  - {fileID: 2100000, guid: 52ce29822128be5419fee2f18be01cbb, type: 2}
