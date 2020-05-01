@@ -15,11 +15,13 @@ public class Tower : MonoBehaviour
 
 	private Pool _pool;
 
-	public bool canBuild = false;
+	
 	
 	#endregion
 
 	#region Public Variables
+	
+	public bool canBuild = false;
 
 	#endregion
 
@@ -72,7 +74,7 @@ public class Tower : MonoBehaviour
     }
 
     /// <summary>
-    /// Puts on top and orders it. (THE PIECE MUST BE ALREADY PUT ON THE TOP OF THE JENGA TOWER)
+    /// Puts on top and orders it. (THE PIECE MUST BE PHYSICALLY PUT ON THE TOP OF THE JENGA TOWER)
     /// </summary>
     /// <param name="p"></param>
     public void PutOnTop(GameObject p)
@@ -102,13 +104,31 @@ public class Tower : MonoBehaviour
 	    int countOfPiecesInTheSameRow = 0;
 	    for (int i = _pieces.Count - 1; i >= _pieces.Count - 3; i--)
 	    {
-		    if (Math.Abs(_pieces[_pieces.Count - 1].transform.position.y - _pieces[i].transform.position.y) < 0.1f)
+		    if (Math.Abs(_pieces[_pieces.Count - 1].transform.localPosition.y - _pieces[i].transform.localPosition.y) < 0.1f)
 		    {
 			    countOfPiecesInTheSameRow++;
 		    }
 	    }
+
 	    return _pieces.GetRange(_pieces.Count - countOfPiecesInTheSameRow, countOfPiecesInTheSameRow);
     }
+
+     public static bool SameRow(GameObject j1, GameObject j2)
+    {
+	    return Math.Abs(j1.transform.position.y - j2.transform.position.y) < 0.1f;
+    }
+
+     public static bool SamePlace(GameObject j1, List<GameObject> others, bool inX)
+     {
+	     for (int i = 0; i < others.Count; i++)
+	     {
+		     if (inX && Math.Abs(j1.transform.position.x - others[i].transform.position.x) < 0.1f) return true;
+		     if (!inX && Math.Abs(j1.transform.position.z - others[i].transform.position.z) < 0.1f)
+				 return true;
+	     }
+
+	     return false;
+     }
 
 
     #endregion

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -22,12 +23,23 @@ public class TowerGenerator : MonoBehaviour
 
     #region Properties
 
+    public float PieceHeight => pieceHeight;
+    
+   
+    
+    
     #endregion
 
     #region MonoBehaviour
-    private void Start()
+
+    private void Awake()
     {
         _towerData = gameObject.AddComponent<Tower>();
+    }
+
+    private void Start()
+    {
+        
         _tower = new GameObject("Tower");
         _tower.transform.parent = transform;
         _piecePool = GetComponent<Pool>();
@@ -37,6 +49,20 @@ public class TowerGenerator : MonoBehaviour
     #endregion
 
     #region Public Methods
+
+    public float CalculateTop(float y)
+    {
+        return pieceHeight + pieceHeight * y;
+    }
+
+    /// <summary>
+    /// Adds jenga piece into the tower jerarchy
+    /// </summary>
+    /// <param name="jenga"></param>
+    public void AddPiece(GameObject jenga)
+    {
+        jenga.transform.parent = _tower.transform;
+    }
 
     #endregion
 
@@ -68,10 +94,13 @@ public class TowerGenerator : MonoBehaviour
             pieceMaterials[0] = pieceMaterials[1];
             pieceMaterials[1] = temp;
         }
+
+        yield return new WaitForSeconds(2f);
         _towerData.canBuild = true;
 
         yield return 0;
     }
+    
 
     #endregion
 
