@@ -76,7 +76,7 @@ public class PlayerInGame : MonoBehaviour
         ChangeStateIf(_turnController.CurrentPlayer != currentState.player, State.SelectingPiece, false);
 		
         // Test 
-        // ChangeStateIf(_tower.towerAlreadyBuilt, State.PlacingPiece, false);
+        ChangeStateIf(_tower.towerAlreadyBuilt, State.PlacingPiece, false);
         switch (currentState.currentState)
         {
 	        case State.SelectingPiece:

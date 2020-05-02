@@ -29,6 +29,15 @@ public class ColocationBehaviour : MonoBehaviour
 
 	private int _posX = 0;
 
+	[SerializeField]
+	private Material _matTransparent;
+
+	/// <summary>
+	/// TODO Set this via a function
+	/// </summary>
+	[SerializeField]
+	private Material _originalMaterial;
+
 	#endregion
 
 	#region Public Variables
@@ -121,6 +130,8 @@ public class ColocationBehaviour : MonoBehaviour
 		col.isTrigger = false;
 		Rigidbody rb = _imaginaryJenga.GetComponent<Rigidbody>();
 		rb.isKinematic = false;
+		MeshRenderer rend = _imaginaryJenga.GetComponent<MeshRenderer>();
+		rend.material = _originalMaterial;
 		_towerData.PutOnTop(_imaginaryJenga);
 		_imaginaryJenga.name = "Jenga Piece put by TODO: PUT PLAYER NAME";
 		_imaginaryJenga = null;
@@ -159,6 +170,9 @@ public class ColocationBehaviour : MonoBehaviour
 		{
 			//TODO : Put semi transparent shader
 			_imaginaryJenga = _jengaPool.Instantiate();
+			MeshRenderer rend = _imaginaryJenga.GetComponent<MeshRenderer>();
+			rend.material = _matTransparent;
+			
 			Collider col = _imaginaryJenga.GetComponent<Collider>();
 			col.isTrigger = true;
 			Rigidbody rb = _imaginaryJenga.GetComponent<Rigidbody>();
