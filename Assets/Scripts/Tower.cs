@@ -99,6 +99,20 @@ public class Tower : MonoBehaviour
 	    _pieces = rest.Concat(ordered.ToList()).ToList();
     }
 
+    
+    /// <summary>
+    /// Get top pieces (will get ONLY the last row) So for example we have a jenga like
+    /// - - -  ** Will return this row
+    /// - - -
+    /// - - -
+    ///   
+    /// Another case
+    /// -   -  ** Will return this row  
+    /// - - -
+    /// -   -
+    ///   - -
+    /// </summary>
+    /// <returns></returns>
     public List<GameObject> GetTopPieces()
     {
 	    int countOfPiecesInTheSameRow = 0;

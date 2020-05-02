@@ -95,6 +95,7 @@ public class TowerGenerator : MonoBehaviour
             pieceMaterials[1] = temp;
         }
 
+        // This is a delay because Tower might bug
         yield return new WaitForSeconds(2f);
         _towerData.canBuild = true;
 
