@@ -24,6 +24,7 @@
           <e p="Player" t="Include">
             <e p="ColocationBehaviour.cs" t="Include" />
             <e p="PlayerInGame.cs" t="Include" />
+            <e p="SelectionBehaviour.cs" t="Include" />
           </e>
           <e p="Pool" t="Include">
             <e p="Pool.cs" t="Include" />

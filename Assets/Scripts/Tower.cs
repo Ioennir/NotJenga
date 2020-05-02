@@ -101,6 +101,31 @@ public class Tower : MonoBehaviour
 	    _pieces = rest.Concat(ordered.ToList()).ToList();
     }
 
+    public GameObject SelectPiece(ref int offset, int horizontal, int vertical)
+    {
+	    if (horizontal == 0 && vertical == 0)
+	    {
+		    return _pieces[offset];
+	    }
+	    if (horizontal != 0)
+	    {
+		    // todo More logic?
+		    if (offset + horizontal < _pieces.Count && offset + horizontal >= 0 && (offset += horizontal) > -1);
+			    
+		    return _pieces[offset];
+	    }
+	    
+	    int count = offset + vertical;
+	    while (count < _pieces.Count && count >= 0 && SameRow(_pieces[count], _pieces[offset]))
+	    {
+		    count += vertical;
+	    }
+
+	    offset = Mathf.Clamp(count, 0, _pieces.Count - 1);
+	    
+	    return _pieces[offset];
+    }
+
     
     /// <summary>
     /// Get top pieces (will get ONLY the last row) So for example we have a jenga like

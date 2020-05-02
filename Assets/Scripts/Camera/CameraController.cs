@@ -27,6 +27,21 @@ public class CameraController : MonoBehaviour
 
     #endregion
 
+    #region Properties
+
+    public Transform Target
+    {
+        get => target;
+        set
+        {
+            _cc.Center = value.position;
+            target = value;
+            
+        }
+    }
+
+    #endregion
+    
     #region Monobehaviour
 
     private void Start()
