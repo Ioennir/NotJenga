@@ -23,7 +23,7 @@ public class ColocationBehaviour : MonoBehaviour
 
 	private float _accumulatorUntilNextInput = 0.0f;
 
-	private float _timerUntilNextInput = 0.8f;
+	private float _timerUntilNextInput = 0.4f;
 
 	private int _currentJenga = 0;
 
@@ -52,10 +52,12 @@ public class ColocationBehaviour : MonoBehaviour
 
 	private void Update()
 	{
+		/*
 		// This is only testing, the Tick() method will be called in another State Machine
-		if (!_towerData.canBuild) return;
+		if (!_towerData.towerAlreadyBuilt) return;
 		Tick();
 		if (!_doingTurn) return;
+		*/
 		_accumulatorUntilNextInput += Time.deltaTime;
 	}
 
@@ -63,9 +65,79 @@ public class ColocationBehaviour : MonoBehaviour
 
 	#region Public Methods
 
-	public void Tick()
+	/// <summary>
+	/// TODO GABI: Get the material of the last extracted piece
+	///
+	/// </summary>
+	/// <returns>If the player is done placing the piece</returns>
+	public bool Tick()
 	{
-		_doingTurn = true;
+		PlacingOfPiece();
+		float inputHorizontal = Input.GetAxisRaw("RightMoveJengaColocation");
+		float inputVertical = Input.GetAxisRaw("Jump");
+		// If you wanna end the turn
+		if (inputVertical > 0.5f && _accumulatorUntilNextInput > _timerUntilNextInput)
+		{
+			_accumulatorUntilNextInput = 0.0f;
+			_doingTurn = false;
+			return true;
+		}
+		// If there are no inputs
+		if (inputHorizontal < 0.5f || _accumulatorUntilNextInput < _timerUntilNextInput)
+		{
+			return false;
+		}
+
+		// If we are putting in an empty row
+		if (_topPieces.Count >= 3)
+		{
+			_currentJenga = (_currentJenga + 1) % _topPieces.Count;
+			_posX = (_posX + 1) % 3;
+		}
+		// If we are not in an empty row just pass position
+		else
+		{
+			_posX = (_posX + 1) % 3;
+		}
+
+		
+		_accumulatorUntilNextInput = 0.0f;
+
+		return false;
+	}
+
+	/// <summary>
+	/// Call it when you are gonna stop using ColocationBehaviour or things will bug out
+	/// </summary>
+	public void DisposeTurn()
+	{
+		// This is an EXTREME case and shouldn't happen often.
+		if (!_imaginaryJenga)
+		{
+			PlacingOfPiece();
+		}
+		_topPieces = new List<GameObject>();
+		Collider col = _imaginaryJenga.GetComponent<Collider>();
+		col.isTrigger = false;
+		Rigidbody rb = _imaginaryJenga.GetComponent<Rigidbody>();
+		rb.isKinematic = false;
+		_towerData.PutOnTop(_imaginaryJenga);
+		_imaginaryJenga.name = "Jenga Piece put by TODO: PUT PLAYER NAME";
+		_imaginaryJenga = null;
+		_currentJenga = 0;
+		_doingTurn = false;
+		
+	}
+
+	#endregion
+
+	#region Private Methods
+
+	/// <summary>
+	/// Logic of the new piece
+	/// </summary>
+	private void PlacingOfPiece()
+	{
 		if (_topPieces.Count == 0)
 		{
 			// NOTE: (GABI)
@@ -143,54 +215,6 @@ public class ColocationBehaviour : MonoBehaviour
 		
 		
 		_imaginaryJenga.transform.position = imaginaryJengaPosition;
-	
-		float inputHorizontal = Input.GetAxisRaw("Horizontal");
-		float inputVertical = Input.GetAxisRaw("Vertical");
-		// If you wanna end the turn
-		if (inputVertical > 0.5f && _accumulatorUntilNextInput > _timerUntilNextInput)
-		{
-			DisposeTurn();
-			_accumulatorUntilNextInput = 0.0f;
-			return;
-		}
-		// If there are no inputs
-		if (inputHorizontal < 0.5f || _accumulatorUntilNextInput < _timerUntilNextInput)
-		{
-			return;
-		}
-
-		// If we are putting in an empty row
-		if (_topPieces.Count >= 3)
-		{
-			_currentJenga = (_currentJenga + 1) % _topPieces.Count;
-			_posX = (_posX + 1) % 3;
-		}
-		// If we are not in an empty row just pass position
-		else
-		{
-			_posX = (_posX + 1) % 3;
-		}
-
-		
-		_accumulatorUntilNextInput = 0.0f;
 	}
-
-	public void DisposeTurn()
-	{
-		_topPieces = new List<GameObject>();
-		Collider col = _imaginaryJenga.GetComponent<Collider>();
-		col.isTrigger = false;
-		Rigidbody rb = _imaginaryJenga.GetComponent<Rigidbody>();
-		rb.isKinematic = false;
-		_towerData.PutOnTop(_imaginaryJenga);
-		_imaginaryJenga.name = "Jenga Piece put by TODO: PUT PLAYER NAME";
-		_imaginaryJenga = null;
-		_currentJenga = 0;
-	}
-
-	#endregion
-
-	#region Private Methods
-
 	#endregion
 }

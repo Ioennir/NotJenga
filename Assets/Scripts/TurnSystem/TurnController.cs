@@ -44,6 +44,11 @@ public class TurnController : MonoBehaviour
         get { return _currentTurnTimer; }
         set { _currentTurnTimer = value; }
     }
+
+    /// <summary>
+    /// Returns the number of player
+    /// </summary>
+    public int PlayerCounter => _playerCounter;
 #endregion
 
 #region MonoBehaviour

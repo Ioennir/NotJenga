@@ -44,6 +44,13 @@ public class CameraController : MonoBehaviour
         transform.position = target.transform.position + offset + _cc.toCarthesian();
     }
 
+    /// <summary>
+    /// Read remarks
+    /// </summary>
+    /// <remarks>
+    /// PROPOSAL (GABI): Maybe we should call the Update method of this class from another component
+    /// (like a state machine) so we know when the camera is gonna be moved for sure.
+    /// </remarks>
     private void Update()
     {
         // Retrieve Delta time

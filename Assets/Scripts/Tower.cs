@@ -14,14 +14,16 @@ public class Tower : MonoBehaviour
 	private List<GameObject> _pieces = new List<GameObject>();
 
 	private Pool _pool;
-
 	
 	
 	#endregion
 
 	#region Public Variables
 	
-	public bool canBuild = false;
+	/// <summary>
+	/// Variable will be true
+	/// </summary>
+	public bool towerAlreadyBuilt = false;
 
 	#endregion
 

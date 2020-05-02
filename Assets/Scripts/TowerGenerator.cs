@@ -97,7 +97,7 @@ public class TowerGenerator : MonoBehaviour
 
         // This is a delay because Tower might bug
         yield return new WaitForSeconds(2f);
-        _towerData.canBuild = true;
+        _towerData.towerAlreadyBuilt = true;
 
         yield return 0;
     }
