@@ -270,6 +270,7 @@ GameObject:
   - component: {fileID: 616257904}
   - component: {fileID: 616257903}
   - component: {fileID: 616257902}
+  - component: {fileID: 616257905}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -342,6 +343,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &616257905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 616257901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c78d76a9a0f4684d93dffcea712e61e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1203347905}
+  offset: {x: 0, y: 0, z: 0}
+  horizontalDistance: 14.51
+  rotationSpeed: 9.53
+  verticalSpeed: 24.2
 --- !u!1 &994974577
 GameObject:
   m_ObjectHideFlags: 0
@@ -561,6 +579,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3688b0734cc65e84eba80ecba6e22a37, type: 3}
+--- !u!4 &1203347905 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1203987439153154497, guid: 3688b0734cc65e84eba80ecba6e22a37,
+    type: 3}
+  m_PrefabInstance: {fileID: 1203347904}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1205711706
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -765,6 +789,7 @@ GameObject:
   - component: {fileID: 1697377274}
   - component: {fileID: 1697377273}
   - component: {fileID: 1697377275}
+  - component: {fileID: 1697377276}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -812,6 +837,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e98cb69341df4df78d45d0b52be8a96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1697377276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1697377272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9ee4fe32f8b344c4bede24d046de10d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectionMaterial: {fileID: 2100000, guid: eb2dd9950829d4034adf96e5f14bb50e, type: 2}
 --- !u!1 &1764364849
 GameObject:
   m_ObjectHideFlags: 0
