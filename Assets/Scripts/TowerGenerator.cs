@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -22,12 +23,23 @@ public class TowerGenerator : MonoBehaviour
 
     #region Properties
 
+    public float PieceHeight => pieceHeight;
+    
+   
+    
+    
     #endregion
 
     #region MonoBehaviour
-    private void Start()
+
+    private void Awake()
     {
         _towerData = gameObject.AddComponent<Tower>();
+    }
+
+    private void Start()
+    {
+        
         _tower = new GameObject("Tower");
         _tower.transform.parent = transform;
         _piecePool = GetComponent<Pool>();
@@ -37,6 +49,20 @@ public class TowerGenerator : MonoBehaviour
     #endregion
 
     #region Public Methods
+
+    public float CalculateTop(float y)
+    {
+        return pieceHeight + pieceHeight * y;
+    }
+
+    /// <summary>
+    /// Adds jenga piece into the tower jerarchy
+    /// </summary>
+    /// <param name="jenga"></param>
+    public void AddPiece(GameObject jenga)
+    {
+        jenga.transform.parent = _tower.transform;
+    }
 
     #endregion
 
@@ -53,12 +79,12 @@ public class TowerGenerator : MonoBehaviour
                 piece.GetComponent<MeshRenderer>().material = pieceMaterials[x % 2];
                 if (y % 2 == 0)
                 {
-                    piece.transform.localPosition = new Vector3(x, pieceHeight + pieceHeight * y, 0.0f);
+                    piece.transform.localPosition = new Vector3(x - 1.0f, pieceHeight + pieceHeight * y, 0.0f);
                 }
                 else
                 {
                     piece.transform.localRotation = Quaternion.AngleAxis(90.0f, piece.transform.up);
-                    piece.transform.localPosition = new Vector3(1.0f, pieceHeight + pieceHeight * y, x - 1.0f);
+                    piece.transform.localPosition = new Vector3(0.0f, pieceHeight + pieceHeight * y, x - 1.0f);
                 }
                 _towerData.AddPiece(piece);
                 
@@ -68,10 +94,14 @@ public class TowerGenerator : MonoBehaviour
             pieceMaterials[0] = pieceMaterials[1];
             pieceMaterials[1] = temp;
         }
-        _towerData.canBuild = true;
+
+        // This is a delay because Tower might bug
+        yield return new WaitForSeconds(2f);
+        _towerData.towerAlreadyBuilt = true;
 
         yield return 0;
     }
+    
 
     #endregion
 
