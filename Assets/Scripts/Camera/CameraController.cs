@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Timers;
 using TMPro;
 using UnityEngine;
+using UnityEngine.XR;
 
 public class CameraController : MonoBehaviour
 {
@@ -10,20 +12,24 @@ public class CameraController : MonoBehaviour
     #region Pulic Attributes
 
     public Transform target;
-    public Vector3 offset;
-    public float horizontalDistance;
-    public float rotationSpeed;
-    public float verticalSpeed;
-    
+
+
     #endregion
 
     #region Private Attributes
 
     private Camera _c;
     private CylindricCoordinates _cc;
-    private int goUp = 0;
-    private int goDown = 0;
-    private Vector2 inputs = Vector2.zero;
+    private int _goUp = 0;
+    private int _goDown = 0;
+    private Vector2 _inputs = Vector2.zero;
+    private bool _transitioning = false;
+
+    [SerializeField] private float transitionTime;
+    [SerializeField] public float horizontalDistance;
+    [SerializeField] public float rotationSpeed;
+    [SerializeField] public float verticalSpeed;
+    [SerializeField] public Vector3 offset;
 
     #endregion
 
@@ -36,7 +42,7 @@ public class CameraController : MonoBehaviour
         {
             _cc.Center = value.position;
             target = value;
-            
+            StartCoroutine(nameof(OnTargetChanged));
         }
     }
 
@@ -70,12 +76,14 @@ public class CameraController : MonoBehaviour
     {
         // Retrieve Delta time
         float dt = Time.deltaTime;
+        
+        
 
         // Retrieve inputs
         RetrieveInputs();
         
         // Update camera position data
-        UpdateCylindricalCoordinates(dt,goUp, goDown, inputs);
+        UpdateCylindricalCoordinates(dt,_goUp, _goDown, _inputs);
 
         transform.position = target.position + _cc.toCarthesian();
         transform.rotation = UpdateCameraRotation();
@@ -94,12 +102,12 @@ public class CameraController : MonoBehaviour
     private void RetrieveInputs()
     {
         // Vertical movement of camera
-        goUp = Input.GetKey(KeyCode.LeftShift) ? 1 : 0;
-        goDown = Input.GetKey(KeyCode.LeftControl) ? -1 : 0;
+        _goUp = Input.GetKey(KeyCode.LeftShift) ? 1 : 0;
+        _goDown = Input.GetKey(KeyCode.LeftControl) ? -1 : 0;
         
         // Horizontal position and vertical rotation of camera
-        inputs.x = Input.GetAxisRaw("Horizontal");
-        inputs.y = Input.GetAxisRaw("Vertical");
+        _inputs.x = Input.GetAxisRaw("Horizontal");
+        _inputs.y = Input.GetAxisRaw("Vertical");
     }
 
     private void ResetCameraPosition()
@@ -135,6 +143,22 @@ public class CameraController : MonoBehaviour
         float verAngleOffset = inputs.y * delta;
     }
 
-    #endregion
+    private IEnumerator OnTargetChanged()
+    {
+        float newHeight = target.position.y / 2;
+        float startHeight = _cc.Height;
+        float elapsedT = 0.0f;
 
+        while (elapsedT < 1.0f)
+        {
+            elapsedT += 0.2f;
+            _cc.Height = Mathf.Lerp(startHeight, newHeight, elapsedT);
+            offset = target.position;
+            yield return new WaitForSeconds(0.2f);
+        }
+
+    }
+
+    #endregion
+    
 }

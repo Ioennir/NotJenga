@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 
 /// <summary>
@@ -9,12 +11,12 @@ using UnityEngine;
 /// </summary>
 public class Tower : MonoBehaviour
 {
+	
 	#region Private Variables
 
 	private List<GameObject> _pieces = new List<GameObject>();
 
 	private Pool _pool;
-	
 	
 	#endregion
 
@@ -51,6 +53,13 @@ public class Tower : MonoBehaviour
 		GameObject g = _pool.Instantiate();
 		g.transform.parent = gameObject.transform;
 		PutOnTop(g);*/
+
+		/*if (Time.time % 5 < 0.1f)
+		{
+			int index = _pieces.Count - 1;
+			CameraController cam = FindObjectOfType<CameraController>();
+			cam.Target = _pieces[index].transform;
+		}*/
 	}
 
 	#endregion
@@ -177,4 +186,5 @@ public class Tower : MonoBehaviour
     #region Private Methods
 
     #endregion
+    
 }
