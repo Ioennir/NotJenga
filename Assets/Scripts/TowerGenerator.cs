@@ -79,12 +79,12 @@ public class TowerGenerator : MonoBehaviour
                 piece.GetComponent<MeshRenderer>().material = pieceMaterials[x % 2];
                 if (y % 2 == 0)
                 {
-                    piece.transform.localPosition = new Vector3(x, pieceHeight + pieceHeight * y, 0.0f);
+                    piece.transform.localPosition = new Vector3(x - 1.0f, pieceHeight + pieceHeight * y, 0.0f);
                 }
                 else
                 {
                     piece.transform.localRotation = Quaternion.AngleAxis(90.0f, piece.transform.up);
-                    piece.transform.localPosition = new Vector3(1.0f, pieceHeight + pieceHeight * y, x - 1.0f);
+                    piece.transform.localPosition = new Vector3(0.0f, pieceHeight + pieceHeight * y, x - 1.0f);
                 }
                 _towerData.AddPiece(piece);
                 
