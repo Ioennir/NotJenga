@@ -4,13 +4,127 @@
     <list default="true" id="61260b3a-f00f-400d-9f96-6a3c78a17868" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.NotJenga/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.NotJenga/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.NotJenga/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.NotJenga/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Camera/CameraController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Camera/CameraController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tower.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tower.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerInGame.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerInGame.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/testgabi.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/testgabi.unity" afterDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/SaveSystem/SaveSystem.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1840">
+              <caret line="92" column="78" selection-start-line="92" selection-start-column="78" selection-end-line="92" selection-end-column="78" />
+              <folding>
+                <marker date="1589258372132" expanded="true" signature="6:73" ph="..." />
+                <marker date="1589258372132" expanded="true" signature="75:243" ph="/// Save system is a class that MUST be included inside the scene you're saving/loading data. ... " />
+                <marker date="1589258372132" expanded="true" signature="284:4217" ph="{...}" />
+                <marker date="1589258372132" expanded="true" signature="288:577" ph="/// Informer is a util class which serves the purpose of informing when are the threads done loading or saving da ... " />
+                <marker date="1589258372132" expanded="true" signature="603:669" ph="{...}" />
+                <marker date="1589258372132" expanded="true" signature="673:825" ph="Private Variables" />
+                <marker date="1589258372132" expanded="true" signature="828:865" ph="Public Variables" />
+                <marker date="1589258372132" expanded="true" signature="868:966" ph="Properties" />
+                <marker date="1589258372132" expanded="true" signature="969:1088" ph="MonoBehaviour" />
+                <marker date="1589258372132" expanded="true" signature="1013:1075" ph="{...}" />
+                <marker date="1589258372132" expanded="true" signature="1094:4170" ph="Public Methods" />
+                <marker date="1589258372132" expanded="true" signature="1188:1361" ph="{...}" />
+                <marker date="1589258372132" expanded="true" signature="1367:1696" ph="/// Saves in another thread the data. ... " />
+                <marker date="1589258372132" expanded="true" signature="1770:2063" ph="{...}" />
+                <marker date="1589258372132" expanded="true" signature="2069:2410" ph="/// Saves data into path. ... " />
+                <marker date="1589258372132" expanded="true" signature="2464:3120" ph="{...}" />
+                <marker date="1589258372132" expanded="true" signature="2555:2942" ph="{...}" />
+                <marker date="1589258372132" expanded="true" signature="2975:3089" ph="{...}" />
+                <marker date="1589258372132" expanded="true" signature="3195:3477" ph="{...}" />
+                <marker date="1589258372132" expanded="true" signature="3210:3318" ph="{...}" />
+                <marker date="1589258372132" expanded="true" signature="3345:3471" ph="{...}" />
+                <marker date="1589258372132" expanded="true" signature="3483:3730" ph="/// Loads the specified system from the file system. ... " />
+                <marker date="1589258372132" expanded="true" signature="3771:4150" ph="{...}" />
+                <marker date="1589258372132" expanded="true" signature="4176:4215" ph="Private Methods" />
+                <marker date="1589258372132" expanded="true" signature="4219:4740" ph="/* Sample use ... */" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/SaveSystem/TestData.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="40">
+              <caret line="2" selection-start-line="2" selection-end-line="4" selection-end-column="14" />
+              <folding>
+                <marker date="1589255955123" expanded="true" signature="20:73" ph="/// Class for sample use ... " />
+                <marker date="1589255955123" expanded="true" signature="117:277" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/SaveSystem/TestData2.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="3" column="14" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
+              <folding>
+                <marker date="1589255960722" expanded="true" signature="1:54" ph="/// Class for sample use ... " />
+                <marker date="1589255960722" expanded="true" signature="99:468" ph="{...}" />
+                <marker date="1589255960722" expanded="false" signature="133:171" ph="Private Variables" />
+                <marker date="1589255960722" expanded="false" signature="174:211" ph="Public Variables" />
+                <marker date="1589255960722" expanded="false" signature="214:245" ph="Properties" />
+                <marker date="1589255960722" expanded="false" signature="248:377" ph="MonoBehaviour" />
+                <marker date="1589255960722" expanded="true" signature="295:316" ph="{...}" />
+                <marker date="1589255960722" expanded="true" signature="340:361" ph="{...}" />
+                <marker date="1589255960722" expanded="false" signature="383:421" ph="Public Methods" />
+                <marker date="1589255960722" expanded="false" signature="427:466" ph="Private Methods" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/SaveSystem/Hex.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="97">
+              <caret line="22" column="126" selection-start-line="22" selection-start-column="126" selection-end-line="22" selection-end-column="126" />
+              <folding>
+                <marker date="1589256132476" expanded="true" signature="6:32" ph="..." />
+                <marker date="1589256132476" expanded="true" signature="34:113" ph="/// Hex is a util class for hexadecimal operations ... " />
+                <marker date="1589256132476" expanded="true" signature="138:1395" ph="{...}" />
+                <marker date="1589256132476" expanded="true" signature="242:412" ph="{...}" />
+                <marker date="1589256132476" expanded="true" signature="310:392" ph="{...}" />
+                <marker date="1589256132476" expanded="true" signature="416:628" ph="/// Super fast function which does not compute the tuple bytes hex value because it was already computed at the b ... " />
+                <marker date="1589256132476" expanded="true" signature="690:957" ph="{...}" />
+                <marker date="1589256132476" expanded="true" signature="810:925" ph="{...}" />
+                <marker date="1589256132476" expanded="true" signature="1024:1393" ph="{...}" />
+                <marker date="1589256132476" expanded="true" signature="1270:1373" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/SaveSystem/AESEncrypt.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-30">
+              <caret line="20" column="55" lean-forward="true" selection-start-line="20" selection-start-column="55" selection-end-line="20" selection-end-column="55" />
+              <folding>
+                <marker date="1589257619756" expanded="true" signature="6:66" ph="..." />
+                <marker date="1589257619756" expanded="true" signature="92:2598" ph="{...}" />
+                <marker date="1589257619756" expanded="true" signature="565:1005" ph="{...}" />
+                <marker date="1589257619756" expanded="true" signature="1016:1133" ph="/// Encrypt text ... " />
+                <marker date="1589257619756" expanded="true" signature="1172:1837" ph="{...}" />
+                <marker date="1589257619756" expanded="true" signature="1847:1979" ph="/// Decrypt the value ... " />
+                <marker date="1589257619756" expanded="true" signature="2028:2591" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -21,21 +135,26 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Audio/Sound.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/PlayerInGame.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/SelectionBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Audio/AudioController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Pieces/PieceComparer.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Util/CylindricCoordinates.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/TowerGenerator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/ColocationBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/TurnSystem/TurnController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Util/CylindricCoordinates.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/SaveSystem/TestData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/SaveSystem/Hex.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Pool/Pool.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Camera/CameraController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2EFDC780-086B-47F2-8399-FD0CE7A4BFA4/8c/dea91819/Input.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Tower.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Audio/AudioController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/SaveSystem/SaveSystem.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Audio/Sound.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3C97B87A-AC9B-4134-AFDC-0551C250ADDF/b1/c035acea/JsonUtility.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/SaveSystem/TestData2.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Audio/Test/TestCube.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/78327B6C-3C08-4CA5-975B-799474D7A953/fd/66cab639/MethodImplOptions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Tower.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Pieces/PieceComparer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/PlayerInGame.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/SelectionBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/99258562-0D64-4271-98DD-F3A0E1467733/b7/d65b11df/StreamWriter.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/SaveSystem/AESEncrypt.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/TurnSystem/TurnController.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -49,9 +168,14 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/ColocationBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/SelectionBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Util/CylindricCoordinates.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerInGame.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Tower.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Camera/CameraController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerInGame.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SaveSystem/TestData.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SaveSystem/TestData2.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SaveSystem/Hex.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SaveSystem/AESEncrypt.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SaveSystem/SaveSystem.cs" />
       </list>
     </option>
   </component>
@@ -62,10 +186,23 @@
         <option value="$PROJECT_DIR$/.idea/.idea.NotJenga/.idea/indexLayout.xml" />
         <option value="$PROJECT_DIR$/.idea/.idea.NotJenga/.idea/vcs.xml" />
         <option value="$PROJECT_DIR$/.idea/.idea.NotJenga/.idea/indexLayout.xml" />
+        <option value="$PROJECT_DIR$/.idea/.idea.NotJenga/.idea/vcs.xml" />
+        <option value="$PROJECT_DIR$/.idea/.idea.NotJenga/.idea/indexLayout.xml" />
       </list>
     </option>
   </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="y" value="23" />
+    <option name="width" value="1687" />
+    <option name="height" value="1050" />
+  </component>
   <component name="ProjectId" id="1bMHNPTTpfHBSzLfOC3KWkCLZve" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -86,17 +223,31 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
+      <option name="userSelectedPid" value="false" />
       <method v="2" />
     </configuration>
     <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
+      <option name="userSelectedPid" value="false" />
       <method v="2" />
     </configuration>
   </component>
@@ -127,8 +278,52 @@
       <workItem from="1588435035349" duration="5118000" />
       <workItem from="1588453232525" duration="8101000" />
       <workItem from="1588518168565" duration="6377000" />
+      <workItem from="1589251313846" duration="6286000" />
     </task>
     <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="6286000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="23" width="2560" height="1057" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Favorites" side_tool="true" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.25" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="NuGet" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Unity" />
+      <window_info anchor="bottom" id="Database Changes" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Unit Tests" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Performance Profiler" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Errors In Solution" />
+      <window_info anchor="right" id="Database" />
+      <window_info anchor="right" id="Unit Tests Coverage" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -144,5 +339,152 @@
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3C97B87A-AC9B-4134-AFDC-0551C250ADDF/b1/c035acea/JsonUtility.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="305">
+          <caret line="21" column="33" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Player/PlayerInGame.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="105" column="51" selection-start-line="105" selection-start-column="51" selection-end-line="105" selection-end-column="51" />
+          <folding>
+            <marker date="1589253807931" expanded="true" signature="156:3908" ph="{...}" />
+            <marker date="1589253807931" expanded="true" signature="177:257" ph="{...}" />
+            <marker date="1589253807931" expanded="true" signature="283:339" ph="{...}" />
+            <marker date="1589253807931" expanded="false" signature="341:803" ph="Private Variables" />
+            <marker date="1589253807931" expanded="true" signature="372:491" ph="/// The current state of this component ... " />
+            <marker date="1589253807931" expanded="false" signature="806:843" ph="Public Variables" />
+            <marker date="1589253807931" expanded="false" signature="846:1223" ph="Properties" />
+            <marker date="1589253807931" expanded="true" signature="867:979" ph="/// Always use this Property to change state of this component or it will bug out ... " />
+            <marker date="1589253807931" expanded="true" signature="1010:1211" ph="{...}" />
+            <marker date="1589253807931" expanded="true" signature="1019:1171" ph="{...}" />
+            <marker date="1589253807931" expanded="true" signature="1079:1129" ph="{...}" />
+            <marker date="1589253807931" expanded="true" signature="1226:2997" ph="MonoBehaviour" />
+            <marker date="1589253807931" expanded="true" signature="1273:1689" ph="{...}" />
+            <marker date="1589253807931" expanded="true" signature="1713:2981" ph="{...}" />
+            <marker date="1589253807931" expanded="true" signature="1931:2018" ph="/* Test ... */" />
+            <marker date="1589253807931" expanded="true" signature="2061:2966" ph="{...}" />
+            <marker date="1589253807931" expanded="true" signature="2209:2344" ph="{...}" />
+            <marker date="1589253807931" expanded="true" signature="2623:2698" ph="{...}" />
+            <marker date="1589253807931" expanded="false" signature="3003:3861" ph="Public Methods" />
+            <marker date="1589253807931" expanded="true" signature="3031:3478" ph="/// Change the state if the conditions are met. ... " />
+            <marker date="1589253807931" expanded="true" signature="3554:3831" ph="{...}" />
+            <marker date="1589253807931" expanded="true" signature="3666:3718" ph="{...}" />
+            <marker date="1589253807931" expanded="false" signature="3867:3906" ph="Private Methods" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/SaveSystem/TestData.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40">
+          <caret line="2" selection-start-line="2" selection-end-line="4" selection-end-column="14" />
+          <folding>
+            <marker date="1589255955123" expanded="true" signature="20:73" ph="/// Class for sample use ... " />
+            <marker date="1589255955123" expanded="true" signature="117:277" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/SaveSystem/TestData2.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="3" column="14" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
+          <folding>
+            <marker date="1589255960722" expanded="true" signature="1:54" ph="/// Class for sample use ... " />
+            <marker date="1589255960722" expanded="true" signature="99:468" ph="{...}" />
+            <marker date="1589255960722" expanded="false" signature="133:171" ph="Private Variables" />
+            <marker date="1589255960722" expanded="false" signature="174:211" ph="Public Variables" />
+            <marker date="1589255960722" expanded="false" signature="214:245" ph="Properties" />
+            <marker date="1589255960722" expanded="false" signature="248:377" ph="MonoBehaviour" />
+            <marker date="1589255960722" expanded="true" signature="295:316" ph="{...}" />
+            <marker date="1589255960722" expanded="true" signature="340:361" ph="{...}" />
+            <marker date="1589255960722" expanded="false" signature="383:421" ph="Public Methods" />
+            <marker date="1589255960722" expanded="false" signature="427:466" ph="Private Methods" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/SaveSystem/Hex.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="97">
+          <caret line="22" column="126" selection-start-line="22" selection-start-column="126" selection-end-line="22" selection-end-column="126" />
+          <folding>
+            <marker date="1589256132476" expanded="true" signature="6:32" ph="..." />
+            <marker date="1589256132476" expanded="true" signature="34:113" ph="/// Hex is a util class for hexadecimal operations ... " />
+            <marker date="1589256132476" expanded="true" signature="138:1395" ph="{...}" />
+            <marker date="1589256132476" expanded="true" signature="242:412" ph="{...}" />
+            <marker date="1589256132476" expanded="true" signature="310:392" ph="{...}" />
+            <marker date="1589256132476" expanded="true" signature="416:628" ph="/// Super fast function which does not compute the tuple bytes hex value because it was already computed at the b ... " />
+            <marker date="1589256132476" expanded="true" signature="690:957" ph="{...}" />
+            <marker date="1589256132476" expanded="true" signature="810:925" ph="{...}" />
+            <marker date="1589256132476" expanded="true" signature="1024:1393" ph="{...}" />
+            <marker date="1589256132476" expanded="true" signature="1270:1373" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/SaveSystem/AESEncrypt.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-30">
+          <caret line="20" column="55" lean-forward="true" selection-start-line="20" selection-start-column="55" selection-end-line="20" selection-end-column="55" />
+          <folding>
+            <marker date="1589257619756" expanded="true" signature="6:66" ph="..." />
+            <marker date="1589257619756" expanded="true" signature="92:2598" ph="{...}" />
+            <marker date="1589257619756" expanded="true" signature="565:1005" ph="{...}" />
+            <marker date="1589257619756" expanded="true" signature="1016:1133" ph="/// Encrypt text ... " />
+            <marker date="1589257619756" expanded="true" signature="1172:1837" ph="{...}" />
+            <marker date="1589257619756" expanded="true" signature="1847:1979" ph="/// Decrypt the value ... " />
+            <marker date="1589257619756" expanded="true" signature="2028:2591" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/99258562-0D64-4271-98DD-F3A0E1467733/b7/d65b11df/StreamWriter.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="25" column="11" selection-start-line="25" selection-start-column="11" selection-end-line="25" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/SaveSystem/SaveSystem.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1840">
+          <caret line="92" column="78" selection-start-line="92" selection-start-column="78" selection-end-line="92" selection-end-column="78" />
+          <folding>
+            <marker date="1589258372132" expanded="true" signature="6:73" ph="..." />
+            <marker date="1589258372132" expanded="true" signature="75:243" ph="/// Save system is a class that MUST be included inside the scene you're saving/loading data. ... " />
+            <marker date="1589258372132" expanded="true" signature="284:4217" ph="{...}" />
+            <marker date="1589258372132" expanded="true" signature="288:577" ph="/// Informer is a util class which serves the purpose of informing when are the threads done loading or saving da ... " />
+            <marker date="1589258372132" expanded="true" signature="603:669" ph="{...}" />
+            <marker date="1589258372132" expanded="true" signature="673:825" ph="Private Variables" />
+            <marker date="1589258372132" expanded="true" signature="828:865" ph="Public Variables" />
+            <marker date="1589258372132" expanded="true" signature="868:966" ph="Properties" />
+            <marker date="1589258372132" expanded="true" signature="969:1088" ph="MonoBehaviour" />
+            <marker date="1589258372132" expanded="true" signature="1013:1075" ph="{...}" />
+            <marker date="1589258372132" expanded="true" signature="1094:4170" ph="Public Methods" />
+            <marker date="1589258372132" expanded="true" signature="1188:1361" ph="{...}" />
+            <marker date="1589258372132" expanded="true" signature="1367:1696" ph="/// Saves in another thread the data. ... " />
+            <marker date="1589258372132" expanded="true" signature="1770:2063" ph="{...}" />
+            <marker date="1589258372132" expanded="true" signature="2069:2410" ph="/// Saves data into path. ... " />
+            <marker date="1589258372132" expanded="true" signature="2464:3120" ph="{...}" />
+            <marker date="1589258372132" expanded="true" signature="2555:2942" ph="{...}" />
+            <marker date="1589258372132" expanded="true" signature="2975:3089" ph="{...}" />
+            <marker date="1589258372132" expanded="true" signature="3195:3477" ph="{...}" />
+            <marker date="1589258372132" expanded="true" signature="3210:3318" ph="{...}" />
+            <marker date="1589258372132" expanded="true" signature="3345:3471" ph="{...}" />
+            <marker date="1589258372132" expanded="true" signature="3483:3730" ph="/// Loads the specified system from the file system. ... " />
+            <marker date="1589258372132" expanded="true" signature="3771:4150" ph="{...}" />
+            <marker date="1589258372132" expanded="true" signature="4176:4215" ph="Private Methods" />
+            <marker date="1589258372132" expanded="true" signature="4219:4740" ph="/* Sample use ... */" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>

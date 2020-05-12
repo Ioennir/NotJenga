@@ -104,7 +104,6 @@ public class PlayerInGame : MonoBehaviour
 	        {
 		        if (!_tower.towerAlreadyBuilt) return;
 		        var r = _selectionBehaviour.Tick();
-		        Debug.Log(r);
 		        // Selecting piece behaviour.
 		        if (ChangeStateIf(r, State.PullingPiece, false))
 		        {
