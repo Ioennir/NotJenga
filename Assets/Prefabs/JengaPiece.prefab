@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 926521783746146711}
   - component: {fileID: 926521783746146710}
   - component: {fileID: 926521783746146709}
+  - component: {fileID: -2731983359072101313}
+  - component: {fileID: 6008790146024252204}
   m_Layer: 0
   m_Name: JengaPiece
   m_TagString: Untagged
@@ -94,6 +96,38 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-2731983359072101313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 926521783746146708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f98dc41d7e2913d46a16f264827a165a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  force: 0
+  arrowDir: {x: 0, y: 0, z: 0}
+  shootAxis: {x: 0, y: 0, z: 0}
+  arrow: {fileID: 1133787842171529846, guid: c1e364e44e0e05c4093a4451b6c27664, type: 3}
+  scaleChange: {x: 0.1, y: 0.1, z: 0.1}
+--- !u!114 &6008790146024252204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 926521783746146708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 335e23f101a599f4392b8469d96c10c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  dragButton: space
+  jengaPiece: {fileID: 0}
 --- !u!1 &7345799051794962215
 GameObject:
   m_ObjectHideFlags: 0

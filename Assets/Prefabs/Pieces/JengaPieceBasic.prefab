@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 6796402982682385449}
   m_Layer: 0
   m_Name: JengaPieceBasic
-  m_TagString: Untagged
+  m_TagString: Selectable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
