@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\projects\unity\NotJenga" t="IncludeRecursive">
+    <e p="$USER_HOME$/Library/Caches/Rider2019.1/extResources" t="IncludeRecursive" />
+    <e p="$USER_HOME$/Library/Caches/Rider2019.1/resharper-host/local/Transient/ReSharperHost/v191/SolutionCaches/_NotJenga.-1855723238.00" t="ExcludeRecursive" />
+    <e p="$PROJECT_DIR$" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
@@ -14,10 +16,14 @@
           </e>
           <e p="Camera" t="Include">
             <e p="CameraController.cs" t="Include" />
+            <e p="SelectionScript.cs" t="Include" />
           </e>
+          <e p="CameraScriptJenga.cs" t="Include" />
+          <e p="JengaScript.cs" t="Include" />
           <e p="Pieces" t="Include">
             <e p="PieceComparer.cs" t="Include" />
             <e p="PieceFriction.cs" t="Include" />
+            <e p="PieceShoot.cs" t="Include" />
           </e>
           <e p="Player" t="Include">
             <e p="ColocationBehaviour.cs" t="Include" />
@@ -27,6 +33,14 @@
           <e p="Pool" t="Include">
             <e p="Pool.cs" t="Include" />
           </e>
+          <e p="SaveSystem" t="Include">
+            <e p="AESEncrypt.cs" t="Include" />
+            <e p="Hex.cs" t="Include" />
+            <e p="SaveSystem.cs" t="Include" />
+            <e p="TestData.cs" t="Include" />
+            <e p="TestData2.cs" t="Include" />
+          </e>
+          <e p="SpheriacalPosition.cs" t="Include" />
           <e p="Tower.cs" t="Include" />
           <e p="TowerGenerator.cs" t="Include" />
           <e p="TurnSystem" t="Include">
@@ -41,9 +55,7 @@
       <e p="NotJenga.sln" t="IncludeFlat" />
       <e p="obj" t="ExcludeRecursive" />
       <e p="Packages" t="ExcludeRecursive" />
-      <e p="Temp\bin" t="ExcludeRecursive" />
+      <e p="Temp/bin" t="ExcludeRecursive" />
     </e>
-    <e p="C:\Users\dgrac\.Rider2019.3\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\dgrac\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_NotJenga.-1655357076.00" t="ExcludeRecursive" />
   </component>
 </project>
