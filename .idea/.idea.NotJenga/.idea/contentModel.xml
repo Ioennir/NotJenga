@@ -7,6 +7,9 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
+          <e p="Arrow" t="Include">
+            <e p="ArrowScript.cs" t="Include" />
+          </e>
           <e p="Audio" t="Include">
             <e p="AudioController.cs" t="Include" />
             <e p="Sound.cs" t="Include" />
@@ -22,12 +25,15 @@
           <e p="JengaScript.cs" t="Include" />
           <e p="Pieces" t="Include">
             <e p="PieceComparer.cs" t="Include" />
+            <e p="PieceDragAndDropScript.cs" t="Include" />
             <e p="PieceFriction.cs" t="Include" />
+            <e p="PieceNormalMove.cs" t="Include" />
             <e p="PieceShoot.cs" t="Include" />
           </e>
           <e p="Player" t="Include">
             <e p="ColocationBehaviour.cs" t="Include" />
             <e p="PlayerInGame.cs" t="Include" />
+            <e p="PullBehaviour.cs" t="Include" />
             <e p="SelectionBehaviour.cs" t="Include" />
           </e>
           <e p="Pool" t="Include">

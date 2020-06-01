@@ -35,38 +35,40 @@ public class PieceShoot : MonoBehaviour
     {
         if (shootMode)
         {
-            if (arrowDir != null)
-            {
-                shootAxis = arrowDir;
-            }
-            if (Input.GetKey("space"))
-            {
-                Vector3 vec = new Vector3((Mathf.Sin(Time.time) + 1) / 4, (Mathf.Sin(Time.time) + 1) / 4, (Mathf.Sin(Time.time) + 1) / 4);
-                arrow.transform.localScale = vec;
-                forceProduct = (Mathf.Sin(Time.time) + 3);
-
-                /*if (arrow.transform.localScale.x >= maxScale.x)
-                {
-                    arrow.transform.localScale -= scaleChange *Time.deltaTime;
-                }
-                if(transform.localScale.x <= minScale.x)
-                {
-                    arrow.transform.localScale += scaleChange * Time.deltaTime;
-                }*/
-                Debug.Log(arrow.transform.localScale);
-            }
-            if (Input.GetKeyUp("space"))
-            {
-                Destroy(arrow);
-                var direct = arrowDir * forceProduct;
-                Debug.Log("Meto golpe");
-                Debug.Log(direct);
-                rb.AddForce(direct, ForceMode.Impulse);
-                isShooting = false;
-            }
-
+            DragJenga();
         }
-       
+    }
 
+    public void DragJenga()
+    {
+        if (arrowDir != null)
+        {
+            shootAxis = arrowDir;
+        }
+        if (Input.GetKey("space"))
+        {
+            Vector3 vec = new Vector3((Mathf.Sin(Time.time) + 1) / 4, (Mathf.Sin(Time.time) + 1) / 4, (Mathf.Sin(Time.time) + 1) / 4);
+            arrow.transform.localScale = vec;
+            forceProduct = (Mathf.Sin(Time.time) + 3);
+
+            /*if (arrow.transform.localScale.x >= maxScale.x)
+            {
+                arrow.transform.localScale -= scaleChange *Time.deltaTime;
+            }
+            if(transform.localScale.x <= minScale.x)
+            {
+                arrow.transform.localScale += scaleChange * Time.deltaTime;
+            }*/
+            Debug.Log(arrow.transform.localScale);
+        }
+        if (Input.GetKeyUp("space"))
+        {
+            Destroy(arrow);
+            var direct = arrowDir * forceProduct;
+            Debug.Log("Meto golpe");
+            Debug.Log(direct);
+            rb.AddForce(direct, ForceMode.Impulse);
+            isShooting = false;
+        }
     }
 }
