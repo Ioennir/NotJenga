@@ -34,10 +34,6 @@ public class PieceShoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (shootMode)
-        {
-            DragJenga();
-        }
     }
 
     public void DragJenga()

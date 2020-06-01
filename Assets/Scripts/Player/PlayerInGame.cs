@@ -167,6 +167,10 @@ public class PlayerInGame : MonoBehaviour
 	    {
 		    _pullBehaviour.Dispose();
 	    }
+	    
+	    if (changeTurn)
+		    _selectionWithMouse.DisposeTurn();
+	    
 	    currentState.player = _turnController.CurrentPlayer;
 	    StateCurrentTurn = state;
 	    return true;

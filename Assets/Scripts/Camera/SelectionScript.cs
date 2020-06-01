@@ -80,6 +80,17 @@ public class SelectionScript : MonoBehaviour
         }*/
     }
 
+    public void DisposeTurn()
+    {
+        if (selection)
+        {
+            Renderer selectionRenderer = selection.GetComponent<Renderer>();
+            if (previousMaterial)
+                selectionRenderer.material = previousMaterial;
+            previousMaterial = null;
+        }
+    }
+
     public GameObject Tick(GameObject chosenFromStateMachine = null)
     {
         if (_topPieces == null)
@@ -97,8 +108,13 @@ public class SelectionScript : MonoBehaviour
         {
            return HandleHit(hit);
         }
-        Renderer selectionRendererSelection = selection.GetComponent<Renderer>();
-        selectionRendererSelection.material = previousMaterial;
+
+        if (selection)
+        {
+            Renderer selectionRendererSelection = selection.GetComponent<Renderer>();
+            selectionRendererSelection.material = previousMaterial;
+        }
+
         selection = null;
         return null;
     }
