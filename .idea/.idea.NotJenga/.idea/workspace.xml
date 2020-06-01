@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="61260b3a-f00f-400d-9f96-6a3c78a17868" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/flecha.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/flecha.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Arrow/ArrowScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Arrow/ArrowScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerInGame.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerInGame.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PullBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PullBehaviour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Camera/SelectionScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Camera/SelectionScript.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -39,7 +36,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/Player/SelectionBehaviour.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="874">
+            <state relative-caret-position="770">
               <caret line="79" column="29" selection-start-line="79" selection-start-column="29" selection-end-line="79" selection-end-column="29" />
               <folding>
                 <marker date="1591032994474" expanded="false" signature="6:32" ph="..." />
@@ -62,10 +59,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/Player/PlayerInGame.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="668">
+            <state relative-caret-position="1158">
               <caret line="167" column="37" selection-start-line="167" selection-start-column="37" selection-end-line="167" selection-end-column="37" />
               <folding>
                 <marker date="1591034353867" expanded="true" signature="6:52" ph="..." />
@@ -121,32 +118,30 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/Camera/SelectionScript.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1333">
-              <caret line="89" column="65" selection-start-line="89" selection-start-column="65" selection-end-line="89" selection-end-column="65" />
+            <state relative-caret-position="410">
+              <caret line="122" column="42" selection-start-line="122" selection-start-column="42" selection-end-line="122" selection-end-column="42" />
               <folding>
-                <marker date="1591033382278" expanded="false" signature="6:78" ph="..." />
-                <marker date="1591033382278" expanded="true" signature="124:6177" ph="{...}" />
-                <marker date="1591033382278" expanded="true" signature="131:287" ph="Public Variables" />
-                <marker date="1591033382278" expanded="true" signature="292:462" ph="Private Variables" />
-                <marker date="1591033382278" expanded="true" signature="532:545" ph="{...}" />
-                <marker date="1591033382278" expanded="true" signature="603:2862" ph="{...}" />
-                <marker date="1591033382278" expanded="true" signature="618:2856" ph="/* SUGGESTION (GABI): Camera.main every Update() is very expensive ... */" />
-                <marker date="1591033382278" expanded="true" signature="2932:6175" ph="{...}" />
-                <marker date="1591033382278" expanded="true" signature="2974:3800" ph="{...}" />
-                <marker date="1591033382278" expanded="true" signature="3503:3594" ph="{...}" />
-                <marker date="1591033382278" expanded="true" signature="3671:3749" ph="{...}" />
-                <marker date="1591033382278" expanded="true" signature="4186:6147" ph="{...}" />
-                <marker date="1591033382278" expanded="true" signature="4276:5122" ph="{...}" />
-                <marker date="1591033382278" expanded="true" signature="4785:4888" ph="{...}" />
-                <marker date="1591033382278" expanded="true" signature="4973:5063" ph="{...}" />
-                <marker date="1591033382278" expanded="true" signature="5157:5269" ph="{...}" />
-                <marker date="1591033382278" expanded="true" signature="5356:5978" ph="{...}" />
-                <marker date="1591033382278" expanded="true" signature="5685:5788" ph="{...}" />
-                <marker date="1591033382278" expanded="true" signature="5828:5918" ph="{...}" />
-                <marker date="1591033382278" expanded="true" signature="6013:6125" ph="{...}" />
+                <marker date="1591038296456" expanded="false" signature="6:78" ph="..." />
+                <marker date="1591038296456" expanded="true" signature="124:6322" ph="{...}" />
+                <marker date="1591038296456" expanded="true" signature="131:287" ph="Public Variables" />
+                <marker date="1591038296456" expanded="true" signature="292:495" ph="Private Variables" />
+                <marker date="1591038296456" expanded="true" signature="565:578" ph="{...}" />
+                <marker date="1591038296456" expanded="true" signature="636:2895" ph="{...}" />
+                <marker date="1591038296456" expanded="true" signature="651:2889" ph="/* SUGGESTION (GABI): Camera.main every Update() is very expensive ... */" />
+                <marker date="1591038296456" expanded="true" signature="2965:6320" ph="{...}" />
+                <marker date="1591038296456" expanded="true" signature="3007:3829" ph="{...}" />
+                <marker date="1591038296456" expanded="true" signature="3532:3623" ph="{...}" />
+                <marker date="1591038296456" expanded="true" signature="3700:3778" ph="{...}" />
+                <marker date="1591038296456" expanded="true" signature="4215:6011" ph="{...}" />
+                <marker date="1591038296456" expanded="true" signature="4312:4735" ph="{...}" />
+                <marker date="1591038296456" expanded="true" signature="4815:5249" ph="{...}" />
+                <marker date="1591038296456" expanded="true" signature="5336:5605" ph="{...}" />
+                <marker date="1591038296456" expanded="true" signature="5684:6001" ph="{...}" />
+                <marker date="1591038296456" expanded="true" signature="6024:6292" ph="{...}" />
+                <marker date="1591038296456" expanded="true" signature="6081:6282" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -308,10 +303,10 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Tower.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Pieces/PieceShoot.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/SelectionBehaviour.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Camera/SelectionScript.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Arrow/ArrowScript.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/PullBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerInGame.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Camera/SelectionScript.cs" />
       </list>
     </option>
   </component>
@@ -363,6 +358,12 @@
               <item name="Assets" type="8711f2a6:AssetsRoot" />
               <item name="Scripts" type="1045f7f1:UnityExplorerNode" />
               <item name="Camera" type="1045f7f1:UnityExplorerNode" />
+            </path>
+            <path>
+              <item name="" type="e068e287:UnityExplorerRootNode" />
+              <item name="Assets" type="8711f2a6:AssetsRoot" />
+              <item name="Scripts" type="1045f7f1:UnityExplorerNode" />
+              <item name="Player" type="1045f7f1:UnityExplorerNode" />
             </path>
           </expand>
           <select />
@@ -452,12 +453,12 @@
       <workItem from="1589251313846" duration="6286000" />
       <workItem from="1589379800993" duration="606000" />
       <workItem from="1589982458375" duration="2236000" />
-      <workItem from="1591019985553" duration="4773000" />
+      <workItem from="1591019985553" duration="7282000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13901000" />
+    <option name="totallyTimeSpent" value="16410000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -934,30 +935,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Player/SelectionBehaviour.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="874">
-          <caret line="79" column="29" selection-start-line="79" selection-start-column="29" selection-end-line="79" selection-end-column="29" />
-          <folding>
-            <marker date="1591032994474" expanded="false" signature="6:32" ph="..." />
-            <marker date="1591032994474" expanded="true" signature="81:2248" ph="{...}" />
-            <marker date="1591032994474" expanded="false" signature="85:410" ph="Private Variables" />
-            <marker date="1591032994474" expanded="false" signature="413:450" ph="Public Variables" />
-            <marker date="1591032994474" expanded="false" signature="453:484" ph="Properties" />
-            <marker date="1591032994474" expanded="false" signature="487:766" ph="MonoBehaviour" />
-            <marker date="1591032994474" expanded="true" signature="534:597" ph="{...}" />
-            <marker date="1591032994474" expanded="true" signature="624:750" ph="{...}" />
-            <marker date="1591032994474" expanded="true" signature="772:2201" ph="Public Methods" />
-            <marker date="1591032994474" expanded="true" signature="824:1839" ph="{...}" />
-            <marker date="1591032994474" expanded="true" signature="1248:1414" ph="{...}" />
-            <marker date="1591032994474" expanded="true" signature="1438:1559" ph="{...}" />
-            <marker date="1591032994474" expanded="true" signature="1866:2062" ph="{...}" />
-            <marker date="1591032994474" expanded="true" signature="2094:2185" ph="{...}" />
-            <marker date="1591032994474" expanded="false" signature="2207:2246" ph="Private Methods" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/Arrow/ArrowScript.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -1019,38 +996,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Camera/SelectionScript.cs">
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Player/SelectionBehaviour.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1333">
-          <caret line="89" column="65" selection-start-line="89" selection-start-column="65" selection-end-line="89" selection-end-column="65" />
+        <state relative-caret-position="770">
+          <caret line="79" column="29" selection-start-line="79" selection-start-column="29" selection-end-line="79" selection-end-column="29" />
           <folding>
-            <marker date="1591033382278" expanded="false" signature="6:78" ph="..." />
-            <marker date="1591033382278" expanded="true" signature="124:6177" ph="{...}" />
-            <marker date="1591033382278" expanded="true" signature="131:287" ph="Public Variables" />
-            <marker date="1591033382278" expanded="true" signature="292:462" ph="Private Variables" />
-            <marker date="1591033382278" expanded="true" signature="532:545" ph="{...}" />
-            <marker date="1591033382278" expanded="true" signature="603:2862" ph="{...}" />
-            <marker date="1591033382278" expanded="true" signature="618:2856" ph="/* SUGGESTION (GABI): Camera.main every Update() is very expensive ... */" />
-            <marker date="1591033382278" expanded="true" signature="2932:6175" ph="{...}" />
-            <marker date="1591033382278" expanded="true" signature="2974:3800" ph="{...}" />
-            <marker date="1591033382278" expanded="true" signature="3503:3594" ph="{...}" />
-            <marker date="1591033382278" expanded="true" signature="3671:3749" ph="{...}" />
-            <marker date="1591033382278" expanded="true" signature="4186:6147" ph="{...}" />
-            <marker date="1591033382278" expanded="true" signature="4276:5122" ph="{...}" />
-            <marker date="1591033382278" expanded="true" signature="4785:4888" ph="{...}" />
-            <marker date="1591033382278" expanded="true" signature="4973:5063" ph="{...}" />
-            <marker date="1591033382278" expanded="true" signature="5157:5269" ph="{...}" />
-            <marker date="1591033382278" expanded="true" signature="5356:5978" ph="{...}" />
-            <marker date="1591033382278" expanded="true" signature="5685:5788" ph="{...}" />
-            <marker date="1591033382278" expanded="true" signature="5828:5918" ph="{...}" />
-            <marker date="1591033382278" expanded="true" signature="6013:6125" ph="{...}" />
+            <marker date="1591032994474" expanded="false" signature="6:32" ph="..." />
+            <marker date="1591032994474" expanded="true" signature="81:2248" ph="{...}" />
+            <marker date="1591032994474" expanded="false" signature="85:410" ph="Private Variables" />
+            <marker date="1591032994474" expanded="false" signature="413:450" ph="Public Variables" />
+            <marker date="1591032994474" expanded="false" signature="453:484" ph="Properties" />
+            <marker date="1591032994474" expanded="false" signature="487:766" ph="MonoBehaviour" />
+            <marker date="1591032994474" expanded="true" signature="534:597" ph="{...}" />
+            <marker date="1591032994474" expanded="true" signature="624:750" ph="{...}" />
+            <marker date="1591032994474" expanded="true" signature="772:2201" ph="Public Methods" />
+            <marker date="1591032994474" expanded="true" signature="824:1839" ph="{...}" />
+            <marker date="1591032994474" expanded="true" signature="1248:1414" ph="{...}" />
+            <marker date="1591032994474" expanded="true" signature="1438:1559" ph="{...}" />
+            <marker date="1591032994474" expanded="true" signature="1866:2062" ph="{...}" />
+            <marker date="1591032994474" expanded="true" signature="2094:2185" ph="{...}" />
+            <marker date="1591032994474" expanded="false" signature="2207:2246" ph="Private Methods" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/Player/PlayerInGame.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="668">
+        <state relative-caret-position="1158">
           <caret line="167" column="37" selection-start-line="167" selection-start-column="37" selection-end-line="167" selection-end-column="37" />
           <folding>
             <marker date="1591034353867" expanded="true" signature="6:52" ph="..." />
@@ -1078,6 +1050,33 @@
             <marker date="1591034353867" expanded="true" signature="4166:4218" ph="{...}" />
             <marker date="1591034353867" expanded="true" signature="4268:4314" ph="{...}" />
             <marker date="1591034353867" expanded="false" signature="4463:4502" ph="Private Methods" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Camera/SelectionScript.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="410">
+          <caret line="122" column="42" selection-start-line="122" selection-start-column="42" selection-end-line="122" selection-end-column="42" />
+          <folding>
+            <marker date="1591038296456" expanded="false" signature="6:78" ph="..." />
+            <marker date="1591038296456" expanded="true" signature="124:6322" ph="{...}" />
+            <marker date="1591038296456" expanded="true" signature="131:287" ph="Public Variables" />
+            <marker date="1591038296456" expanded="true" signature="292:495" ph="Private Variables" />
+            <marker date="1591038296456" expanded="true" signature="565:578" ph="{...}" />
+            <marker date="1591038296456" expanded="true" signature="636:2895" ph="{...}" />
+            <marker date="1591038296456" expanded="true" signature="651:2889" ph="/* SUGGESTION (GABI): Camera.main every Update() is very expensive ... */" />
+            <marker date="1591038296456" expanded="true" signature="2965:6320" ph="{...}" />
+            <marker date="1591038296456" expanded="true" signature="3007:3829" ph="{...}" />
+            <marker date="1591038296456" expanded="true" signature="3532:3623" ph="{...}" />
+            <marker date="1591038296456" expanded="true" signature="3700:3778" ph="{...}" />
+            <marker date="1591038296456" expanded="true" signature="4215:6011" ph="{...}" />
+            <marker date="1591038296456" expanded="true" signature="4312:4735" ph="{...}" />
+            <marker date="1591038296456" expanded="true" signature="4815:5249" ph="{...}" />
+            <marker date="1591038296456" expanded="true" signature="5336:5605" ph="{...}" />
+            <marker date="1591038296456" expanded="true" signature="5684:6001" ph="{...}" />
+            <marker date="1591038296456" expanded="true" signature="6024:6292" ph="{...}" />
+            <marker date="1591038296456" expanded="true" signature="6081:6282" ph="{...}" />
           </folding>
         </state>
       </provider>

@@ -13,6 +13,7 @@ public class SelectionScript : MonoBehaviour
     private string selectableTag = "Selectable";
     private Material previousMaterial;
     private bool alreadySelected = false;
+    private Transform selection;
     #endregion
     // Start is called before the first frame update
     void Start()
@@ -81,7 +82,7 @@ public class SelectionScript : MonoBehaviour
     {
         if (chosenFromStateMachine)
         {
-            var selection = chosenFromStateMachine.transform;
+            selection = chosenFromStateMachine.transform;
             var selectionRenderer = selection.GetComponent<Renderer>();
             var scriptShoot = selection.GetComponent<PieceShoot>();
             var arrowInst = Instantiate(arrow);
@@ -107,55 +108,53 @@ public class SelectionScript : MonoBehaviour
         // SUGGESTION (GABI): Tag comparison with == comparator is not ideal, use transform.CompareTag(selectableTag) instead 
         if (Physics.Raycast(ray, out hit) && hit.transform.tag == selectableTag)
         {
+            if (selection && previousMaterial && hit.transform != selection.transform)
+            {
+                
+                var selectionRenderer = selection.GetComponent<Renderer>();
+                Debug.Log("change to previous material " + previousMaterial.name + " VS " + selectionRenderer.material.name);
+                selectionRenderer.material = previousMaterial;
+                previousMaterial = null;
+                selection = hit.transform;
+                return null;
+            }
             if (Input.GetMouseButtonDown(0) && !alreadySelected) // Shoot jenga
             { 
-                var selection = hit.transform;
-                var selectionRenderer = selection.GetComponent<Renderer>();
+                selection = hit.transform;
                 var scriptShoot = selection.GetComponent<PieceShoot>();
                 var arrowInst = Instantiate(arrow);
                 scriptShoot.shootMode = true;
-              
                 arrowInst.transform.position = hit.transform.position;
                 arrowInst.GetComponent<ArrowScript>().cube = hit.transform;
-                if (!previousMaterial)
-                {
-                    previousMaterial = selectionRenderer.material;
-                }
-                // SUGGESTION (GABI): Above 
-                if (!selectionRenderer)
-                {
-                    selectionRenderer.material = mat;
-                }
                 return selection.gameObject;
-            }
-            if (!previousMaterial)
-            {
-                hit.transform.GetComponent<Renderer>().material = previousMaterial;
             }
             if (Input.GetMouseButtonDown(1) && !alreadySelected) //Drag and drop jenga
             {
                 mode = 1;
-                var selection = hit.transform;
-                var selectionRenderer = selection.GetComponent<Renderer>();
+                selection = hit.transform;
                 var scriptMove = selection.GetComponent<PieceDragAndDropScript>();
                 scriptMove.dragMode = true;
-                if (!previousMaterial)
-                {
-                    previousMaterial = selectionRenderer.material;
-                }
-                if (!selectionRenderer)
-                {
-                    selectionRenderer.material = mat;
-                }
-
                 return selection.gameObject;
             }
-            if (!previousMaterial)
-            {
-                hit.transform.GetComponent<Renderer>().material = previousMaterial;
-            }
 
-          
+            if (!Input.GetMouseButtonDown(0) && !Input.GetMouseButtonDown(1))
+            {
+                selection = hit.transform;
+                var selectionRenderer = selection.GetComponent<Renderer>();
+            
+                if (!previousMaterial) 
+                    previousMaterial = selectionRenderer.material;
+                selectionRenderer.material = mat;
+            }
+        }
+        else
+        {
+            if (selection && previousMaterial)
+            {
+                var selectionRenderer = selection.GetComponent<Renderer>();
+                selectionRenderer.material = previousMaterial;
+                selection = null;
+            }
         }
 
         return null;
