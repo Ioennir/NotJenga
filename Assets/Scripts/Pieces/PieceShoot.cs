@@ -19,6 +19,7 @@ public class PieceShoot : MonoBehaviour
     private float forceProduct = 0.0f;
     private Rigidbody rb;
     private bool isShooting = true;
+
     
     #endregion
     // Start is called before the first frame update
@@ -48,7 +49,8 @@ public class PieceShoot : MonoBehaviour
         if (Input.GetKey("space"))
         {
             Vector3 vec = new Vector3((Mathf.Sin(Time.time) + 1) / 4, (Mathf.Sin(Time.time) + 1) / 4, (Mathf.Sin(Time.time) + 1) / 4);
-            arrow.transform.localScale = vec;
+            if (arrow)
+                arrow.transform.localScale = vec;
             forceProduct = (Mathf.Sin(Time.time) + 3);
 
             /*if (arrow.transform.localScale.x >= maxScale.x)
@@ -59,7 +61,6 @@ public class PieceShoot : MonoBehaviour
             {
                 arrow.transform.localScale += scaleChange * Time.deltaTime;
             }*/
-            Debug.Log(arrow.transform.localScale);
         }
         if (Input.GetKeyUp("space"))
         {
