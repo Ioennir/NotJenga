@@ -6,10 +6,13 @@ public class SelectionScript : MonoBehaviour
 {
     #region Public Variables
     public Material mat;
+    public GameObject arrow;
+    public int mode; //tell other scripts which mode are we in
     #endregion
     #region Private Variables
     private string selectableTag = "Selectable";
     private Material previousMaterial;
+    private bool alreadySelected = false;
     #endregion
     // Start is called before the first frame update
     void Start()
@@ -26,12 +29,16 @@ public class SelectionScript : MonoBehaviour
         // SUGGESTION (GABI): Tag comparison with == comparator is not ideal, use transform.CompareTag(selectableTag) instead 
         if (Physics.Raycast(ray, out hit) && hit.transform.tag == selectableTag)
         {
-            // SUGGESTION (GABI): Move this above so we only check for Raycast when Click
-            if (Input.GetMouseButtonDown(0))
-            {
+            if (Input.GetMouseButtonDown(0) && !alreadySelected) // Shoot jenga
+            { 
                 var selection = hit.transform;
                 var selectionRenderer = selection.GetComponent<Renderer>();
-                // SUGGESTION (GABI): previousMaterial != null is expensive, use ! operator instead
+                var scriptShoot = selection.GetComponent<PieceShoot>();
+                var arrowInst = Instantiate(arrow);
+                scriptShoot.shootMode = true;
+              
+                arrowInst.transform.position = hit.transform.position;
+                arrowInst.GetComponent<ArrowScript>().cube = hit.transform;
                 if (previousMaterial != null)
                 {
                     previousMaterial = selectionRenderer.material;
@@ -42,15 +49,32 @@ public class SelectionScript : MonoBehaviour
                     selectionRenderer.material = mat;
                 }
             }
-            else
+            if (previousMaterial != null)
             {
-                // SUGGESTION (GABI): Above
+                hit.transform.GetComponent<Renderer>().material = previousMaterial;
+            }
+            if (Input.GetMouseButtonDown(1) && !alreadySelected) //Drag and drop jenga
+            {
+                mode = 1;
+                var selection = hit.transform;
+                var selectionRenderer = selection.GetComponent<Renderer>();
+                var scriptMove = selection.GetComponent<PieceDragAndDropScript>();
+                scriptMove.dragMode = true;
                 if (previousMaterial != null)
                 {
-                    hit.transform.GetComponent<Renderer>().material = previousMaterial;
+                    previousMaterial = selectionRenderer.material;
+                }
+                if (selectionRenderer != null)
+                {
+                    selectionRenderer.material = mat;
                 }
             }
-
+            if (previousMaterial != null)
+            {
+                hit.transform.GetComponent<Renderer>().material = previousMaterial;
+            }
         }
     }
 }
+    
+
