@@ -19,7 +19,7 @@ public class ArrowScript : MonoBehaviour
     void Update()
     {
         float horizontal = Input.GetAxis("Horizontal");
-        this.transform.Rotate(new Vector3(0.0f, horizontal, 0.0f) * Time.deltaTime * rotSpeed);
+        this.transform.Rotate(new Vector3(0.0f, horizontal, 0.0f) * Time.deltaTime * rotSpeed * 10f);
         if (cube != null)
         {
             cube.GetComponent<PieceShoot>().arrow = this.gameObject;

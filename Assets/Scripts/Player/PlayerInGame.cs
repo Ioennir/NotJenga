@@ -162,6 +162,11 @@ public class PlayerInGame : MonoBehaviour
 	    {
 		    _turnController.MoveNextTurn();
 	    }
+
+	    if (StateCurrentTurn == State.PullingPiece)
+	    {
+		    _pullBehaviour.Dispose();
+	    }
 	    currentState.player = _turnController.CurrentPlayer;
 	    StateCurrentTurn = state;
 	    return true;

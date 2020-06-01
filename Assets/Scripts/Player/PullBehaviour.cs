@@ -72,6 +72,12 @@ public class PullBehaviour : MonoBehaviour
 	    _currentPieceShoot.DragJenga();
 	    return false;
     }
+
+    public void Dispose()
+    {
+	    dragging = true;
+	    _currentPiece = null;
+    }
     
     #endregion
 
