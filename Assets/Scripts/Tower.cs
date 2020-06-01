@@ -116,21 +116,23 @@ public class Tower : MonoBehaviour
 	    {
 		    return _pieces[offset];
 	    }
+	    List<GameObject> top = GetTopPieces();
 	    if (horizontal != 0)
 	    {
 		    // todo More logic?
-		    if (offset + horizontal < _pieces.Count && offset + horizontal >= 0 && (offset += horizontal) > -1);
-			    
+		    if (offset + horizontal < _pieces.Count - top.Count && offset + horizontal >= 0 && (offset += horizontal) > -1);
+		    
 		    return _pieces[offset];
 	    }
-	    
+
+	   
 	    int count = offset + vertical;
-	    while (count < _pieces.Count && count >= 0 && SameRow(_pieces[count], _pieces[offset]))
+	    while (count < _pieces.Count - top.Count && count >= 0 && SameRow(_pieces[count], _pieces[offset]))
 	    {
 		    count += vertical;
 	    }
 
-	    offset = Mathf.Clamp(count, 0, _pieces.Count - 1);
+	    offset = Mathf.Clamp(count, 0, _pieces.Count - 1 - top.Count);
 	    
 	    return _pieces[offset];
     }

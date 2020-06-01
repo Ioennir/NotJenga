@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 [RequireComponent(typeof(SelectionBehaviour))]
 [RequireComponent(typeof(ColocationBehaviour))]
@@ -94,7 +95,7 @@ public class PlayerInGame : MonoBehaviour
 	        {
 		        if (ChangeStateIf(_tower.towerAlreadyBuilt, State.SelectingPiece, false))
 		        {
-			        var top = _tower.GetTopPieces();
+			        List<GameObject> top = _tower.GetTopPieces();
 			        _cameraController.Target = top[0].gameObject.transform;
 		        }
 		        break;
@@ -103,7 +104,7 @@ public class PlayerInGame : MonoBehaviour
 	        case State.SelectingPiece:
 	        {
 		        if (!_tower.towerAlreadyBuilt) return;
-		        var r = _selectionBehaviour.Tick();
+		        GameObject r = _selectionBehaviour.Tick();
 		        // Selecting piece behaviour.
 		        if (ChangeStateIf(r, State.PullingPiece, false))
 		        {
