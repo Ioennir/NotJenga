@@ -6,7 +6,7 @@ using UnityEngine;
 /// <summary>
 /// Spherical coordinates to define a point in space
 /// </summary>
-public class CylindricCoordinates
+public class CylindricalCoordinates
 {
     #region Private Attributes
 
@@ -19,7 +19,7 @@ public class CylindricCoordinates
 
     #region Constructors
 
-    public CylindricCoordinates()
+    public CylindricalCoordinates()
     {
         _c = Vector3.zero;
         _r = 0f;
@@ -27,7 +27,7 @@ public class CylindricCoordinates
         _h = 0f;
     }
 
-    public CylindricCoordinates(Vector3 center, float radius, float angle, float height)
+    public CylindricalCoordinates(Vector3 center, float radius, float angle, float height)
     {
         _c = center;
         _r = radius;
@@ -35,7 +35,7 @@ public class CylindricCoordinates
         _h = height;
     }
 
-    public CylindricCoordinates(float radius, float angle, float height)
+    public CylindricalCoordinates(float radius, float angle, float height)
     {
         _c = Vector3.zero;
         _r = radius;
