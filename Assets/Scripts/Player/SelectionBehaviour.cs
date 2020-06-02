@@ -71,6 +71,15 @@ public class SelectionBehaviour : MonoBehaviour
 	    return select > 0.5f && (rendNext.material = _prevMaterial) ? _currentPiece : null;
     }
 
+    public void Dispose()
+    {
+	    MeshRenderer rend = _currentPiece.GetComponent<MeshRenderer>();
+	    rend.material = _prevMaterial;
+	    _currentPiece = null;
+	    _selectedPiece = 0;
+	    _prevMaterial = null;
+    }
+
     public void DisposeState()
     {
 	    _currentPiece = null;

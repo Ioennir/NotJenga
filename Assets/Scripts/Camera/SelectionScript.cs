@@ -13,16 +13,20 @@ public class SelectionScript : MonoBehaviour
     private string selectableTag = "Selectable";
     private Material previousMaterial;
     private bool alreadySelected = false;
+    private Transform selection;
+    private Tower _tower;
+    private List<GameObject> _topPieces;
     #endregion
     // Start is called before the first frame update
     void Start()
     {
-
+        _tower = FindObjectOfType<Tower>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        /*
         // SUGGESTION (GABI): Camera.main every Update() is very expensive
         var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
@@ -39,17 +43,17 @@ public class SelectionScript : MonoBehaviour
               
                 arrowInst.transform.position = hit.transform.position;
                 arrowInst.GetComponent<ArrowScript>().cube = hit.transform;
-                if (previousMaterial != null)
+                if (!previousMaterial)
                 {
                     previousMaterial = selectionRenderer.material;
                 }
                 // SUGGESTION (GABI): Above 
-                if (selectionRenderer != null)
+                if (!selectionRenderer)
                 {
                     selectionRenderer.material = mat;
                 }
             }
-            if (previousMaterial != null)
+            if (!previousMaterial)
             {
                 hit.transform.GetComponent<Renderer>().material = previousMaterial;
             }
@@ -60,19 +64,117 @@ public class SelectionScript : MonoBehaviour
                 var selectionRenderer = selection.GetComponent<Renderer>();
                 var scriptMove = selection.GetComponent<PieceDragAndDropScript>();
                 scriptMove.dragMode = true;
-                if (previousMaterial != null)
+                if (!previousMaterial)
                 {
                     previousMaterial = selectionRenderer.material;
                 }
-                if (selectionRenderer != null)
+                if (!selectionRenderer)
                 {
                     selectionRenderer.material = mat;
                 }
             }
-            if (previousMaterial != null)
+            if (!previousMaterial)
             {
                 hit.transform.GetComponent<Renderer>().material = previousMaterial;
             }
+        }*/
+    }
+
+    public void DisposeTurn()
+    {
+        if (selection)
+        {
+            Renderer selectionRenderer = selection.GetComponent<Renderer>();
+            if (previousMaterial)
+                selectionRenderer.material = previousMaterial;
+            previousMaterial = null;
+        }
+    }
+
+    public GameObject Tick(GameObject chosenFromStateMachine = null)
+    {
+        if (_topPieces == null)
+        {
+            _topPieces = _tower.GetTopPieces();
+        }
+        if (chosenFromStateMachine)
+        {
+            HandleSelectionFromStateMachine(chosenFromStateMachine);
+            return selection.gameObject;
+        }
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit) && hit.transform.CompareTag(selectableTag))
+        {
+           return HandleHit(hit);
+        }
+
+        if (selection)
+        {
+            Renderer selectionRendererSelection = selection.GetComponent<Renderer>();
+            selectionRendererSelection.material = previousMaterial;
+        }
+
+        selection = null;
+        return null;
+    }
+
+    private GameObject HandleHit(RaycastHit hit)
+    {
+        if (_topPieces.Contains(hit.transform.gameObject))
+        {
+            return null;
+        }
+        if (selection && previousMaterial && hit.transform != selection.transform)
+        {
+            Renderer selectionRenderer = selection.GetComponent<Renderer>();
+            selectionRenderer.material = previousMaterial;
+            previousMaterial = null;
+            selection = hit.transform;
+            return null;
+        }
+        if (Input.GetMouseButtonDown(0) && !alreadySelected) // Shoot jenga
+        { 
+            selection = hit.transform;
+            PieceShoot scriptShoot = selection.GetComponent<PieceShoot>();
+            GameObject arrowInst = Instantiate(arrow);
+            scriptShoot.shootMode = true;
+            arrowInst.transform.position = hit.transform.position;
+            arrowInst.GetComponent<ArrowScript>().cube = hit.transform;
+            return selection.gameObject;
+        }
+        if (Input.GetMouseButtonDown(1) && !alreadySelected) //Drag and drop jenga
+        {
+            mode = 1;
+            selection = hit.transform;
+            var scriptMove = selection.GetComponent<PieceDragAndDropScript>();
+            scriptMove.dragMode = true;
+            return selection.gameObject;
+        }
+        selection = hit.transform;
+        Renderer selectionRendererEnd = selection.GetComponent<Renderer>();
+        if (!previousMaterial) 
+            previousMaterial = selectionRendererEnd.material;
+        selectionRendererEnd.material = mat;
+        return null;
+    }
+
+    private void HandleSelectionFromStateMachine(GameObject chosenFromStateMachine)
+    {
+        selection = chosenFromStateMachine.transform;
+        Renderer selectionRenderer = selection.GetComponent<Renderer>();
+        PieceShoot scriptShoot = selection.GetComponent<PieceShoot>();
+        GameObject arrowInst = Instantiate(arrow);
+        scriptShoot.shootMode = true;
+        arrowInst.transform.position = chosenFromStateMachine.transform.position;
+        arrowInst.GetComponent<ArrowScript>().cube = chosenFromStateMachine.transform;
+        if (!previousMaterial)
+        {
+            previousMaterial = selectionRenderer.material;
+        }
+        if (!selectionRenderer)
+        {
+            selectionRenderer.material = mat;
         }
     }
 }

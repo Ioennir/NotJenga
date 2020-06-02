@@ -18,8 +18,8 @@ public class ArrowScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float horizontal = Input.GetAxis("Horizontal");
-        this.transform.Rotate(new Vector3(0.0f, horizontal, 0.0f) * Time.deltaTime * rotSpeed);
+        float horizontal = Input.GetAxis("RightMoveJengaColocation");
+        this.transform.Rotate(new Vector3(0.0f, horizontal, 0.0f) * Time.deltaTime * rotSpeed * 10f);
         if (cube != null)
         {
             cube.GetComponent<PieceShoot>().arrow = this.gameObject;

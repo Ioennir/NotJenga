@@ -33,8 +33,13 @@ public class PlayerInGame : MonoBehaviour
 	///  Behaviours
 	
 	private SelectionBehaviour _selectionBehaviour;
-	
+
 	private ColocationBehaviour _colocationBehaviour;
+
+	private PullBehaviour _pullBehaviour;
+
+	private SelectionScript _selectionWithMouse;
+	
 
 	/// Utils
 	
@@ -43,6 +48,8 @@ public class PlayerInGame : MonoBehaviour
 	private CameraController _cameraController;
 
 	private Tower _tower;
+
+	private GameObject _currentJenga;
 
 	#endregion
 
@@ -76,6 +83,9 @@ public class PlayerInGame : MonoBehaviour
     {
 	    _cameraController = FindObjectOfType<CameraController>();
 	    _colocationBehaviour = GetComponent<ColocationBehaviour>();
+	    _pullBehaviour = GetComponent<PullBehaviour>();
+	    _selectionWithMouse = GetComponent<SelectionScript>();
+	    
 	    _selectionBehaviour = GetComponent<SelectionBehaviour>();
 	    _turnController = FindObjectOfType<TurnController>();
 	    _tower = FindObjectOfType<Tower>();
@@ -105,16 +115,20 @@ public class PlayerInGame : MonoBehaviour
 	        {
 		        if (!_tower.towerAlreadyBuilt) return;
 		        GameObject r = _selectionBehaviour.Tick();
+		        r = _selectionWithMouse.Tick(r);
 		        // Selecting piece behaviour.
 		        if (ChangeStateIf(r, State.PullingPiece, false))
 		        {
 			        _cameraController.Target = r.transform;
+			        _selectionBehaviour.Dispose();
+			        _currentJenga = r;
 		        }
 		        break;
 	        }
 
 	        case State.PullingPiece:
 	        {
+		        ChangeStateIf(_pullBehaviour.Tick(_currentJenga), State.PlacingPiece, false);
 		        break;
 	        }
 
@@ -148,6 +162,15 @@ public class PlayerInGame : MonoBehaviour
 	    {
 		    _turnController.MoveNextTurn();
 	    }
+
+	    if (StateCurrentTurn == State.PullingPiece)
+	    {
+		    _pullBehaviour.Dispose();
+	    }
+	    
+	    if (changeTurn)
+		    _selectionWithMouse.DisposeTurn();
+	    
 	    currentState.player = _turnController.CurrentPlayer;
 	    StateCurrentTurn = state;
 	    return true;
