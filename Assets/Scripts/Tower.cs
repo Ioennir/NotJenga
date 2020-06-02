@@ -154,6 +154,7 @@ public class Tower : MonoBehaviour
     public void DestroyPieceOnFloor(PieceCheckCollision piece)
     {
 	    _floorPieces.Remove(piece.gameObject);
+	    _pieces.Remove(piece.gameObject);
     }
 
     

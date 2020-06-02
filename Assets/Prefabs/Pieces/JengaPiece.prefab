@@ -14,6 +14,10 @@ GameObject:
   - component: {fileID: -1500073644362492606}
   - component: {fileID: -8916629023342472753}
   - component: {fileID: -4451414295140191661}
+  - component: {fileID: -3967206738533942944}
+  - component: {fileID: 8325297288019146644}
+  - component: {fileID: -3843364009750885957}
+  - component: {fileID: -3218892517871874918}
   m_Layer: 0
   m_Name: JengaPiece
   m_TagString: Selectable
@@ -128,3 +132,62 @@ MonoBehaviour:
   frictionDynamic: 0.2
   isSticky: 0
   physicsMaterial: {fileID: 0}
+--- !u!114 &-3967206738533942944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 959481774545258232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a89973f3219b5492b8d0f18255216596, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8325297288019146644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 959481774545258232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 335e23f101a599f4392b8469d96c10c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0.00000005
+  dragButton: space
+  leftMoveButton: left
+  rightMoveButton: right
+  dragMode: 0
+--- !u!114 &-3843364009750885957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 959481774545258232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db7db7eb97eaee348a9a628178fed8d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-3218892517871874918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 959481774545258232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f98dc41d7e2913d46a16f264827a165a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  force: 3.24
+  arrowDir: {x: 0, y: 0, z: 0}
+  shootMode: 0
+  shootAxis: {x: 0, y: 0, z: 0}
+  arrow: {fileID: 4098144169239062652, guid: b438e785d3aae4348a418bc2f2043344, type: 3}
+  scaleChange: {x: 0.1, y: 0.1, z: 0.1}

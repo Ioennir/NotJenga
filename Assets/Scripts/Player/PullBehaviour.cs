@@ -81,7 +81,6 @@ public class PullBehaviour : MonoBehaviour
 
 		if (floorPieces.Count == 1)
 		{
-			_tower.Pool.Destroy(_currentPiece);
 			_currentPiece.GetComponent<PieceCheckCollision>().OnDestroy();
 			return true;
 		}

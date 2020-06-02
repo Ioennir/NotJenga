@@ -38,7 +38,7 @@ public class PieceCheckCollision : MonoBehaviour
 		angles.z = ClampAngle(angles.z);
 		bool condition = true;
 		
-		if ((Math.Abs(angles.x) > 10f || Math.Abs(angles.z) > 10f && condition) && !_badPlaced)
+		if ((Math.Abs(angles.x) > 10f || Math.Abs(angles.z) > 10f && condition) && !_badPlaced && _tower.towerAlreadyBuilt)
 		{
 			Debug.Log(angles);
 			Debug.Log("Badly placed something!");
@@ -65,7 +65,7 @@ public class PieceCheckCollision : MonoBehaviour
 	    return angle > 350 ? angle - 360 : angle;
     }
 
-    private void OnCollisionStay(Collision other)
+    private void OnTriggerStay(Collider other)
     {
 	    if (other.gameObject.CompareTag("Floor"))
 	    {
@@ -76,6 +76,7 @@ public class PieceCheckCollision : MonoBehaviour
 
     public void OnDestroy()
     {
+	    Debug.Log("Destroy");
 	    if (_inFloor)
 	    {
 		    _tower.DestroyPieceOnFloor(this);
@@ -85,6 +86,8 @@ public class PieceCheckCollision : MonoBehaviour
 	    {
 		    _tower.badPlaced.Remove(gameObject);
 	    }
+
+	    _tower.Pool.Destroy(gameObject);
     }
 
     #endregion
