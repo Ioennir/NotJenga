@@ -12,9 +12,11 @@ public class TowerGenerator : MonoBehaviour
     [Header("Configuration")]
     [SerializeField] private uint towerHeight = 17;
     [SerializeField] [Range(0.0f, 1.0f)] private float buildInterval = 0.5f;
-    [SerializeField] private float pieceHeight = 0.5f;
-
+    private float pieceHeight = 0.1f;
+    private float pieceWidth = 0.1f;
     private Tower _towerData;
+
+    private Vector3 towerCenter;
     #endregion
 
     #region Public Variables
@@ -35,6 +37,8 @@ public class TowerGenerator : MonoBehaviour
     private void Awake()
     {
         _towerData = gameObject.AddComponent<Tower>();
+        pieceHeight *= 0.1f;
+        towerCenter = transform.position;
     }
 
     private void Start()
@@ -76,15 +80,18 @@ public class TowerGenerator : MonoBehaviour
             {
                 GameObject piece = _piecePool.Instantiate();
                 piece.transform.parent = _tower.transform;
+                piece.transform.localScale *= 0.5f;
+                pieceHeight = piece.transform.localScale.y;
+                pieceWidth = piece.transform.localScale.x;
                 piece.GetComponent<MeshRenderer>().material = pieceMaterials[x % 2];
                 if (y % 2 == 0)
                 {
-                    piece.transform.localPosition = new Vector3(x - 1.0f, pieceHeight + pieceHeight * y, 0.0f);
+                    piece.transform.localPosition = new Vector3(towerCenter.x + (x * pieceWidth - pieceWidth), towerCenter.y + y * pieceHeight + pieceHeight, towerCenter.z);
                 }
                 else
                 {
                     piece.transform.localRotation = Quaternion.AngleAxis(90.0f, piece.transform.up);
-                    piece.transform.localPosition = new Vector3(0.0f, pieceHeight + pieceHeight * y, x - 1.0f);
+                    piece.transform.localPosition = new Vector3(towerCenter.x, towerCenter.y + y * pieceHeight + pieceHeight, towerCenter.z + (x * pieceWidth - pieceWidth));
                 }
                 _towerData.AddPiece(piece);
                 
