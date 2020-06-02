@@ -27,7 +27,7 @@ public class ColocationBehaviour : MonoBehaviour
 
 	private int _currentJenga = 0;
 
-	private int _posX = 0;
+	private int _posX = -1;
 
 	[SerializeField]
 	private Material _matTransparent;
@@ -101,12 +101,13 @@ public class ColocationBehaviour : MonoBehaviour
 		if (_topPieces.Count >= 3)
 		{
 			_currentJenga = (_currentJenga + 1) % _topPieces.Count;
-			_posX = (_posX + 1) % 3;
+			_posX = ClampOver(_posX + 1, -1,  2);
 		}
 		// If we are not in an empty row just pass position
 		else
 		{
-			_posX = (_posX + 1) % 3;
+			_posX = ClampOver(_posX + 1, -1, 2);
+			
 		}
 
 		
@@ -164,6 +165,7 @@ public class ColocationBehaviour : MonoBehaviour
 			// - - -
 
 			_topPieces = _towerData.GetTopPieces();
+			_posX = (int) _topPieces[0].transform.localPosition.x;
 		}
 
 		if (!_imaginaryJenga)
@@ -209,8 +211,8 @@ public class ColocationBehaviour : MonoBehaviour
 		{
 			if (conditionForUsingMovementInZAxis)
 			{
-				imaginaryJengaPosition.z = _posX - 1;
-				imaginaryJengaPosition.x = 1;
+				imaginaryJengaPosition.z = _posX;
+				imaginaryJengaPosition.x = 0;
 			}
 			else
 			{
@@ -225,10 +227,26 @@ public class ColocationBehaviour : MonoBehaviour
 		} while (Tower.SamePlace(_imaginaryJenga, _topPieces, !conditionForUsingMovementInZAxis) && 
 		         _topPieces.Count != 3 &&
 		         // update posX in another iteration if the conditions are met.
-		         (_posX = (_posX + 1) % 3) > -10000);
+		         (_posX = ClampOver(_posX + 1, -1,  2)) > -10000);
 		
 		
 		_imaginaryJenga.transform.position = imaginaryJengaPosition;
+	}
+
+	public int ClampOver(int n, int min, int max)
+	{
+		if (n >= max)
+		{
+			n = min;
+			return n;
+		}
+
+		if (n < min)
+		{
+			n = min;
+		}
+
+		return n;
 	}
 	#endregion
 }

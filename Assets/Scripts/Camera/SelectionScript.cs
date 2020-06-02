@@ -82,13 +82,7 @@ public class SelectionScript : MonoBehaviour
 
     public void DisposeTurn()
     {
-        if (selection)
-        {
-            Renderer selectionRenderer = selection.GetComponent<Renderer>();
-            if (previousMaterial)
-                selectionRenderer.material = previousMaterial;
-            previousMaterial = null;
-        }
+        _topPieces = null;
     }
 
     public GameObject Tick(GameObject chosenFromStateMachine = null)

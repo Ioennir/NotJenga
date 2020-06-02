@@ -15,6 +15,7 @@ public class Tower : MonoBehaviour
 	#region Private Variables
 
 	private List<GameObject> _pieces = new List<GameObject>();
+	private List<GameObject> _floorPieces = new List<GameObject>();
 
 	private Pool _pool;
 	
@@ -26,11 +27,14 @@ public class Tower : MonoBehaviour
 	/// Variable will be true
 	/// </summary>
 	public bool towerAlreadyBuilt = false;
-
+	
+	public List<GameObject> badPlaced = new List<GameObject>();
 	#endregion
 
 	#region Properties
 
+	public Pool Pool => _pool
+	;
 	#endregion
 
 	#region MonoBehaviour
@@ -135,6 +139,21 @@ public class Tower : MonoBehaviour
 	    offset = Mathf.Clamp(count, 0, _pieces.Count - 1 - top.Count);
 	    
 	    return _pieces[offset];
+    }
+
+    public List<GameObject> PiecesOnTheFloor()
+    {
+	    return _floorPieces;
+    }
+
+    public void AddPieceOnFloor(PieceCheckCollision piece)
+    {
+	    _floorPieces.Add(piece.gameObject);
+    }
+
+    public void DestroyPieceOnFloor(PieceCheckCollision piece)
+    {
+	    _floorPieces.Remove(piece.gameObject);
     }
 
     

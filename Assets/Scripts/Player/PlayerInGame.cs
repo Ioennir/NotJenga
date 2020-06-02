@@ -10,7 +10,8 @@ public class PlayerInGame : MonoBehaviour
 		WaitingForGameToStart,
 		SelectingPiece,
 		PullingPiece,
-		PlacingPiece
+		PlacingPiece,
+		WaitingForNextTurn
 	}
 
 	public struct StateTurn
@@ -50,6 +51,10 @@ public class PlayerInGame : MonoBehaviour
 	private Tower _tower;
 
 	private GameObject _currentJenga;
+
+	private float _deltaUntilNextTurn = 0.0f;
+
+	[SerializeField] private float waitingUntilColocation = 3.0f;
 
 	#endregion
 
@@ -128,7 +133,22 @@ public class PlayerInGame : MonoBehaviour
 
 	        case State.PullingPiece:
 	        {
-		        ChangeStateIf(_pullBehaviour.Tick(_currentJenga), State.PlacingPiece, false);
+		        ChangeStateIf(_pullBehaviour.Tick(_currentJenga), State.WaitingForNextTurn, false);
+		        break;
+	        }
+
+	        case State.WaitingForNextTurn:
+	        {
+		        if (_tower.PiecesOnTheFloor().Count > 0 || _tower.badPlaced.Count > 0 && !_tower.badPlaced.Contains(_currentJenga))
+		        {
+			        Debug.Log("LOST");
+		        }
+		        _deltaUntilNextTurn += Time.deltaTime;
+		        ChangeStateIf(
+			        _deltaUntilNextTurn >= waitingUntilColocation && 
+		            (_deltaUntilNextTurn = 0.01f) > -1f, 
+			        State.PlacingPiece, 
+			        false);
 		        break;
 	        }
 
@@ -167,8 +187,13 @@ public class PlayerInGame : MonoBehaviour
 	    {
 		    _pullBehaviour.Dispose();
 	    }
+
+	    if (changeTurn && StateCurrentTurn != State.PlacingPiece)
+	    {
+		    Debug.Log("lost");
+	    }
 	    
-	    if (changeTurn)
+	    if (StateCurrentTurn == State.SelectingPiece)
 		    _selectionWithMouse.DisposeTurn();
 	    
 	    currentState.player = _turnController.CurrentPlayer;
