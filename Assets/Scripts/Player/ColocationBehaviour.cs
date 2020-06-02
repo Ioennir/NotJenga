@@ -249,26 +249,28 @@ public class ColocationBehaviour : MonoBehaviour
 
 	public bool ClampOverXZ()
 	{
-		_pos.x = ClampOver(_pos.x + 0.5f,
+		_pos.x = ClampOver(_pos.x + _imaginaryJenga.transform.localScale.x,
 			_tower.TowerCenter.x - _imaginaryJenga.transform.localScale.x,
 			_tower.TowerCenter.x + _imaginaryJenga.transform.localScale.x);
-		_pos.z = ClampOver(_pos.z + 0.5f,
+		_pos.z = ClampOver(_pos.z + _imaginaryJenga.transform.localScale.z,
 			_tower.TowerCenter.z - _imaginaryJenga.transform.localScale.z,
 			_tower.TowerCenter.z + _imaginaryJenga.transform.localScale.z);
+		Debug.Log(_pos);
+		Debug.Log($"The max {_tower.TowerCenter.z + _imaginaryJenga.transform.localScale.z}");
 		return true;
 	}
 	
 	public float ClampOver(float n, float min, float max)
 	{
-		if (n > max)
+		if (n > max + 0.1f)
 		{
 			n = min;
 			return n;
 		}
 
-		if (n < min)
+		if (n < min + 0.1f)
 		{
-			n = min;
+			n = max;
 		}
 
 		return n;
