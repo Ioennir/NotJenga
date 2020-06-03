@@ -1,24 +1,31 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class SoundCollisionScript : MonoBehaviour
 {
-    private Sound sound;
-    private AudioController controller;
-    //private Sound soundcontroller;
+    private AudioController _controller;
+
     public void Start()
     {
-        controller = GameObject.Find("AudioController").GetComponent<AudioController>();
-        sound = this.GetComponent<Sound>();
+        _controller = FindObjectOfType<AudioController>();
     }
+
+    private void Update()
+    {
+        
+    }
+
     public void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Selectable"))
         {
-            float volume = Mathf.Clamp01(collision.relativeVelocity.magnitude / 20);
-            sound.volume = volume;
-            controller.Play("JengaSound");
+            float volume = Mathf.Clamp01(collision.relativeVelocity.magnitude / 50);
+            _controller.ChangeAndPlay("JengaSound", sound1 =>
+            {
+                sound1.volume = volume;
+            });
         }
     }
     

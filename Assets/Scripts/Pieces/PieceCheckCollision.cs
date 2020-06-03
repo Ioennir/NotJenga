@@ -76,7 +76,6 @@ public class PieceCheckCollision : MonoBehaviour
 
     public void OnDestroy()
     {
-	    Debug.Log("Destroy");
 	    if (_inFloor)
 	    {
 		    _tower.DestroyPieceOnFloor(this);
@@ -86,8 +85,8 @@ public class PieceCheckCollision : MonoBehaviour
 	    {
 		    _tower.badPlaced.Remove(gameObject);
 	    }
-
-	    _tower.Pool.Destroy(gameObject);
+		if (_tower && _tower.Pool)
+			_tower.Pool.Destroy(gameObject);
     }
 
     #endregion
