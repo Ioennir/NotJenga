@@ -1,0 +1,171 @@
+﻿using System;
+using UnityEngine;
+using Random = System.Random;
+
+/// <summary>
+/// Configuration related class
+///
+/// Will hold jenga information from other scenes, like the data to load etc.
+///
+/// You can also save the current scene data here.
+/// </summary>
+public class Config : MonoBehaviour
+{
+	#region Private Variables
+
+	private static JengaData _data;
+
+	private bool _savingData = false;
+
+	private SaveSystem.Informer<SavedGamesData> _loadingSavedGamesData;
+
+	private static Config _instance;
+	#endregion
+
+	#region Public Variables
+	
+	
+	#endregion
+
+	#region Properties
+
+	public static bool SavingData => _instance._savingData;
+	
+	#endregion
+
+	#region MonoBehaviour
+
+	private void Awake()
+	{
+		if (!_instance)
+		{
+			_instance = this;
+		}
+		else
+		{
+			Destroy(gameObject);
+			return;
+		}
+		if (!SaveSystem.Exists("game_data.json"))
+		{
+			// This should be almost instant so it will not be in another thread.
+			SaveSystem.Save("game_data.json", new SavedGamesData());
+			Debug.Log("lol");
+			Debug.Log($"{SaveSystem.PersistentDataPath}");
+		}
+	}
+
+	private void Start()
+    {
+	    
+    }
+
+	private void Update()
+    {
+        KeepSavingJengaGame();
+    }
+
+    #endregion
+
+    #region Public Methods
+
+    /// <summary>
+    /// Tries to load jenga data. If there is none, it will return null
+    /// </summary>
+    /// <returns></returns>
+    public static JengaData LoadData()
+    {
+	    return _data;
+    }
+
+    
+    /// <summary>
+    /// Will start saving the jenga game in another thread.
+    /// </summary>
+    /// <returns></returns>
+    public static bool SaveJengaGame(GameObject[] pieces)
+    {
+	    if (_data == null)
+	    {
+		    _data = new JengaData { id = _instance.GetInstanceID() };
+	    }
+	    _data.jengas = new JengaPieceData[pieces.Length];
+	    
+	    for (int i = 0; i < pieces.Length; ++i)
+	    {
+		    _data.jengas[i] = new JengaPieceData
+		    {
+			    position = pieces[i].transform.position,
+			    rotation = pieces[i].transform.rotation.eulerAngles,
+			    scale = pieces[i].transform.localScale
+		    };
+	    }
+	    _instance._loadingSavedGamesData = SaveSystem.LoadOnAnotherThread<SavedGamesData>("game_data.json");
+	    _instance._savingData = true;
+	    return true;
+    }
+
+    /// <summary>
+    /// Keeps going with the saving of the jenga game
+    /// from where we left off on SaveJengaGame()
+    /// </summary>
+    private void KeepSavingJengaGame()
+    {
+	    if (!_savingData || _loadingSavedGamesData == null) 
+	    {
+		    return;
+	    }
+	    if (!_loadingSavedGamesData.error)
+	    {
+		    _savingData = false;
+	    }
+	    if (!_loadingSavedGamesData.loaded)
+	    {
+		    return;
+	    }
+	    SavedGamesData dataGame = _loadingSavedGamesData.data;
+	    int idWeAreSearchingFor = _data.id;
+	    int idx = -1;
+	    for (int i = 0; i < dataGame.games.Length; ++i)
+	    {
+		    if (dataGame.games[i].id != idWeAreSearchingFor) continue;
+		    idx = i;
+		    break;
+	    }
+	    if (idx == -1)
+	    {
+		    int oldSize = dataGame.games.Length;
+			Array.Resize(ref dataGame.games, oldSize + 1);
+			dataGame.games[oldSize] = _data;
+	    }
+	    else
+	    {
+		    dataGame.games[idx].jengas = _data.jengas;    
+	    }
+	    SaveSystem.SaveOnAnotherThread("game_data.json", dataGame);
+	    _savingData = false;
+	    _loadingSavedGamesData = null;
+    }
+
+    public static SaveSystem.Informer<SavedGamesData> LoadGamesData()
+    {
+	    return SaveSystem.LoadOnAnotherThread<SavedGamesData>("game_data.json");;
+    }
+
+    public static void LoadInConfig(JengaData data)
+    {
+	    _data = data;
+    }
+
+    public static SaveSystem.Informer<SavedGamesData> SaveGameData(SavedGamesData data)
+    {
+	    return SaveSystem.SaveOnAnotherThread("game_data.json", data);
+    }
+    
+
+    #endregion
+
+    #region Private Methods
+
+    #endregion
+}

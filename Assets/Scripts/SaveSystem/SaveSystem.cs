@@ -144,6 +144,17 @@ public class SaveSystem : MonoBehaviour
 	    T system = JsonUtility.FromJson<T>(decryptedData);
 	    return system;
     }
+
+    /// <summary>
+    /// Check if file exists.
+    /// </summary>
+    /// <param name="path"></param>
+    /// <returns></returns>
+    public static bool Exists(string path)
+    {
+	    path = $"{_persistentDataPath}/{path}";
+	    return File.Exists(path);
+    }
     
     #endregion
 

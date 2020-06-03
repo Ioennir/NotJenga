@@ -98,6 +98,7 @@ public class PlayerInGame : MonoBehaviour
 	    currentState.currentState = State.SelectingPiece;
     }
 
+    private SaveSystem.Informer<SavedGamesData> _informer;
 	private void Update()
     {
 	    // Change the state if turn != this turn

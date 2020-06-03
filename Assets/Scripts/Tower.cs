@@ -33,8 +33,10 @@ public class Tower : MonoBehaviour
 
 	#region Properties
 
-	public Pool Pool => _pool
-	;
+	public Pool Pool => _pool;
+
+	public GameObject[] Pieces => _pieces.ToArray();
+
 	#endregion
 
 	#region MonoBehaviour
