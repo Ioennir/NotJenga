@@ -173,7 +173,7 @@ public class PlayerInGame : MonoBehaviour
 
 	        case State.End:
 	        {
-		        if (_end && _informer.loaded)
+		        if (_end && _informer != null && _informer.loaded)
 		        {
 			        Debug.Log("END");
 			        return;

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class ColocationBehaviour : MonoBehaviour
 {
@@ -27,18 +28,19 @@ public class ColocationBehaviour : MonoBehaviour
 
 	private int _currentJenga = 0;
 
-	private float _posX = -1f;
+	private TurnController _turnController;
+	
 
 	private Vector3 _pos = new Vector3();
 
-	[SerializeField]
-	private Material _matTransparent;
+	[FormerlySerializedAs("_matTransparent")] [SerializeField]
+	private Material matTransparent;
 
 	/// <summary>
 	/// TODO Set this via a function
 	/// </summary>
-	[SerializeField]
-	private Material _originalMaterial;
+	[FormerlySerializedAs("_originalMaterial")] [SerializeField]
+	private Material originalMaterial;
 
 	#endregion
 
@@ -59,6 +61,7 @@ public class ColocationBehaviour : MonoBehaviour
 		_towerData = FindObjectOfType<Tower>();
 		_jengaPool = FindObjectOfType<Pool>();
 		_tower = FindObjectOfType<TowerGenerator>();
+		_turnController = FindObjectOfType<TurnController>();
 	}
 
 	private void Update()
@@ -144,9 +147,9 @@ public class ColocationBehaviour : MonoBehaviour
 		Rigidbody rb = _imaginaryJenga.GetComponent<Rigidbody>();
 		rb.isKinematic = false;
 		MeshRenderer rend = _imaginaryJenga.GetComponent<MeshRenderer>();
-		rend.material = _originalMaterial;
+		rend.material = originalMaterial;
 		_towerData.PutOnTop(_imaginaryJenga);
-		_imaginaryJenga.name = "Jenga Piece put by TODO: PUT PLAYER NAME";
+		_imaginaryJenga.name = $"Piece put by player {_turnController.CurrentPlayer}";
 		_imaginaryJenga = null;
 		_currentJenga = 0;
 		_doingTurn = false;
@@ -177,17 +180,14 @@ public class ColocationBehaviour : MonoBehaviour
 			// - - -
 
 			_topPieces = _towerData.GetTopPieces();
-			_posX = (int) _topPieces[0].transform.position.x;
-			
 		}
 
 		if (!_imaginaryJenga)
 		{
-			//TODO : Put semi transparent shader
 			_imaginaryJenga = _jengaPool.Instantiate();
 			_imaginaryJenga.transform.localScale = _topPieces[0].transform.localScale;
 			MeshRenderer rend = _imaginaryJenga.GetComponent<MeshRenderer>();
-			rend.material = _matTransparent;
+			rend.material = matTransparent;
 			
 			Collider col = _imaginaryJenga.GetComponent<Collider>();
 			col.isTrigger = true;
@@ -223,52 +223,61 @@ public class ColocationBehaviour : MonoBehaviour
 		bool conditionForUsingMovementInZAxis = rot > 80f && rot < 170 || rot > 260 && rot < 290;
 		do
 		{
-			if (conditionForUsingMovementInZAxis)
-			{
-				imaginaryJengaPosition.z = _pos.z;
-				imaginaryJengaPosition.x = _tower.TowerCenter.x;
-			}
-			else
-			{
-				imaginaryJengaPosition.z = _tower.TowerCenter.z;
-				imaginaryJengaPosition.x = _pos.x;
-			}
+			imaginaryJengaPosition.z = conditionForUsingMovementInZAxis ? _pos.z : _tower.TowerCenter.z;
+			imaginaryJengaPosition.x =conditionForUsingMovementInZAxis ? _tower.TowerCenter.x : _pos.x;
 			// Update position
 			_imaginaryJenga.transform.localPosition = imaginaryJengaPosition;
-		
-			// Check if there is overlapping in x or z axis with another piece in the same row (only for rows that have less than 3 pieces, because if
+			// Check if there is overlapping in x or z axis with another piece in the same row
+			// (only for rows that have less than 3 pieces, because if
 			// there are 3 pieces you are putting the new piece on top)
-		} while (Tower.SamePlace(_imaginaryJenga, _topPieces, !conditionForUsingMovementInZAxis) && 
-		         _topPieces.Count != 3 &&
-		         // update posX in another iteration if the conditions are met.
-		         ClampOverXZ());
+		} while (Tower.SamePlace(
+			         _imaginaryJenga, 
+			         _topPieces, 
+			         !conditionForUsingMovementInZAxis) && 
+					 _topPieces.Count != 3 &&
+		         // update pos in another iteration if the conditions are met.
+		             ClampOverXZ()
+		 );
 		
 		
 		_imaginaryJenga.transform.position = imaginaryJengaPosition;
 	}
 
-	public bool ClampOverXZ()
+	/// <summary>
+	/// Applies ClampOver to x and z positions, adding localScale and having
+	/// tower center as a reference
+	/// </summary>
+	/// <returns></returns>
+	private bool ClampOverXZ()
 	{
-		_pos.x = ClampOver(_pos.x + _imaginaryJenga.transform.localScale.x,
-			_tower.TowerCenter.x - _imaginaryJenga.transform.localScale.x,
-			_tower.TowerCenter.x + _imaginaryJenga.transform.localScale.x);
-		_pos.z = ClampOver(_pos.z + _imaginaryJenga.transform.localScale.z,
-			_tower.TowerCenter.z - _imaginaryJenga.transform.localScale.z,
-			_tower.TowerCenter.z + _imaginaryJenga.transform.localScale.z);
-		Debug.Log(_pos);
-		Debug.Log($"The max {_tower.TowerCenter.z + _imaginaryJenga.transform.localScale.z}");
+		Vector3 localScale = _imaginaryJenga.transform.localScale;
+		_pos.x = ClampOver(_pos.x + localScale.x,
+			_tower.TowerCenter.x - localScale.x,
+			_tower.TowerCenter.x + localScale.x);
+		_pos.z = ClampOver(_pos.z + localScale.z,
+			_tower.TowerCenter.z - localScale.z,
+			_tower.TowerCenter.z + localScale.z);
 		return true;
 	}
 	
-	public float ClampOver(float n, float min, float max)
+	/// <summary>
+	/// Clamps the value. If <param name="n"></param> is more than <param name="max"></param>
+	/// if will be set to <param name="min"></param> and viceversa.
+	/// </summary>
+	/// <param name="n"></param>
+	/// <param name="min"></param>
+	/// <param name="max"></param>
+	/// <param name="offset">Because we are working with floats you might have an offset</param>
+	/// <returns></returns>
+	public float ClampOver(float n, float min, float max, float offset = 0.1f)
 	{
-		if (n > max + 0.1f)
+		if (n > max + offset)
 		{
 			n = min;
 			return n;
 		}
 
-		if (n < min + 0.1f)
+		if (n < min + offset)
 		{
 			n = max;
 		}
