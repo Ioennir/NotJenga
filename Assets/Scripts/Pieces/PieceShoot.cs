@@ -62,8 +62,6 @@ public class PieceShoot : MonoBehaviour
         {
             Destroy(arrow);
             var direct = arrowDir * forceProduct;
-            Debug.Log("Meto golpe");
-            Debug.Log(direct);
             rb.AddForce(direct, ForceMode.Impulse);
             isShooting = false;
         }

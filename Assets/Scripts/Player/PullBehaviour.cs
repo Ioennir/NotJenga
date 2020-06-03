@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 public class PullBehaviour : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class PullBehaviour : MonoBehaviour
 	private GameObject _currentPiece;
 
 	private bool dragging = false;
+
+	private Tower _tower;
 
 	#endregion
 
@@ -26,7 +29,7 @@ public class PullBehaviour : MonoBehaviour
 
     private void Start()
     {
-
+	    _tower = FindObjectOfType<Tower>();
     }
 
 	private void Update()
@@ -63,9 +66,27 @@ public class PullBehaviour : MonoBehaviour
 		    _currentPieceDrag = jenga.GetComponent<PieceDragAndDropScript>();
 	    }
 
+	    List<GameObject> floorPieces = _tower.PiecesOnTheFloor();
+	    if (_tower.badPlaced.Count > 0 && !_tower.badPlaced.Contains(_currentPiece))
+	    {
+		    Debug.Log("LOSE");
+		    return false;
+	    }
+	    
+		if (floorPieces.Count > 1 || floorPieces.Count == 1 && floorPieces.IndexOf(_currentPiece) <= -1)
+		{	
+			Debug.Log("LOSE");
+			return false;
+		}
+
+		if (floorPieces.Count == 1)
+		{
+			_currentPiece.GetComponent<PieceCheckCollision>().OnDestroy();
+			return true;
+		}
+		
 	    if (dragging)
 	    {
-		    // TODO Return true if the Dragging is done else false if it's not done.
 		    _currentPieceDrag.DragJenga();
 		    return false;
 	    }

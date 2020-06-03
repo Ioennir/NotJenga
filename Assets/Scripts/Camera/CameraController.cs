@@ -61,7 +61,7 @@ public class CameraController : MonoBehaviour
     private Camera _camera;
     
     // The Cylindrical Coordinates that the camera will take
-    private CylindricalCoordinates _coordinates;
+    private CylindricalCoordinates _coordinates = new CylindricalCoordinates();
 
     // Camera current state
     private CameraStateMachine _cameraState = new CameraStateMachine();

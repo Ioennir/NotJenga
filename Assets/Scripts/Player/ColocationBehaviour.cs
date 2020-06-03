@@ -27,7 +27,9 @@ public class ColocationBehaviour : MonoBehaviour
 
 	private int _currentJenga = 0;
 
-	private int _posX = 0;
+	private float _posX = -1f;
+
+	private Vector3 _pos = new Vector3();
 
 	[SerializeField]
 	private Material _matTransparent;
@@ -101,12 +103,23 @@ public class ColocationBehaviour : MonoBehaviour
 		if (_topPieces.Count >= 3)
 		{
 			_currentJenga = (_currentJenga + 1) % _topPieces.Count;
-			_posX = (_posX + 1) % 3;
+			/*
+			_posX = ClampOver(
+				_posX + 0.5f, 
+				_tower.TowerCenter.x - _imaginaryJenga.transform.localScale.x,
+				_tower.TowerCenter.x + _imaginaryJenga.transform.localScale.x);
+				*/
+			ClampOverXZ();
 		}
 		// If we are not in an empty row just pass position
 		else
 		{
-			_posX = (_posX + 1) % 3;
+			/*_posX = _posX = ClampOver(
+				_posX + 0.5f, 
+				_tower.TowerCenter.x - _imaginaryJenga.transform.localScale.x,
+				_tower.TowerCenter.x + _imaginaryJenga.transform.localScale.x);
+		*/
+			ClampOverXZ();
 		}
 
 		
@@ -164,12 +177,15 @@ public class ColocationBehaviour : MonoBehaviour
 			// - - -
 
 			_topPieces = _towerData.GetTopPieces();
+			_posX = (int) _topPieces[0].transform.position.x;
+			
 		}
 
 		if (!_imaginaryJenga)
 		{
 			//TODO : Put semi transparent shader
 			_imaginaryJenga = _jengaPool.Instantiate();
+			_imaginaryJenga.transform.localScale = _topPieces[0].transform.localScale;
 			MeshRenderer rend = _imaginaryJenga.GetComponent<MeshRenderer>();
 			rend.material = _matTransparent;
 			
@@ -209,26 +225,55 @@ public class ColocationBehaviour : MonoBehaviour
 		{
 			if (conditionForUsingMovementInZAxis)
 			{
-				imaginaryJengaPosition.z = _posX - 1;
-				imaginaryJengaPosition.x = 1;
+				imaginaryJengaPosition.z = _pos.z;
+				imaginaryJengaPosition.x = _tower.TowerCenter.x;
 			}
 			else
 			{
-				imaginaryJengaPosition.z = 0;
-				imaginaryJengaPosition.x = _posX;
+				imaginaryJengaPosition.z = _tower.TowerCenter.z;
+				imaginaryJengaPosition.x = _pos.x;
 			}
 			// Update position
-			_imaginaryJenga.transform.position = imaginaryJengaPosition;
+			_imaginaryJenga.transform.localPosition = imaginaryJengaPosition;
 		
 			// Check if there is overlapping in x or z axis with another piece in the same row (only for rows that have less than 3 pieces, because if
 			// there are 3 pieces you are putting the new piece on top)
 		} while (Tower.SamePlace(_imaginaryJenga, _topPieces, !conditionForUsingMovementInZAxis) && 
 		         _topPieces.Count != 3 &&
 		         // update posX in another iteration if the conditions are met.
-		         (_posX = (_posX + 1) % 3) > -10000);
+		         ClampOverXZ());
 		
 		
 		_imaginaryJenga.transform.position = imaginaryJengaPosition;
+	}
+
+	public bool ClampOverXZ()
+	{
+		_pos.x = ClampOver(_pos.x + _imaginaryJenga.transform.localScale.x,
+			_tower.TowerCenter.x - _imaginaryJenga.transform.localScale.x,
+			_tower.TowerCenter.x + _imaginaryJenga.transform.localScale.x);
+		_pos.z = ClampOver(_pos.z + _imaginaryJenga.transform.localScale.z,
+			_tower.TowerCenter.z - _imaginaryJenga.transform.localScale.z,
+			_tower.TowerCenter.z + _imaginaryJenga.transform.localScale.z);
+		Debug.Log(_pos);
+		Debug.Log($"The max {_tower.TowerCenter.z + _imaginaryJenga.transform.localScale.z}");
+		return true;
+	}
+	
+	public float ClampOver(float n, float min, float max)
+	{
+		if (n > max + 0.1f)
+		{
+			n = min;
+			return n;
+		}
+
+		if (n < min + 0.1f)
+		{
+			n = max;
+		}
+
+		return n;
 	}
 	#endregion
 }
