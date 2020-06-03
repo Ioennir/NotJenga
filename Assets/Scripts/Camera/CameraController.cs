@@ -91,7 +91,7 @@ public class CameraController : MonoBehaviour
     
     #region Monobehaviour
     
-    private void Awake()
+    private void Start()
     {
         _target = FindObjectOfType<Tower>().transform;
 
