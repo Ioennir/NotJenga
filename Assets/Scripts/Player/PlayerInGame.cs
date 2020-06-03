@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 [RequireComponent(typeof(SelectionBehaviour))]
@@ -11,7 +13,8 @@ public class PlayerInGame : MonoBehaviour
 		SelectingPiece,
 		PullingPiece,
 		PlacingPiece,
-		WaitingForNextTurn
+		WaitingForNextTurn,
+		End,
 	}
 
 	public struct StateTurn
@@ -56,6 +59,10 @@ public class PlayerInGame : MonoBehaviour
 
 	[SerializeField] private float waitingUntilColocation = 3.0f;
 
+	private bool _end = false;
+
+	private SaveSystem.Informer<SavedGamesData> _informer;
+	
 	#endregion
 
 	#region Public Variables
@@ -97,8 +104,7 @@ public class PlayerInGame : MonoBehaviour
 	    currentState.player = _turnController.CurrentPlayer;
 	    currentState.currentState = State.SelectingPiece;
     }
-
-    private SaveSystem.Informer<SavedGamesData> _informer;
+    
 	private void Update()
     {
 	    // Change the state if turn != this turn
@@ -119,6 +125,11 @@ public class PlayerInGame : MonoBehaviour
 	        
 	        case State.SelectingPiece:
 	        {
+		        if (Input.GetKey(KeyCode.P) && !Config.SavingData)
+		        {
+			        Debug.Log("Starting save...");
+			        Config.SaveJengaGame(_tower.Pieces);
+		        }
 		        if (!_tower.towerAlreadyBuilt) return;
 		        GameObject r = _selectionBehaviour.Tick();
 		        r = _selectionWithMouse.Tick(r);
@@ -142,7 +153,8 @@ public class PlayerInGame : MonoBehaviour
 	        {
 		        if (_tower.PiecesOnTheFloor().Count > 0 || _tower.badPlaced.Count > 0 && !_tower.badPlaced.Contains(_currentJenga))
 		        {
-			        Debug.Log("LOST");
+			        ChangeStateIf(true, State.End, false);
+			        return;
 		        }
 		        _deltaUntilNextTurn += Time.deltaTime;
 		        ChangeStateIf(
@@ -156,6 +168,17 @@ public class PlayerInGame : MonoBehaviour
 	        case State.PlacingPiece:
 	        {
 		        ChangeStateIf(_colocationBehaviour.Tick(), State.SelectingPiece, true);
+		        break;
+	        }
+
+	        case State.End:
+	        {
+		        if (_end && _informer.loaded)
+		        {
+			        Debug.Log("END");
+			        return;
+		        }
+		        DestroyGameFromSave();
 		        break;
 	        }
         }
@@ -208,5 +231,47 @@ public class PlayerInGame : MonoBehaviour
 
     #region Private Methods
 
+    private void DestroyGameFromSave()
+    {
+	    if (_end) return;
+	    if (Config.LoadData() == null)
+	    {
+		    _end = true;
+		    return;
+	    }
+	    if (_informer == null)
+	    {
+		    _informer = Config.LoadGamesData();
+		    
+	    }
+	    JengaData data = Config.LoadData();
+	    if (_informer.error)
+	    {
+		    _end = true;
+		    _informer.loaded = true;
+		    return;
+	    }
+	    if (!_informer.loaded) return;
+	    int idx = -1;
+	    for (int i = 0; i < _informer.data.games.Length; ++i)
+	    {
+		    if (_informer.data.games[i].id == data.id)
+		    {
+			    idx = i;
+			    break;
+		    }
+	    }
+
+	    if (idx < 0)
+	    {
+		    _end = true;
+		    return;
+	    }
+	    ArrayUtility.Remove(ref _informer.data.games, _informer.data.games[idx]);
+	    _informer = Config.SaveGameData(_informer.data);
+	    _end = true;
+    }
+    
+    
     #endregion
 }

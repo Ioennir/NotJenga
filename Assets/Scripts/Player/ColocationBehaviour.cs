@@ -215,7 +215,7 @@ public class ColocationBehaviour : MonoBehaviour
 		{
 			// Use the same rotation as its peers
 			_imaginaryJenga.transform.rotation = _topPieces[_currentJenga].transform.rotation;
-			imaginaryJengaPosition.y = currentJengaPosition.y;
+			imaginaryJengaPosition.y = currentJengaPosition.y + _tower.PieceHeight;
 		}
 		// New rotation
 		float rot = Math.Abs(_imaginaryJenga.transform.rotation.eulerAngles.y);

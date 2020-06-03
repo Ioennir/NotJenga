@@ -40,8 +40,6 @@ public class PieceCheckCollision : MonoBehaviour
 		
 		if ((Math.Abs(angles.x) > 10f || Math.Abs(angles.z) > 10f && condition) && !_badPlaced && _tower.towerAlreadyBuilt)
 		{
-			Debug.Log(angles);
-			Debug.Log("Badly placed something!");
 			_badPlaced = true;
 			_tower.badPlaced.Add(gameObject);
 		}

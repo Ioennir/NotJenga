@@ -29,7 +29,7 @@ public class Config : MonoBehaviour
 
 	#region Properties
 
-	public static bool SavingData => _instance._savingData;
+	public static bool SavingData => _instance._savingData || _instance._loadingSavedGamesData != null;
 	
 	#endregion
 
@@ -85,6 +85,12 @@ public class Config : MonoBehaviour
     /// <returns></returns>
     public static bool SaveJengaGame(GameObject[] pieces)
     {
+	    if (_instance._savingData || _instance._loadingSavedGamesData != null)
+	    {
+		    Debug.Log("CANT SAVE");
+		    return false;
+	    }
+	    _instance._savingData = true;
 	    if (_data == null)
 	    {
 		    _data = new JengaData { id = _instance.GetInstanceID() };
@@ -101,7 +107,7 @@ public class Config : MonoBehaviour
 		    };
 	    }
 	    _instance._loadingSavedGamesData = SaveSystem.LoadOnAnotherThread<SavedGamesData>("game_data.json");
-	    _instance._savingData = true;
+	    
 	    return true;
     }
 
@@ -111,13 +117,22 @@ public class Config : MonoBehaviour
     /// </summary>
     private void KeepSavingJengaGame()
     {
+	    if (!_savingData && _loadingSavedGamesData != null)
+	    {
+		    if (_loadingSavedGamesData.loaded || _loadingSavedGamesData.error)
+		    {
+			    Debug.Log("RESET");
+			    _loadingSavedGamesData = null;
+		    }
+	    }
 	    if (!_savingData || _loadingSavedGamesData == null) 
 	    {
 		    return;
 	    }
-	    if (!_loadingSavedGamesData.error)
+	    if (_loadingSavedGamesData.error)
 	    {
 		    _savingData = false;
+		    return;
 	    }
 	    if (!_loadingSavedGamesData.loaded)
 	    {
@@ -142,9 +157,8 @@ public class Config : MonoBehaviour
 	    {
 		    dataGame.games[idx].jengas = _data.jengas;    
 	    }
-	    SaveSystem.SaveOnAnotherThread("game_data.json", dataGame);
+	    _loadingSavedGamesData = SaveSystem.SaveOnAnotherThread("game_data.json", dataGame);
 	    _savingData = false;
-	    _loadingSavedGamesData = null;
     }
 
     public static SaveSystem.Informer<SavedGamesData> LoadGamesData()

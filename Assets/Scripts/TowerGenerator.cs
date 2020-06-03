@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.UIElements;
 using UnityEngine;
 
 public class TowerGenerator : MonoBehaviour
@@ -41,6 +42,8 @@ public class TowerGenerator : MonoBehaviour
         _towerData = gameObject.AddComponent<Tower>();
         pieceHeight *= 0.1f;
         towerCenter = transform.position;
+        // Uncomment for test
+        //Config.LoadInConfig(SaveSystem.Load<SavedGamesData>("game_data.json").games[0]);
     }
 
     
@@ -75,6 +78,8 @@ public class TowerGenerator : MonoBehaviour
             transformPiece.position = piece.position;
             transformPiece.rotation = Quaternion.Euler(piece.rotation);
             transformPiece.localScale = piece.scale;
+            pieceHeight = piece.scale.y;
+            pieceWidth = piece.scale.x;
             instance.GetComponent<MeshRenderer>().material = pieceMaterials[i % 2];
             _towerData.AddPiece(instance);
         }

@@ -19,12 +19,14 @@ public class SoundCollisionScript : MonoBehaviour
 
     public void OnCollisionEnter(Collision collision)
     {
+        if (!_controller) return;
         if (collision.gameObject.CompareTag("Selectable"))
         {
             float volume = Mathf.Clamp01(collision.relativeVelocity.magnitude / 50);
             _controller.ChangeAndPlay("JengaSound", sound1 =>
             {
                 sound1.volume = volume;
+                sound1.transform.position = transform.position;
             });
         }
     }

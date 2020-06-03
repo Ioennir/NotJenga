@@ -136,6 +136,7 @@ public class SaveSystem : MonoBehaviour
     public static T Load<T>(string path)
     {
 	    path = $"{_persistentDataPath}/{path}";
+	    Debug.Log(path);
 	    StreamReader reader = new StreamReader(path);
 	    string data = reader.ReadToEnd();
 	    reader.Close();
