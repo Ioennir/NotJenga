@@ -81,7 +81,7 @@ public class TowerGenerator : MonoBehaviour
             {
                 GameObject piece = _piecePool.Instantiate();
                 piece.transform.parent = _tower.transform;
-                piece.transform.localScale *= 0.5f;
+                //piece.transform.localScale *= 0.5f;
                 pieceHeight = piece.transform.localScale.y;
                 pieceWidth = piece.transform.localScale.x;
                 piece.GetComponent<MeshRenderer>().material = pieceMaterials[x % 2];
