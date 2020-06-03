@@ -14,7 +14,8 @@ public class CameraController : MonoBehaviour
     {
         MovingAroundTower,
         MovingAroundPiece,
-        TravellingToDestination
+        TravellingToDestination,
+        FreeMovement
     }
 
     #endregion
