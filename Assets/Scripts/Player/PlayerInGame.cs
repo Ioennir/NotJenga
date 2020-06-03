@@ -234,7 +234,7 @@ public class PlayerInGame : MonoBehaviour
     private void DestroyGameFromSave()
     {
 	    if (_end) return;
-	    if (Config.LoadData() == null)
+	    if (Config.GetJengaConfig() == null)
 	    {
 		    _end = true;
 		    return;
@@ -244,7 +244,7 @@ public class PlayerInGame : MonoBehaviour
 		    _informer = Config.LoadGamesData();
 		    
 	    }
-	    JengaData data = Config.LoadData();
+	    JengaData data = Config.GetJengaConfig();
 	    if (_informer.error)
 	    {
 		    _end = true;

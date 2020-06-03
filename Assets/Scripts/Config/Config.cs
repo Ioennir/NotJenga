@@ -70,12 +70,27 @@ public class Config : MonoBehaviour
     #region Public Methods
 
     /// <summary>
-    /// Tries to load jenga data. If there is none, it will return null
+    /// Tries to get the config if there is some. If you wanna load config call LoadJengaConfig.
+    ///
+    /// For bug prevention, LoadConfig sets to null the configuration so you have to explicitly load a config again.
+    ///
     /// </summary>
-    /// <returns></returns>
-    public static JengaData LoadData()
+    /// <returns>If there is no config, it will return null.</returns>
+    public static JengaData GetJengaConfig()
     {
-	    return _data;
+	    JengaData data = _data;
+	    _data = null;
+	    return data;
+    }
+    
+    /// <summary>
+    /// Loads jenga data so when we are in the gameplay scene
+    /// we can have custom setups. if there is no config loaded it will spawn a standard tower.
+    /// </summary>
+    /// <param name="data"></param>
+    public static void LoadJengaConfig(JengaData data)
+    {
+	    _data = data;
     }
 
     
@@ -166,10 +181,7 @@ public class Config : MonoBehaviour
 	    return SaveSystem.LoadOnAnotherThread<SavedGamesData>("game_data.json");;
     }
 
-    public static void LoadInConfig(JengaData data)
-    {
-	    _data = data;
-    }
+  
 
     public static SaveSystem.Informer<SavedGamesData> SaveGameData(SavedGamesData data)
     {

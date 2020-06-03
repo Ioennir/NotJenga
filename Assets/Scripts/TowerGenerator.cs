@@ -53,7 +53,7 @@ public class TowerGenerator : MonoBehaviour
         _tower = new GameObject("Tower");
         _tower.transform.parent = transform;
         _piecePool = GetComponent<Pool>();
-        _dataLoaded = Config.LoadData();
+        _dataLoaded = Config.GetJengaConfig();
         if (_dataLoaded == null)
         {
             StartCoroutine("BuildTower", buildInterval);
