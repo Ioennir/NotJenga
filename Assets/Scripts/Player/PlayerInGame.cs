@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
@@ -252,22 +253,7 @@ public class PlayerInGame : MonoBehaviour
 		    return;
 	    }
 	    if (!_informer.loaded) return;
-	    int idx = -1;
-	    for (int i = 0; i < _informer.data.games.Length; ++i)
-	    {
-		    if (_informer.data.games[i].id == data.id)
-		    {
-			    idx = i;
-			    break;
-		    }
-	    }
-
-	    if (idx < 0)
-	    {
-		    _end = true;
-		    return;
-	    }
-	    ArrayUtility.Remove(ref _informer.data.games, _informer.data.games[idx]);
+	    _informer.data.games = _informer.data.games.Where(game => game.id != data.id).ToArray();
 	    _informer = Config.SaveGameData(_informer.data);
 	    _end = true;
     }
