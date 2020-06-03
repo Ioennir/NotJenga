@@ -41,7 +41,6 @@ public class CameraController : MonoBehaviour
     
     #region Pulic Attributes
 
-    public Transform target;
     
     #endregion
 
@@ -58,6 +57,9 @@ public class CameraController : MonoBehaviour
 
     // New version XDD ///////////////////////////////////////////////////////////////////////////////////////
     
+    // Target from which the camera will be centered on
+    private Transform _target;
+
     // Camera instance from the scene (it will take the main camera)
     private Camera _camera;
     
@@ -76,11 +78,11 @@ public class CameraController : MonoBehaviour
 
     public Transform Target
     {
-        get => target;
+        get => _target;
         set
         {
             _coordinates.Center = value.position;
-            target = value;
+            _target = value;
             StartCoroutine(nameof(OnTargetChanged));
         }
     }
@@ -88,24 +90,20 @@ public class CameraController : MonoBehaviour
     #endregion
     
     #region Monobehaviour
-
     
     private void Awake()
     {
-        
-    }
+        _target = FindObjectOfType<Tower>().transform;
 
-    private void Start()
-    {
-        target = FindObjectOfType<Tower>().transform;
-         
         _camera = GetComponent<Camera>();
         
         _cameraState.currentState = CameraState.MovingAroundTower;
-        
-        _coordinates = new CylindricalCoordinates(target.position, horizontalDistance, 0f, 0f);
-        
-        transform.position = target.transform.position + offset + _coordinates.toCarthesian();
+
+        _coordinates = new CylindricalCoordinates(_target.position, horizontalDistance, 0f, 0f);
+
+        transform.position = _target.transform.position + offset + _coordinates.toCarthesian();
+
+        offset = _target.position;
     }
 
     /// <summary>
@@ -209,7 +207,7 @@ public class CameraController : MonoBehaviour
         _coordinates.Radius = Mathf.Clamp(_coordinates.Radius, 2f, 10f);
 
         // Move camera around the tower given the inputs
-        transform.position = target.position + _coordinates.toCarthesian();
+        transform.position = _target.position + _coordinates.toCarthesian();
         
         // Rotate camera to look to offset
         transform.rotation = UpdateCameraRotation();
@@ -219,7 +217,7 @@ public class CameraController : MonoBehaviour
     {
         // Vertical movement with W and S
         float verSpeed = inputs.axes.y * (verticalSpeed * dt);
-
+        Debug.Log(offset);
         // Clamp the Y value of the offset
         offset.y += verSpeed;
         offset.y = Mathf.Clamp(offset.y, 0f, 15f);
@@ -262,7 +260,7 @@ public class CameraController : MonoBehaviour
 
     private IEnumerator OnTargetChanged()
     {
-        float newHeight = target.position.y / 2;
+        float newHeight = _target.position.y / 2;
         float startHeight = _coordinates.Height;
         float elapsedT = 0.0f;
 
@@ -270,7 +268,7 @@ public class CameraController : MonoBehaviour
         {
             elapsedT += 0.2f;
             _coordinates.Height = Mathf.Lerp(startHeight, newHeight, elapsedT);
-            offset = target.position;
+            offset = _target.position;
             yield return new WaitForSeconds(0.2f);
         }
 

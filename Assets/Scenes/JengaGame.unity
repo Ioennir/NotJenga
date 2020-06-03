@@ -1552,13 +1552,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c78d76a9a0f4684d93dffcea712e61e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 298115850}
   transitionTime: 0
   horizontalDistance: 5.16
-  rotationSpeed: 9.53
-  verticalSpeed: 24.2
-  zoomSpeed: 0
-  offset: {x: 0, y: 0, z: 0}
+  rotationSpeed: 5.27
+  verticalSpeed: 6.83
+  zoomSpeed: 5.9
+  offset: {x: 0, y: 3.27, z: 0}
 --- !u!1 &1377890983 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: de718bc728a01a3418ac5e49a140ba75,
