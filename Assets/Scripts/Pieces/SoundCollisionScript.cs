@@ -11,15 +11,18 @@ public class SoundCollisionScript : MonoBehaviour
     {
         controller = GameObject.Find("AudioController").GetComponent<AudioController>();
         sound = this.GetComponent<Sound>();
+        sound.Init();
     }
-    public void OnCollisionEnter(Collision collision)
+    public void OnCollisionEnter(Collision other)
     {
-        if (collision.gameObject.CompareTag("Selectable"))
+        if (other.gameObject.CompareTag("Selectable"))
         {
-            float volume = Mathf.Clamp01(collision.relativeVelocity.magnitude / 20);
+            float volume = Mathf.Clamp01(other.relativeVelocity.magnitude / 20);
             sound.volume = volume;
-            controller.Play("JengaSound");
+            sound.UpdateSource();
+            sound.Play();
+
         }
     }
-    
+   
 }
