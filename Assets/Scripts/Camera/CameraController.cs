@@ -45,12 +45,7 @@ public class CameraController : MonoBehaviour
     #endregion
 
     #region Private Attributes
-
-    private Camera _c;
-    private CylindricalCoordinates _cc;
-    private int _goUp = 0;
-    private int _goDown = 0;
-    private Vector2 _inputs = Vector2.zero;
+    
     private bool _transitioning = false;
 
     public float transitionTime;
@@ -83,7 +78,7 @@ public class CameraController : MonoBehaviour
         get => target;
         set
         {
-            _cc.Center = value.position;
+            _coordinates.Center = value.position;
             target = value;
             StartCoroutine(nameof(OnTargetChanged));
         }
@@ -102,16 +97,14 @@ public class CameraController : MonoBehaviour
     private void Start()
     {
         target = FindObjectOfType<Tower>().transform;
+         
+        _camera = GetComponent<Camera>();
         
-        _c = GetComponent<Camera>();
-        _cc = new CylindricalCoordinates(
-            target.position, 
-            horizontalDistance,
-            0f, 
-            0f
-        );
-
-        transform.position = target.transform.position + offset + _cc.toCarthesian();
+        _cameraState.currentState = CameraState.MovingAroundTower;
+        
+        _coordinates = new CylindricalCoordinates(target.position, horizontalDistance, 0f, 0f);
+        
+        transform.position = target.transform.position + offset + _coordinates.toCarthesian();
     }
 
     /// <summary>
@@ -124,16 +117,16 @@ public class CameraController : MonoBehaviour
     private void Update()
     {
         // Retrieve Delta time
-        float dt = Time.deltaTime;
+        //float dt = Time.deltaTime;
 
         // Retrieve inputs
-        RetrieveInputs();
+        //RetrieveInputs();
         
         // Update camera position data
-        UpdateCylindricalCoordinates(dt,_goUp, _goDown, _inputs);
+        //UpdateCylindricalCoordinates(dt,_goUp, _goDown, _inputs);
 
-        transform.position = target.position + _cc.toCarthesian();
-        transform.rotation = UpdateCameraRotation();
+        //transform.position = target.position + _cc.toCarthesian();
+        //transform.rotation = UpdateCameraRotation();
         
         // New version XDD /////////////////////////////////////////////////////////////////////////////////////////
 
@@ -187,6 +180,8 @@ public class CameraController : MonoBehaviour
         _cameraInputs = GetInputs();
         
         MoveCamera(delta, _cameraInputs);
+        
+        MoveOffset(delta, _cameraInputs);
     }
 
     private void MovingAroundPieceBehaviour()
@@ -202,7 +197,7 @@ public class CameraController : MonoBehaviour
         
         // Vertical movement
         int verticalDir = inputs.goUp + inputs.goDown;
-        float verSpeed = inputs.axes.y * verticalDir * (verticalSpeed * dt);
+        float verSpeed = verticalDir * (verticalSpeed * dt);
         _coordinates.Height += verSpeed;
         _coordinates.Height = Mathf.Clamp(_coordinates.Height, 0f, 15f);
 
@@ -211,12 +206,22 @@ public class CameraController : MonoBehaviour
         float zmSpeed = zoomDir * (zoomSpeed * dt);
         _coordinates.Radius += zmSpeed;
         _coordinates.Radius = Mathf.Clamp(_coordinates.Radius, 2f, 10f);
+
+        // Move camera around the tower given the inputs
+        transform.position = target.position + _coordinates.toCarthesian();
         
+        // Rotate camera to look to offset
+        transform.rotation = UpdateCameraRotation();
     }
 
-    private void MoveTarget()
+    private void MoveOffset(float dt, CameraInputs inputs)
     {
-        
+        // Vertical movement with W and S
+        float verSpeed = inputs.axes.y * (verticalSpeed * dt);
+
+        // Clamp the Y value of the offset
+        offset.y += verSpeed;
+        offset.y = Mathf.Clamp(offset.y, 0f, 15f);
     }
 
     private void TravellingToDestinationBehaviour()
@@ -240,43 +245,13 @@ public class CameraController : MonoBehaviour
         newInputs.goDown = Input.GetKey(KeyCode.LeftControl) ? -1 : 0;
         
         // Zoom In or Zoom Out keys
-        newInputs.zoomIn = Input.GetKey(KeyCode.Z) ? 1 : 0;
-        newInputs.zoomOut = Input.GetKey(KeyCode.X) ? -1 : 0;
+        newInputs.zoomIn = Input.GetKey(KeyCode.Z) ? -1 : 0;
+        newInputs.zoomOut = Input.GetKey(KeyCode.X) ? 1 : 0;
 
         return newInputs;
     }
     
-    private void RetrieveInputs()
-    {
-        // Vertical movement of camera
-        _goUp = Input.GetKey(KeyCode.LeftShift) ? 1 : 0;
-        _goDown = Input.GetKey(KeyCode.LeftControl) ? -1 : 0;
-        
-        // Horizontal position and vertical rotation of camera
-        _inputs.x = Input.GetAxisRaw("Horizontal");
-        _inputs.y = Input.GetAxisRaw("Vertical");
-    }
-
-    private void ResetCameraPosition()
-    {
-        _cc.Angle = 0f;
-        _cc.Height = 0f;
-    }
-
-    private void UpdateCylindricalCoordinates(float delta, int upwards, int downwards, Vector2 axes)
-    {
-        // Get rotation and vertical speed values
-        float rotSpeed = (rotationSpeed * axes.x) * delta;
-        float verSpeed = verticalSpeed * (upwards + downwards) * delta;
-
-        // Apply changes to Cylindrical Coordinates
-        _cc.Angle += rotSpeed;
-        _cc.Height += verSpeed;
-        
-        // Update offset so we don't need to update rotation
-        offset.y += (verticalSpeed * axes.y) * delta;
-        offset.y = Mathf.Clamp(offset.y, 0.0f, 10.0f);
-    }
+    /// Old Version Below ////////////////////////////////////////////////////////////////////////////////////////////////
 
     private Quaternion UpdateCameraRotation()
     {
@@ -284,31 +259,20 @@ public class CameraController : MonoBehaviour
         return newRot;
     }
 
-    private void UpdateSphericalPosition(float delta, Vector2 inputs)
-    {
-        float horAngleOffset = inputs.x * delta;
-        float verAngleOffset = inputs.y * delta;
-    }
-
     private IEnumerator OnTargetChanged()
     {
         float newHeight = target.position.y / 2;
-        float startHeight = _cc.Height;
+        float startHeight = _coordinates.Height;
         float elapsedT = 0.0f;
 
         while (elapsedT < 1.0f)
         {
             elapsedT += 0.2f;
-            _cc.Height = Mathf.Lerp(startHeight, newHeight, elapsedT);
+            _coordinates.Height = Mathf.Lerp(startHeight, newHeight, elapsedT);
             offset = target.position;
             yield return new WaitForSeconds(0.2f);
         }
 
-    }
-
-    private void InitialAnimation()
-    {
-        
     }
 
     #endregion
