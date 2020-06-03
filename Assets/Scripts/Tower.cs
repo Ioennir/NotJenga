@@ -116,6 +116,13 @@ public class Tower : MonoBehaviour
 	    _pieces = rest.Concat(ordered.ToList()).ToList();
     }
 
+    /// <summary>
+    /// Gets a piece starting from the offset, and will move x times horizontal and x times vertical.
+    /// </summary>
+    /// <param name="offset"></param>
+    /// <param name="horizontal"></param>
+    /// <param name="vertical"></param>
+    /// <returns></returns>
     public GameObject SelectPiece(ref int offset, int horizontal, int vertical)
     {
 	    if (horizontal == 0 && vertical == 0)
