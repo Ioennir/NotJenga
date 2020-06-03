@@ -2443,6 +2443,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lampara
       objectReference: {fileID: 0}
+    - target: {fileID: 5652184504964566055, guid: e567f30eaf09adf43a78267a6d4515ef,
+        type: 3}
+      propertyPath: m_Name
+      value: Lamp
+      objectReference: {fileID: 0}
     - target: {fileID: 5652184504964566072, guid: e567f30eaf09adf43a78267a6d4515ef,
         type: 3}
       propertyPath: m_Range
