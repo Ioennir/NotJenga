@@ -54,6 +54,7 @@ public class Pool : MonoBehaviour
 		{
 			_pool[i] = Instantiate(prefab);
             _pool[i].transform.parent = _poolContainer.transform;
+            _pool[i].transform.localScale *= 0.5f;
 			_pool[i].SetActive(false);
 		}
 	}
@@ -61,6 +62,14 @@ public class Pool : MonoBehaviour
 	#endregion
 
     #region Public Methods
+
+    public void DeactivateAll()
+    {
+        for (int i = 0; i < _pool.Length; ++i)
+        {
+            _pool[i].SetActive(false);
+        }
+    }
 
     /// <summary>
     /// Instantiate a GameObject. If the pool is full of active objects the pool will resize.

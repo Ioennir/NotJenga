@@ -49,14 +49,21 @@ public class TowerGenerator : MonoBehaviour
         //Config.LoadInConfig(SaveSystem.Load<SavedGamesData>("game_data.json").games[0]);
     }
 
-    
-
     private void Start()
     {
-        _tower = new GameObject("Tower");
-        _tower.transform.parent = transform;
-        _piecePool = GetComponent<Pool>();
-        _dataLoaded = Config.GetJengaConfig();
+        InitTower();
+    }
+
+    #endregion
+
+    #region Public Methods
+
+    public void Reset(int rows)
+    {
+        //Despawn all pieces or explode them and then reconstruct the tower
+        _piecePool.DeactivateAll();
+        towerHeight = (uint)rows;
+        //For some reason, the first piece instantiated after doing this has got the wrong rotation.
         if (_dataLoaded == null)
         {
             StartCoroutine("BuildTower", buildInterval);
@@ -65,10 +72,6 @@ public class TowerGenerator : MonoBehaviour
         StartCoroutine(SpawnLoad());
         _towerData.towerAlreadyBuilt = true;
     }
-
-    #endregion
-
-    #region Public Methods
 
     private IEnumerator SpawnLoad()
     { 
@@ -96,7 +99,7 @@ public class TowerGenerator : MonoBehaviour
     }
 
     /// <summary>
-    /// Adds jenga piece into the tower jerarchy
+    /// Adds jenga piece into the tower hierarchy
     /// </summary>
     /// <param name="jenga"></param>
     public void AddPiece(GameObject jenga)
@@ -108,6 +111,21 @@ public class TowerGenerator : MonoBehaviour
 
     #region Private Methods
 
+    private void InitTower()
+    {
+        _tower = new GameObject("Tower");
+        _tower.transform.parent = transform;
+        _piecePool = GetComponent<Pool>();
+        _dataLoaded = Config.GetJengaConfig();
+        if (_dataLoaded == null)
+        {
+            StartCoroutine("BuildTower", buildInterval);
+            return;
+        }
+        StartCoroutine(SpawnLoad());
+        _towerData.towerAlreadyBuilt = true;
+    }
+
     private IEnumerator BuildTower(float secondInterval)
     {
         for(int y = 0; y < towerHeight; y++)
@@ -116,7 +134,7 @@ public class TowerGenerator : MonoBehaviour
             {
                 GameObject piece = _piecePool.Instantiate();
                 piece.transform.parent = _tower.transform;
-                piece.transform.localScale *= 0.5f;
+                //piece.transform.localScale *= 0.5f;
                 pieceHeight = piece.transform.localScale.y + 0.05f;
                 pieceWidth = piece.transform.localScale.x + 0.05f;
                 var original = PieceOriginalMaterial.Get(piece);
