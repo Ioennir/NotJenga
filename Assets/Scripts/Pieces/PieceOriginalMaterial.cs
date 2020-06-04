@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class PieceOriginalMaterial : MonoBehaviour
 {
@@ -17,7 +18,12 @@ public class PieceOriginalMaterial : MonoBehaviour
 
 	#region MonoBehaviour
 
-    private void Start()
+	private void Awake()
+	{
+		
+	}
+
+	private void Start()
     {
         
     }

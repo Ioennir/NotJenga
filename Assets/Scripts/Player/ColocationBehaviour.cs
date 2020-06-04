@@ -150,7 +150,9 @@ public class ColocationBehaviour : MonoBehaviour
 		Rigidbody rb = _imaginaryJenga.GetComponent<Rigidbody>();
 		rb.isKinematic = false;
 		MeshRenderer rend = _imaginaryJenga.GetComponent<MeshRenderer>();
+		
 		rend.material = _tower.pieceMaterials[_currentJengaMaterial++];
+		_imaginaryJenga.GetComponent<PieceOriginalMaterial>().originalMaterial = rend.material;
 		_currentJengaMaterial %= 2;
 		_towerData.PutOnTop(_imaginaryJenga);
 		_imaginaryJenga.name = $"Piece put by player {_turnController.CurrentPlayer}";
@@ -192,7 +194,6 @@ public class ColocationBehaviour : MonoBehaviour
 			_imaginaryJenga.transform.localScale = _topPieces[0].transform.localScale;
 			MeshRenderer rend = _imaginaryJenga.GetComponent<MeshRenderer>();
 			rend.material = matTransparent;
-			
 			Collider col = _imaginaryJenga.GetComponent<Collider>();
 			col.isTrigger = true;
 			Rigidbody rb = _imaginaryJenga.GetComponent<Rigidbody>();

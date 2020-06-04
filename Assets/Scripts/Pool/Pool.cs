@@ -137,6 +137,7 @@ public class Pool : MonoBehaviour
 	    for (uint i = maxSize; i < newSize; ++i)
 	    {
 		    _pool[i] = Instantiate(prefab);
+		    _pool[i].transform.localScale *= 0.5f;
 		    _pool[i].SetActive(false);
 	    }
 	    maxSize = newSize;

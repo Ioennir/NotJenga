@@ -75,11 +75,16 @@ public class SelectionBehaviour : MonoBehaviour
 
     public void Dispose()
     {
+	    if (!_currentPiece)
+	    {
+		    _selectedPiece = 0;
+		    _prevMaterial = null;
+		    return;
+	    }
 	    MeshRenderer rend = _currentPiece.GetComponent<MeshRenderer>();
 	    rend.material = _prevMaterial;
 	    _currentPiece = null;
-	    _selectedPiece = 0;
-	    _prevMaterial = null;
+	    
     }
 
     public void DisposeState()

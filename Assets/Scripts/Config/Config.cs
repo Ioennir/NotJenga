@@ -20,6 +20,8 @@ public class Config : MonoBehaviour
 	private SaveSystem.Informer<SavedGamesData> _loadingSavedGamesData;
 
 	private static Config _instance;
+
+	private GameActivator _activator;
 	
 	#endregion
 
@@ -49,6 +51,11 @@ public class Config : MonoBehaviour
 		// This should be almost instant so it will not be in another thread.
 		SaveSystem.Save("game_data.json", new SavedGamesData());
 		Debug.Log($"Created game_data.json because none was found at {SaveSystem.PersistentDataPath}");
+	}
+
+	private void Start()
+	{
+		_activator = FindObjectOfType<GameActivator>();
 	}
 
 	private void Update()
@@ -103,13 +110,13 @@ public class Config : MonoBehaviour
 		    _data = new JengaData { id = _instance.GetInstanceID() };
 	    }
 	    _data.jengas = new JengaPieceData[pieces.Length];
-	    
+	    _data.date = DateTime.Now.Ticks;
 	    for (int i = 0; i < pieces.Length; ++i)
 	    {
 		    _data.jengas[i] = new JengaPieceData
 		    {
-			    position = pieces[i].transform.position,
-			    rotation = pieces[i].transform.rotation.eulerAngles,
+			    position = pieces[i].transform.localPosition,
+			    rotation = pieces[i].transform.localRotation.eulerAngles,
 			    scale = pieces[i].transform.localScale
 		    };
 	    }
@@ -129,7 +136,7 @@ public class Config : MonoBehaviour
 	    {
 		    if (_loadingSavedGamesData.loaded || _loadingSavedGamesData.error)
 		    {
-			    Debug.Log("Finished saving data.");
+			    _activator.LoadGames();
 			    _loadingSavedGamesData = null;
 		    }
 	    }
@@ -153,10 +160,12 @@ public class Config : MonoBehaviour
 	    SavedGamesData dataGame = _loadingSavedGamesData.data;
 	    int idWeAreSearchingFor = _data.id;
 	    int idx = -1;
+	    Debug.Log(idWeAreSearchingFor);
 	    // Find if our game exists.
 	    for (int i = 0; i < dataGame.games.Length; ++i)
 	    {
 		    if (dataGame.games[i].id != idWeAreSearchingFor) continue;
+		    
 		    idx = i;
 		    break;
 	    }
@@ -164,14 +173,18 @@ public class Config : MonoBehaviour
 	    if (idx == -1)
 	    {
 		    int oldSize = dataGame.games.Length;
-			Array.Resize(ref dataGame.games, oldSize + 1);
+		    Array.Resize(ref dataGame.games, oldSize + 1);
 			dataGame.games[oldSize] = _data;
+			LoadJengaConfig(dataGame.games[oldSize]);
 	    }
 	    // It exists
 	    else
 	    {
-		    dataGame.games[idx].jengas = _data.jengas;    
+		    dataGame.games[idx].jengas = _data.jengas;
+		    dataGame.games[idx].date = _data.date;
+		    LoadJengaConfig(dataGame.games[idx]);
 	    }
+	    
 	    // Save again and get the informer so we can check on checkIfTheGameFinishedSaving
 	    _loadingSavedGamesData = SaveSystem.SaveOnAnotherThread("game_data.json", dataGame);
 	    _loadingData = false;

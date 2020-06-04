@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 [System.Serializable]
 public class JengaData 
@@ -11,6 +12,8 @@ public class JengaData
 
 	public JengaPieceData[] jengas;
 	public int id;
+	public long date;
+	
 	
 	#endregion
 

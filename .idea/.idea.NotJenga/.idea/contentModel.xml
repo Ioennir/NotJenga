@@ -43,6 +43,7 @@
             <e p="SavedGamesData.cs" t="Include" />
           </e>
           <e p="CreateRopeScript.cs" t="Include" />
+          <e p="GameActivator.cs" t="Include" />
           <e p="JengaScript.cs" t="Include" />
           <e p="Pieces" t="Include">
             <e p="PieceCheckCollision.cs" t="Include" />
