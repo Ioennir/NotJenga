@@ -18,8 +18,8 @@ GameObject:
   - component: {fileID: 8325297288019146644}
   - component: {fileID: -3843364009750885957}
   - component: {fileID: -3218892517871874918}
-  - component: {fileID: 7250841628954403428}
   - component: {fileID: 1987725469287384700}
+<<<<<<< HEAD
   - component: {fileID: -757888978080009723}
   - component: {fileID: 2740656345699566357}
   - component: {fileID: -2922734844645398261}
@@ -33,6 +33,8 @@ GameObject:
   - component: {fileID: -4856026394421111409}
   - component: {fileID: -7051869241054302319}
   - component: {fileID: -1956344706599710996}
+=======
+>>>>>>> edfee153ddea4586b206d637b44b0638dd370335
   m_Layer: 0
   m_Name: JengaPiece
   m_TagString: Selectable
@@ -206,25 +208,6 @@ MonoBehaviour:
   shootAxis: {x: 0, y: 0, z: 0}
   arrow: {fileID: 4098144169239062652, guid: b438e785d3aae4348a418bc2f2043344, type: 3}
   scaleChange: {x: 0.1, y: 0.1, z: 0.1}
---- !u!114 &7250841628954403428
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 959481774545258232}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b6dc8fdc651844c2d8bf87f6a9402463, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  name: JengaSound
-  audioClip: {fileID: 8300000, guid: fcc5a61f83928c64799df2df6abade6f, type: 3}
-  volume: 50
-  loop: 0
-  pitch: 1
-  minDistance: 15
-  maxDistance: 30
 --- !u!114 &1987725469287384700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -237,6 +220,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e71242ebcc919554bb3d83cebfc723cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
 --- !u!82 &-757888978080009723
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1485,3 +1469,5 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+=======
+>>>>>>> edfee153ddea4586b206d637b44b0638dd370335

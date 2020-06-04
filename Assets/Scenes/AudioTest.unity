@@ -502,6 +502,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 959481774545258232, guid: 684492bc847454c42a5ed11ed1811f26,
         type: 3}
+    - target: {fileID: 1203987439153154499, guid: 3688b0734cc65e84eba80ecba6e22a37,
+        type: 3}
+      propertyPath: towerHeight
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 1203987439153154499, guid: 3688b0734cc65e84eba80ecba6e22a37,
+        type: 3}
+      propertyPath: buildInterval
+      value: 0.086
+      objectReference: {fileID: 0}
     - target: {fileID: 1203987439153154500, guid: 3688b0734cc65e84eba80ecba6e22a37,
         type: 3}
       propertyPath: m_Name
@@ -553,6 +563,7 @@ Transform:
   - {fileID: 435989528}
   - {fileID: 898435244}
   - {fileID: 1629899879}
+  - {fileID: 1209355253}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1276,7 +1287,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
-  - {fileID: 7250841628954403428, guid: 684492bc847454c42a5ed11ed1811f26, type: 3}
+  - {fileID: 1209355254}
 --- !u!4 &1197184272
 Transform:
   m_ObjectHideFlags: 0
@@ -1291,6 +1302,56 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1209355252
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1209355253}
+  - component: {fileID: 1209355254}
+  m_Layer: 0
+  m_Name: Sound
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1209355253
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1209355252}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 433058324}
+  m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1209355254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1209355252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6dc8fdc651844c2d8bf87f6a9402463, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: JengaSound
+  audioClip: {fileID: 8300000, guid: fcc5a61f83928c64799df2df6abade6f, type: 3}
+  volume: 50
+  loop: 0
+  pitch: 1
+  minDistance: 15
+  maxDistance: 30
 --- !u!1001 &1225644930
 PrefabInstance:
   m_ObjectHideFlags: 0

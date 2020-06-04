@@ -36,6 +36,13 @@
             <e p="SelectionScript.cs" t="Include" />
           </e>
           <e p="CameraScriptJenga.cs" t="Include" />
+          <e p="Config" t="Include">
+            <e p="Config.cs" t="Include" />
+            <e p="JengaData.cs" t="Include" />
+            <e p="JengaPieceData.cs" t="Include" />
+            <e p="SavedGamesData.cs" t="Include" />
+          </e>
+          <e p="CreateRopeScript.cs" t="Include" />
           <e p="JengaScript.cs" t="Include" />
           <e p="Pieces" t="Include">
             <e p="PieceCheckCollision.cs" t="Include" />
@@ -44,6 +51,7 @@
             <e p="PieceFriction.cs" t="Include" />
             <e p="PieceNormalMove.cs" t="Include" />
             <e p="PieceShoot.cs" t="Include" />
+            <e p="SoundCollisionScript.cs" t="Include" />
           </e>
           <e p="Player" t="Include">
             <e p="ColocationBehaviour.cs" t="Include" />

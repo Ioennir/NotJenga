@@ -1,14 +1,15 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class SoundCollisionScript : MonoBehaviour
 {
-    private Sound sound;
-    private AudioController controller;
-    //private Sound soundcontroller;
+    private AudioController _controller;
+
     public void Start()
     {
+<<<<<<< HEAD
         controller = GameObject.Find("AudioController").GetComponent<AudioController>();
         sound = this.GetComponent<Sound>();
         sound.Init();
@@ -22,6 +23,27 @@ public class SoundCollisionScript : MonoBehaviour
             sound.UpdateSource();
             sound.Play();
 
+=======
+        _controller = FindObjectOfType<AudioController>();
+    }
+
+    private void Update()
+    {
+        
+    }
+
+    public void OnCollisionEnter(Collision collision)
+    {
+        if (!_controller) return;
+        if (collision.gameObject.CompareTag("Selectable"))
+        {
+            float volume = Mathf.Clamp01(collision.relativeVelocity.magnitude / 50);
+            _controller.ChangeAndPlay("JengaSound", sound1 =>
+            {
+                sound1.volume = volume;
+                sound1.transform.position = transform.position;
+            });
+>>>>>>> edfee153ddea4586b206d637b44b0638dd370335
         }
     }
    

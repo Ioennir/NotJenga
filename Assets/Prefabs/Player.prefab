@@ -49,8 +49,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab96c5263e47f428785536229cf375eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _matTransparent: {fileID: 2100000, guid: 05ecb90c4603c40d0a1f20ef8e74b6f1, type: 2}
-  _originalMaterial: {fileID: 2100000, guid: 03e79413390da1f42b3f2fc2c4d3b44e, type: 2}
+  matTransparent: {fileID: 2100000, guid: 05ecb90c4603c40d0a1f20ef8e74b6f1, type: 2}
+  originalMaterial: {fileID: 2100000, guid: 03e79413390da1f42b3f2fc2c4d3b44e, type: 2}
 --- !u!114 &2063806689799216592
 MonoBehaviour:
   m_ObjectHideFlags: 0

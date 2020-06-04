@@ -32,11 +32,6 @@ public class PullBehaviour : MonoBehaviour
 	    _tower = FindObjectOfType<Tower>();
     }
 
-	private void Update()
-    {
-        
-    }
-
     #endregion
 
     #region Public Methods
@@ -96,7 +91,6 @@ public class PullBehaviour : MonoBehaviour
 
     public void Dispose()
     {
-	    dragging = true;
 	    _currentPiece = null;
     }
     

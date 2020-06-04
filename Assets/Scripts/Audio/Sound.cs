@@ -20,6 +20,9 @@
 public class Sound : MonoBehaviour
 {
 	#region Private Variables
+
+	private static int nOfSoundsPlaying = 0;
+	private bool _playing = false;
 	
 	[SerializeField] private string name;
 	
@@ -56,6 +59,8 @@ public class Sound : MonoBehaviour
 	/// If you wanna change the loop, the volume, the minDistance or the pitch you can change it here before playing.
 	/// </summary>
 	public AudioSource Source => _source;
+
+	public bool Playing => _playing;
 	
 	#endregion
 
@@ -68,7 +73,12 @@ public class Sound : MonoBehaviour
 
 	private void Update()
     {
-        
+	    if (_playing && !Source.isPlaying)
+	    {
+		    Debug.Log(nOfSoundsPlaying);
+		    nOfSoundsPlaying--;
+		    _playing = false;
+	    }
     }
 
     #endregion
@@ -77,8 +87,10 @@ public class Sound : MonoBehaviour
 
     public void Init()
     {
-	    // Create an AudioSource
-	    _source = gameObject.AddComponent<AudioSource>();
+	    _source = gameObject.GetComponent<AudioSource>();
+	    if (!_source)
+		    // Create an AudioSource
+			_source = gameObject.AddComponent<AudioSource>();
 	    // Set 3D sound
 	    _source.spatialBlend = 1;
 	    // Doppler level
@@ -96,7 +108,8 @@ public class Sound : MonoBehaviour
     /// </summary>
     public void UpdateSource()
     {
-	    _source.clip = audioClip;
+	    if (!_source.clip)
+			_source.clip = audioClip;
 	    _source.volume = volume;
 	    _source.loop = loop;
 	    _source.pitch = pitch;
@@ -109,6 +122,8 @@ public class Sound : MonoBehaviour
     /// </summary>
     public void Play()
     {
+	    _playing = true;
+	    nOfSoundsPlaying++;
 	    _source.Play();
     }
 
