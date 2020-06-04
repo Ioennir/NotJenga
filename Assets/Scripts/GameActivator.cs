@@ -29,6 +29,6 @@ public class GameActivator : MonoBehaviour
         {
             rows = parsedrows;
         }
-        Tower.GetComponent<TowerGenerator>().Reset(rows);
+        //create a tower reset 
     }
 }
