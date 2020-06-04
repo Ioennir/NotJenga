@@ -53,7 +53,7 @@ public class GameActivator : MonoBehaviour
     {
         int rows = 7;
         int parsedrows = int.Parse(textrows.text);
-        if (parsedrows > 2 && parsedrows <= 16)
+        if (parsedrows > 2 && parsedrows <= 17)
         {
             rows = parsedrows;
         }
