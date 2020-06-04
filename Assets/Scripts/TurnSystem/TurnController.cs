@@ -55,6 +55,7 @@ public class TurnController : MonoBehaviour
 
     void Start()
     {
+        UI = FindObjectOfType<UIWrapper>();
         //IMPORTANT(Ioennir): This InitializeGameTurns call will be moved to the interface in the main menu, this is only for testing and show purpose.
         // This starts when the tower is being constructed, change it to when the tower has already been constructed.
         InitializeGameTurns(2, 40.0f);
@@ -97,6 +98,7 @@ public class TurnController : MonoBehaviour
     {
         CurrentPlayer++;
         CurrentPlayer %= _playerCounter;
+        CurrentTurnTimer = 0.0f;
         CurrentTurn++;
         Debug.Log("[TURN CONTROLLER]: Changing to turn number: " + CurrentTurn);
         UI.UpdateUI(CurrentPlayer, CurrentTurn);

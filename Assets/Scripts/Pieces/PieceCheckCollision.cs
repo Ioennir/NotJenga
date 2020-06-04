@@ -9,10 +9,11 @@ public class PieceCheckCollision : MonoBehaviour
 	private Tower _tower;
 	private bool _badPlaced = false;
 	
+	
 	#endregion
 
 	#region Public Variables
-
+	public Material prevMaterial;
 	#endregion
 
 	#region Properties
@@ -38,10 +39,8 @@ public class PieceCheckCollision : MonoBehaviour
 		angles.z = ClampAngle(angles.z);
 		bool condition = true;
 		
-		if ((Math.Abs(angles.x) > 10f || Math.Abs(angles.z) > 10f && condition) && !_badPlaced && _tower.towerAlreadyBuilt)
+		if ((Math.Abs(angles.x) > 12.5f || Math.Abs(angles.z) > 12.5f && condition) && !_badPlaced && _tower.towerAlreadyBuilt)
 		{
-			Debug.Log(angles);
-			Debug.Log("Badly placed something!");
 			_badPlaced = true;
 			_tower.badPlaced.Add(gameObject);
 		}
@@ -76,7 +75,6 @@ public class PieceCheckCollision : MonoBehaviour
 
     public void OnDestroy()
     {
-	    Debug.Log("Destroy");
 	    if (_inFloor)
 	    {
 		    _tower.DestroyPieceOnFloor(this);
@@ -86,8 +84,8 @@ public class PieceCheckCollision : MonoBehaviour
 	    {
 		    _tower.badPlaced.Remove(gameObject);
 	    }
+	    GetComponent<Renderer>().material = PieceOriginalMaterial.Get(gameObject).originalMaterial;
 
-	    _tower.Pool.Destroy(gameObject);
     }
 
     #endregion

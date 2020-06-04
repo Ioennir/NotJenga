@@ -217,7 +217,6 @@ public class CameraController : MonoBehaviour
     {
         // Vertical movement with W and S
         float verSpeed = inputs.axes.y * (verticalSpeed * dt);
-        Debug.Log(offset);
         // Clamp the Y value of the offset
         offset.y += verSpeed;
         offset.y = Mathf.Clamp(offset.y, 0f, 15f);

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Assertions.Comparers;
 using Random = UnityEngine.Random;
 
 
@@ -33,8 +34,10 @@ public class Tower : MonoBehaviour
 
 	#region Properties
 
-	public Pool Pool => _pool
-	;
+	public Pool Pool => _pool;
+
+	public GameObject[] Pieces => _pieces.ToArray();
+
 	#endregion
 
 	#region MonoBehaviour
@@ -114,6 +117,13 @@ public class Tower : MonoBehaviour
 	    _pieces = rest.Concat(ordered.ToList()).ToList();
     }
 
+    /// <summary>
+    /// Gets a piece starting from the offset, and will move x times horizontal and x times vertical.
+    /// </summary>
+    /// <param name="offset"></param>
+    /// <param name="horizontal"></param>
+    /// <param name="vertical"></param>
+    /// <returns></returns>
     public GameObject SelectPiece(ref int offset, int horizontal, int vertical)
     {
 	    if (horizontal == 0 && vertical == 0)
@@ -190,16 +200,41 @@ public class Tower : MonoBehaviour
 	    return Math.Abs(j1.transform.position.y - j2.transform.position.y) < 0.1f;
     }
 
-     public static bool SamePlace(GameObject j1, List<GameObject> others, bool inX)
+
+     public struct MinimumPiece
      {
+	     public float diff;
+	     public bool sufficientDifference;
+	     public Vector3 position;
+     }
+     public static MinimumPiece SamePlace(GameObject j1, List<GameObject> others, bool inX)
+     {
+	     MinimumPiece piece = new MinimumPiece();
+	     Vector3 pos = j1.transform.position;
+	     piece.sufficientDifference = true;
 	     for (int i = 0; i < others.Count; i++)
 	     {
-		     if (inX && Math.Abs(j1.transform.position.x - others[i].transform.position.x) < 0.1f) return true;
-		     if (!inX && Math.Abs(j1.transform.position.z - others[i].transform.position.z) < 0.1f)
-				 return true;
+		     float diffX = Math.Abs(pos.x - others[i].transform.position.x);
+		     float diffZ = Math.Abs(pos.z - others[i].transform.position.z);
+		     
+		     if (inX && diffX <= 0.1f)
+		     {
+			     piece.sufficientDifference = false;
+			     piece.diff = diffX + diffZ;
+			     piece.position = pos;
+			     return piece;
+		     }
+
+		     if (!inX && diffZ <= 0.1f)
+		     {
+			     piece.sufficientDifference = false;
+			     piece.diff = diffX + diffZ;
+			     piece.position = pos;
+			     return piece;
+		     }
 	     }
 
-	     return false;
+	     return piece;
      }
 
 

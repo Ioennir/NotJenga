@@ -32,11 +32,6 @@ public class PullBehaviour : MonoBehaviour
 	    _tower = FindObjectOfType<Tower>();
     }
 
-	private void Update()
-    {
-        
-    }
-
     #endregion
 
     #region Public Methods
@@ -70,13 +65,13 @@ public class PullBehaviour : MonoBehaviour
 	    if (_tower.badPlaced.Count > 0 && !_tower.badPlaced.Contains(_currentPiece))
 	    {
 		    Debug.Log("LOSE");
-		    return false;
+		    return true;
 	    }
 	    
 		if (floorPieces.Count > 1 || floorPieces.Count == 1 && floorPieces.IndexOf(_currentPiece) <= -1)
 		{	
 			Debug.Log("LOSE");
-			return false;
+			return true;
 		}
 
 		if (floorPieces.Count == 1)
@@ -96,7 +91,6 @@ public class PullBehaviour : MonoBehaviour
 
     public void Dispose()
     {
-	    dragging = true;
 	    _currentPiece = null;
     }
     

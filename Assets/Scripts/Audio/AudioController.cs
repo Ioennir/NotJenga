@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEngine;
+using Debug = UnityEngine.Debug;
 
 /// <summary>
 /// Helper class that will init every sound that you pass to it.
@@ -54,8 +55,8 @@ public class AudioController : MonoBehaviour
     {
 	    bool success = _soundsDict.TryGetValue(name, out Sound value);
 	    if (!success) return null;
-	    value.UpdateSource();
 	    if (value.Source.isPlaying) return value;
+	    value.UpdateSource();
 	    value.Play();
 	    return value;
     }
@@ -116,10 +117,10 @@ public class AudioController : MonoBehaviour
     {
 	    bool success = _soundsDict.TryGetValue(name, out Sound value);
 	    if (!success) return null;
+	    if (value.Source.isPlaying || value.Playing) return value;
 	    action(value);
 	    value.UpdateSource();
-		if (value.Source.isPlaying) return value;
-		value.Play();
+	    value.Play();
 	    return value;
     }
 

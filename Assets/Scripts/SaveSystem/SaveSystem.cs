@@ -136,6 +136,7 @@ public class SaveSystem : MonoBehaviour
     public static T Load<T>(string path)
     {
 	    path = $"{_persistentDataPath}/{path}";
+	    Debug.Log(path);
 	    StreamReader reader = new StreamReader(path);
 	    string data = reader.ReadToEnd();
 	    reader.Close();
@@ -143,6 +144,17 @@ public class SaveSystem : MonoBehaviour
 	    string decryptedData = EncryptionTool.Decrypt(encryptedData);
 	    T system = JsonUtility.FromJson<T>(decryptedData);
 	    return system;
+    }
+
+    /// <summary>
+    /// Check if file exists.
+    /// </summary>
+    /// <param name="path"></param>
+    /// <returns></returns>
+    public static bool Exists(string path)
+    {
+	    path = $"{_persistentDataPath}/{path}";
+	    return File.Exists(path);
     }
     
     #endregion
