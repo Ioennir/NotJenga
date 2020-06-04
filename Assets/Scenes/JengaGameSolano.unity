@@ -908,7 +908,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 534275038}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &534275043
 Camera:
   m_ObjectHideFlags: 0
@@ -2955,13 +2955,13 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1434007618}
   m_TextComponent: {fileID: 1347463177}
   m_Placeholder: {fileID: 833209877}
-  m_ContentType: 2
+  m_ContentType: 0
   m_InputType: 0
   m_AsteriskChar: 42
-  m_KeyboardType: 4
+  m_KeyboardType: 0
   m_LineType: 0
   m_HideMobileInput: 0
-  m_CharacterValidation: 1
+  m_CharacterValidation: 0
   m_CharacterLimit: 0
   m_OnEndEdit:
     m_PersistentCalls:
