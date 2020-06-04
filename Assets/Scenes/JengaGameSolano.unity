@@ -2319,10 +2319,7 @@ GameObject:
   - component: {fileID: 1274714312}
   - component: {fileID: 1274714311}
   - component: {fileID: 1274714314}
-<<<<<<< HEAD
-=======
   - component: {fileID: 1274714315}
->>>>>>> ffb7ee766b609fed4484494bebf20b6a539d205b
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2905,13 +2902,6 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-<<<<<<< HEAD
-  m_Children: []
-  m_Father: {fileID: 433058324}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 85.818, z: 0}
---- !u!114 &1274714314
-=======
   m_Children:
   - {fileID: 833209876}
   - {fileID: 1347463176}
@@ -2924,32 +2914,10 @@ RectTransform:
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1434007617
->>>>>>> ffb7ee766b609fed4484494bebf20b6a539d205b
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
-<<<<<<< HEAD
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1274714310}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c78d76a9a0f4684d93dffcea712e61e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  transitionTime: 0
-  horizontalDistance: 5.47
-  rotationSpeed: 7.38
-  verticalSpeed: 5.65
-  zoomSpeed: 5.43
-  offset: {x: 0, y: 0, z: 0}
---- !u!1 &1423909156 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -4473984409997532297, guid: 68eff4cab3629b642b7ad8aee2d3d605,
-    type: 3}
-  m_PrefabInstance: {fileID: 1154434873}
-=======
->>>>>>> ffb7ee766b609fed4484494bebf20b6a539d205b
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1434007615}
   m_Enabled: 1
