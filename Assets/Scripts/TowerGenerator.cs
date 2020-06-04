@@ -70,6 +70,19 @@ public class TowerGenerator : MonoBehaviour
 
     #region Public Methods
 
+    public void Reset(int rows)
+    {
+        _piecePool.DeactivateAll();
+        towerHeight = (uint)rows;
+        if (_dataLoaded == null)
+        {
+            StartCoroutine("BuildTower", buildInterval);
+            return;
+        }
+        StartCoroutine(SpawnLoad());
+        _towerData.towerAlreadyBuilt = true;
+    }
+
     private IEnumerator SpawnLoad()
     { 
         for (int i = 0; i < _dataLoaded.jengas.Length; ++i)
@@ -116,7 +129,7 @@ public class TowerGenerator : MonoBehaviour
             {
                 GameObject piece = _piecePool.Instantiate();
                 piece.transform.parent = _tower.transform;
-                piece.transform.localScale *= 0.5f;
+              
                 pieceHeight = piece.transform.localScale.y + 0.05f;
                 pieceWidth = piece.transform.localScale.x + 0.05f;
                 var original = PieceOriginalMaterial.Get(piece);
