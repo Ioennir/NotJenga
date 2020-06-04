@@ -31,6 +31,7 @@ public class GameActivator : MonoBehaviour
         if (_informerGames != null && _informerGames.loaded)
         {
             dropdownGames.options = new List<Dropdown.OptionData>();
+            dropdownGames.options.Add(new Dropdown.OptionData("Choose one"));
             foreach (JengaData data in _informerGames.data.games)
             {
                 dropdownGames.options.Add(
@@ -51,7 +52,7 @@ public class GameActivator : MonoBehaviour
     {
         int rows = 7;
         int parsedrows = int.Parse(textrows.text);
-        if (parsedrows > 2 && parsedrows < 17)
+        if (parsedrows > 2 && parsedrows <= 16)
         {
             rows = parsedrows;
         }
@@ -60,7 +61,7 @@ public class GameActivator : MonoBehaviour
 
     public void SelectGame()
     {
-        Tower.GetComponent<TowerGenerator>().ResetWithLoad(_currentData.games[dropdownGames.value]);
+        Tower.GetComponent<TowerGenerator>().ResetWithLoad(_currentData.games[dropdownGames.value-1]);
     }
     
 

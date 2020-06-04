@@ -194,7 +194,7 @@ public class Tower : MonoBehaviour
 	    int countOfPiecesInTheSameRow = 0;
 	    for (int i = _pieces.Count - 1; i >= _pieces.Count - 3; i--)
 	    {
-		    if (Math.Abs(_pieces[_pieces.Count - 1].transform.localPosition.y - _pieces[i].transform.localPosition.y) < 0.1f)
+		    if (Math.Abs(_pieces[_pieces.Count - 1].transform.localPosition.y - _pieces[i].transform.localPosition.y) < 0.2f)
 		    {
 			    countOfPiecesInTheSameRow++;
 		    }

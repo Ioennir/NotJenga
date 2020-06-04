@@ -139,6 +139,7 @@ public class Pool : MonoBehaviour
 		    _pool[i] = Instantiate(prefab);
 		    _pool[i].transform.localScale *= 0.5f;
 		    _pool[i].SetActive(false);
+		    _pool[i].transform.parent = _poolContainer.transform;
 	    }
 	    maxSize = newSize;
     }
