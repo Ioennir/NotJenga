@@ -82,6 +82,7 @@
           </e>
         </e>
         <e p="Shader" t="Include">
+          <e p="Waves 1.shader" t="Include" />
           <e p="Waves.shader" t="Include" />
         </e>
       </e>

@@ -5,13 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="61260b3a-f00f-400d-9f96-6a3c78a17868" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.NotJenga/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.NotJenga/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.NotJenga/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.NotJenga/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/flecha.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/flecha.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Pieces/PieceCheckCollision.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Pieces/PieceCheckCollision.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/ColocationBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/ColocationBehaviour.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tower.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tower.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shader/Waves.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shader/Waves.shader" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Waves.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Waves.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/JengaGameSolano.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/JengaGameSolano.unity" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -134,44 +130,6 @@
                 <marker date="1591229596555" expanded="true" signature="1394:1656" ph="{...}" />
                 <marker date="1591229596555" expanded="true" signature="1419:1473" ph="{...}" />
                 <marker date="1591229596555" expanded="true" signature="1495:1552" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/Scripts/SaveSystem/SaveSystem.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="600">
-              <caret line="36" column="25" selection-start-line="36" selection-start-column="25" selection-end-line="36" selection-end-column="25" />
-              <folding>
-                <marker date="1591212596971" expanded="true" signature="6:73" ph="..." />
-                <marker date="1591212596971" expanded="true" signature="75:243" ph="/// Save system is a class that MUST be included inside the scene you're saving/loading data. ... " />
-                <marker date="1591212596971" expanded="true" signature="284:4502" ph="{...}" />
-                <marker date="1591212596971" expanded="true" signature="288:577" ph="/// Informer is a util class which serves the purpose of informing when are the threads done loading or saving da ... " />
-                <marker date="1591212596971" expanded="true" signature="603:669" ph="{...}" />
-                <marker date="1591212596971" expanded="true" signature="673:825" ph="Private Variables" />
-                <marker date="1591212596971" expanded="true" signature="828:865" ph="Public Variables" />
-                <marker date="1591212596971" expanded="true" signature="868:966" ph="Properties" />
-                <marker date="1591212596971" expanded="true" signature="969:1088" ph="MonoBehaviour" />
-                <marker date="1591212596971" expanded="true" signature="1013:1075" ph="{...}" />
-                <marker date="1591212596971" expanded="true" signature="1094:4455" ph="Public Methods" />
-                <marker date="1591212596971" expanded="true" signature="1188:1361" ph="{...}" />
-                <marker date="1591212596971" expanded="true" signature="1367:1696" ph="/// Saves in another thread the data. ... " />
-                <marker date="1591212596971" expanded="true" signature="1770:2063" ph="{...}" />
-                <marker date="1591212596971" expanded="true" signature="2069:2410" ph="/// Saves data into path. ... " />
-                <marker date="1591212596971" expanded="true" signature="2464:3120" ph="{...}" />
-                <marker date="1591212596971" expanded="true" signature="2555:2942" ph="{...}" />
-                <marker date="1591212596971" expanded="true" signature="2975:3089" ph="{...}" />
-                <marker date="1591212596971" expanded="true" signature="3195:3477" ph="{...}" />
-                <marker date="1591212596971" expanded="true" signature="3210:3318" ph="{...}" />
-                <marker date="1591212596971" expanded="true" signature="3345:3471" ph="{...}" />
-                <marker date="1591212596971" expanded="true" signature="3483:3730" ph="/// Loads the specified system from the file system. ... " />
-                <marker date="1591212596971" expanded="true" signature="3771:4172" ph="{...}" />
-                <marker date="1591212596971" expanded="true" signature="4178:4304" ph="/// Check if file exists. ... " />
-                <marker date="1591212596971" expanded="true" signature="4347:4435" ph="{...}" />
-                <marker date="1591212596971" expanded="true" signature="4461:4500" ph="Private Methods" />
-                <marker date="1591212596971" expanded="true" signature="4504:5025" ph="/* Sample use ... */" />
               </folding>
             </state>
           </provider>
@@ -323,17 +281,41 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Shader/Waves.shader">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="103">
-              <caret line="19" column="64" selection-start-line="19" selection-start-column="64" selection-end-line="19" selection-end-column="64" />
+            <state relative-caret-position="153">
+              <caret line="19" column="15" selection-start-line="19" selection-start-column="15" selection-end-line="19" selection-end-column="63" />
               <folding>
                 <marker date="1591230967528" expanded="true" signature="22:4786" ph="{...}" />
                 <marker date="1591230967528" expanded="true" signature="36:755" ph="{...}" />
                 <marker date="1591230967528" expanded="true" signature="332:520" ph="/* _Amplitude (&quot;Amplitude&quot;, Float) = 1 ... */" />
                 <marker date="1591230967528" expanded="true" signature="767:4764" ph="{...}" />
                 <marker date="1591230967528" expanded="true" signature="952:4756" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assets/Shader/Waves 1.shader">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-4398">
+              <caret line="53" column="50" selection-start-line="53" selection-start-column="50" selection-end-line="53" selection-end-column="50" />
+              <folding>
+                <marker date="1591232636346" expanded="true" signature="0:350" ph="/* When creating shaders for Universal Render Pipeline you can you the ShaderGraph which is super AWESOME! ... */" />
+                <marker date="1591232636346" expanded="true" signature="418:21434" ph="{...}" />
+                <marker date="1591232636346" expanded="true" signature="439:2762" ph="{...}" />
+                <marker date="1591232636346" expanded="true" signature="2178:2366" ph="/* _Amplitude (&quot;Amplitude&quot;, Float) = 1 ... */" />
+                <marker date="1591232636346" expanded="true" signature="2782:21234" ph="{...}" />
+                <marker date="1591232636346" expanded="true" signature="2792:3125" ph="/* With SRP we introduce a new &quot;RenderPipeline&quot; tag in Subshader. This allows to create shaders ... */" />
+                <marker date="1591232636346" expanded="true" signature="3327:7135" ph="{...}" />
+                <marker date="1591232636346" expanded="true" signature="7150:7473" ph="/* ------------------------------------------------------------------ ... */" />
+                <marker date="1591232636346" expanded="true" signature="7495:20673" ph="{...}" />
+                <marker date="1591232636346" expanded="true" signature="7509:7619" ph="/* &quot;Lightmode&quot; tag must be &quot;UniversalForward&quot; or not be defined in order for ... */" />
+                <marker date="1591232636346" expanded="true" signature="7819:20656" ph="{...}" />
+                <marker date="1591232636346" expanded="true" signature="20786:21051" ph="/* Used for depth prepass ... */" />
+                <marker date="1591232636346" expanded="true" signature="21240:21361" ph="/* Uses a custom shader GUI to display settings. Re-use the same from Lit shader as they have the ... */" />
               </folding>
             </state>
           </provider>
@@ -381,6 +363,8 @@
       <find>private SaveSystem.Informer&lt;SavedGamesData&gt; _informer;</find>
       <find>_savingData = false;</find>
       <find>_posX</find>
+      <find>Properties</find>
+      <find>SubSha</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -412,6 +396,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Pieces/SoundCollisionScript.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/PullBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SaveSystem/Hex.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Shader/Waves 1.shader" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Shader/Waves.shader" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Pieces/PieceDragAndDropScript.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Audio/Sound.cs" root0="FORCE_HIGHLIGHTING" />
@@ -456,6 +441,7 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/ColocationBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Tower.cs" />
         <option value="$PROJECT_DIR$/Assets/Shader/Waves.shader" />
+        <option value="$PROJECT_DIR$/Assets/Shader/Waves 1.shader" />
       </list>
     </option>
   </component>
@@ -588,12 +574,12 @@
       <workItem from="1591019985553" duration="9060000" />
       <workItem from="1591114270018" duration="13704000" />
       <workItem from="1591197831761" duration="16873000" />
-      <workItem from="1591223451721" duration="5304000" />
+      <workItem from="1591223451721" duration="6333000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54069000" />
+    <option name="totallyTimeSpent" value="55098000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -605,10 +591,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1920" height="1200" extended-state="0" />
+    <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15867944" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18192919" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -1444,14 +1430,36 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Shader/Waves.shader">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="103">
-          <caret line="19" column="64" selection-start-line="19" selection-start-column="64" selection-end-line="19" selection-end-column="64" />
+        <state relative-caret-position="153">
+          <caret line="19" column="15" selection-start-line="19" selection-start-column="15" selection-end-line="19" selection-end-column="63" />
           <folding>
             <marker date="1591230967528" expanded="true" signature="22:4786" ph="{...}" />
             <marker date="1591230967528" expanded="true" signature="36:755" ph="{...}" />
             <marker date="1591230967528" expanded="true" signature="332:520" ph="/* _Amplitude (&quot;Amplitude&quot;, Float) = 1 ... */" />
             <marker date="1591230967528" expanded="true" signature="767:4764" ph="{...}" />
             <marker date="1591230967528" expanded="true" signature="952:4756" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Shader/Waves 1.shader">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4398">
+          <caret line="53" column="50" selection-start-line="53" selection-start-column="50" selection-end-line="53" selection-end-column="50" />
+          <folding>
+            <marker date="1591232636346" expanded="true" signature="0:350" ph="/* When creating shaders for Universal Render Pipeline you can you the ShaderGraph which is super AWESOME! ... */" />
+            <marker date="1591232636346" expanded="true" signature="418:21434" ph="{...}" />
+            <marker date="1591232636346" expanded="true" signature="439:2762" ph="{...}" />
+            <marker date="1591232636346" expanded="true" signature="2178:2366" ph="/* _Amplitude (&quot;Amplitude&quot;, Float) = 1 ... */" />
+            <marker date="1591232636346" expanded="true" signature="2782:21234" ph="{...}" />
+            <marker date="1591232636346" expanded="true" signature="2792:3125" ph="/* With SRP we introduce a new &quot;RenderPipeline&quot; tag in Subshader. This allows to create shaders ... */" />
+            <marker date="1591232636346" expanded="true" signature="3327:7135" ph="{...}" />
+            <marker date="1591232636346" expanded="true" signature="7150:7473" ph="/* ------------------------------------------------------------------ ... */" />
+            <marker date="1591232636346" expanded="true" signature="7495:20673" ph="{...}" />
+            <marker date="1591232636346" expanded="true" signature="7509:7619" ph="/* &quot;Lightmode&quot; tag must be &quot;UniversalForward&quot; or not be defined in order for ... */" />
+            <marker date="1591232636346" expanded="true" signature="7819:20656" ph="{...}" />
+            <marker date="1591232636346" expanded="true" signature="20786:21051" ph="/* Used for depth prepass ... */" />
+            <marker date="1591232636346" expanded="true" signature="21240:21361" ph="/* Uses a custom shader GUI to display settings. Re-use the same from Lit shader as they have the ... */" />
           </folding>
         </state>
       </provider>
