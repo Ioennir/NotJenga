@@ -32,7 +32,8 @@ public class TowerGenerator : MonoBehaviour
     public float PieceHeight => pieceHeight;
 
     public Vector3 TowerCenter => towerCenter;
-   
+
+    public float PieceWidth => pieceWidth;
     
     
     #endregion
@@ -80,8 +81,8 @@ public class TowerGenerator : MonoBehaviour
             transformPiece.position = piece.position;
             transformPiece.rotation = Quaternion.Euler(piece.rotation);
             transformPiece.localScale = piece.scale;
-            pieceHeight = piece.scale.y;
-            pieceWidth = piece.scale.x;
+            pieceHeight = piece.scale.y + 0.05f;
+            pieceWidth = piece.scale.x + 0.05f;
             instance.GetComponent<MeshRenderer>().material = pieceMaterials[i % 2];
             _towerData.AddPiece(instance);
         }
@@ -116,9 +117,11 @@ public class TowerGenerator : MonoBehaviour
                 GameObject piece = _piecePool.Instantiate();
                 piece.transform.parent = _tower.transform;
                 piece.transform.localScale *= 0.5f;
-                pieceHeight = piece.transform.localScale.y;
-                pieceWidth = piece.transform.localScale.x;
-                piece.GetComponent<MeshRenderer>().material = pieceMaterials[x % 2];
+                pieceHeight = piece.transform.localScale.y + 0.05f;
+                pieceWidth = piece.transform.localScale.x + 0.05f;
+                var original = PieceOriginalMaterial.Get(piece);
+                original.originalMaterial = pieceMaterials[x % 2];
+                piece.GetComponent<MeshRenderer>().material = original.originalMaterial;
                 if (y % 2 == 0)
                 {
                     piece.transform.localPosition = new Vector3(towerCenter.x + (x * pieceWidth - pieceWidth),

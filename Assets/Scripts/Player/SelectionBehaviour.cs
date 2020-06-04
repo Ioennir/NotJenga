@@ -54,15 +54,17 @@ public class SelectionBehaviour : MonoBehaviour
 	    float vertical = Input.GetAxisRaw("Vertical");
 	    float horizontal = Input.GetAxisRaw("Horizontal");
 	    GameObject nextPiece = _towerData.SelectPiece(ref _selectedPiece, (int) horizontal, (int) vertical);
+	    PieceOriginalMaterial originalNextPiece = PieceOriginalMaterial.Get(nextPiece);
 	    if (nextPiece == _currentPiece)
 	    {
 		    MeshRenderer rend = nextPiece.GetComponent<MeshRenderer>();
-		    return select > 0.5f && (rend.material = _prevMaterial) ? _currentPiece : null;
+		    return select > 0.5f && (rend.material = originalNextPiece.originalMaterial) ? _currentPiece : null;
 	    }
 	    if (_currentPiece)
 	    {
 		    MeshRenderer rend = _currentPiece.GetComponent<MeshRenderer>();
-		    rend.material = _prevMaterial;
+		    PieceOriginalMaterial originalPiece = PieceOriginalMaterial.Get(nextPiece);
+		    rend.material = originalPiece.originalMaterial;
 	    }
 	    MeshRenderer rendNext = nextPiece.GetComponent<MeshRenderer>();
 	    _prevMaterial = rendNext.material;

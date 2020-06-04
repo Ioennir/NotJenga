@@ -75,7 +75,6 @@ public class Sound : MonoBehaviour
     {
 	    if (_playing && !Source.isPlaying)
 	    {
-		    Debug.Log(nOfSoundsPlaying);
 		    nOfSoundsPlaying--;
 		    _playing = false;
 	    }

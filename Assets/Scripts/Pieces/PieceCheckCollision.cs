@@ -9,10 +9,11 @@ public class PieceCheckCollision : MonoBehaviour
 	private Tower _tower;
 	private bool _badPlaced = false;
 	
+	
 	#endregion
 
 	#region Public Variables
-
+	public Material prevMaterial;
 	#endregion
 
 	#region Properties
@@ -83,8 +84,8 @@ public class PieceCheckCollision : MonoBehaviour
 	    {
 		    _tower.badPlaced.Remove(gameObject);
 	    }
-		if (_tower && _tower.Pool)
-			_tower.Pool.Destroy(gameObject);
+	    GetComponent<Renderer>().material = PieceOriginalMaterial.Get(gameObject).originalMaterial;
+
     }
 
     #endregion
