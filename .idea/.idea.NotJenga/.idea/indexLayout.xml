@@ -23,7 +23,6 @@
       <Path>.idea</Path>
       <Path>Library</Path>
       <Path>Temp</Path>
-      <Path>XD.app</Path>
       <Path>obj</Path>
     </explicitExcludes>
   </component>

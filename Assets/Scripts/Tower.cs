@@ -217,7 +217,7 @@ public class Tower : MonoBehaviour
 		     float diffX = Math.Abs(pos.x - others[i].transform.position.x);
 		     float diffZ = Math.Abs(pos.z - others[i].transform.position.z);
 		     
-		     if (inX && diffX < 0.15f)
+		     if (inX && diffX <= 0.1f)
 		     {
 			     piece.sufficientDifference = false;
 			     piece.diff = diffX + diffZ;
@@ -225,7 +225,7 @@ public class Tower : MonoBehaviour
 			     return piece;
 		     }
 
-		     if (!inX && diffZ < 0.15f)
+		     if (!inX && diffZ <= 0.1f)
 		     {
 			     piece.sufficientDifference = false;
 			     piece.diff = diffX + diffZ;

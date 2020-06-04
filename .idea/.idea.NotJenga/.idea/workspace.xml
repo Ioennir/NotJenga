@@ -7,20 +7,11 @@
     <list default="true" id="61260b3a-f00f-400d-9f96-6a3c78a17868" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.NotJenga/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.NotJenga/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.NotJenga/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.NotJenga/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Pieces/JengaPiece.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Pieces/JengaPiece.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Audio/AudioController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Audio/AudioController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Audio/Sound.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Audio/Sound.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Camera/SelectionScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Camera/SelectionScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/flecha.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/flecha.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Pieces/PieceCheckCollision.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Pieces/PieceCheckCollision.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/ColocationBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/ColocationBehaviour.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerInGame.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerInGame.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PullBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PullBehaviour.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/SelectionBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/SelectionBehaviour.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tower.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tower.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TowerGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TowerGenerator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TurnSystem/TurnController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TurnSystem/TurnController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Shader/Waves.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shader/Waves.shader" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -123,72 +114,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/Pieces/PieceCheckCollision.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="663">
-              <caret line="85" column="9" selection-start-line="85" selection-start-column="9" selection-end-line="85" selection-end-column="9" />
+            <state relative-caret-position="64">
+              <caret line="41" column="38" selection-start-line="41" selection-start-column="38" selection-end-line="41" selection-end-column="38" />
               <folding>
-                <marker date="1591226433377" expanded="true" signature="6:32" ph="..." />
-                <marker date="1591226433377" expanded="true" signature="82:1670" ph="{...}" />
-                <marker date="1591226433377" expanded="true" signature="86:252" ph="Private Variables" />
-                <marker date="1591226433377" expanded="true" signature="255:322" ph="Public Variables" />
-                <marker date="1591226433377" expanded="true" signature="325:429" ph="Properties" />
-                <marker date="1591226433377" expanded="true" signature="432:1040" ph="MonoBehaviour" />
-                <marker date="1591226433377" expanded="true" signature="479:532" ph="{...}" />
-                <marker date="1591226433377" expanded="true" signature="556:1024" ph="{...}" />
-                <marker date="1591226433377" expanded="true" signature="860:927" ph="{...}" />
-                <marker date="1591226433377" expanded="true" signature="1046:1085" ph="Public Methods" />
-                <marker date="1591226433377" expanded="true" signature="1091:1668" ph="Private Methods" />
-                <marker date="1591226433377" expanded="true" signature="1157:1216" ph="{...}" />
-                <marker date="1591226433377" expanded="true" signature="1264:1360" ph="{...}" />
-                <marker date="1591226433377" expanded="true" signature="1317:1354" ph="{...}" />
-                <marker date="1591226433377" expanded="true" signature="1390:1652" ph="{...}" />
-                <marker date="1591226433377" expanded="true" signature="1415:1469" ph="{...}" />
-                <marker date="1591226433377" expanded="true" signature="1491:1548" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/Scripts/Config/Config.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="980">
-              <caret line="55" column="54" selection-start-line="55" selection-start-column="54" selection-end-line="55" selection-end-column="54" />
-              <folding>
-                <marker date="1591216461902" expanded="true" signature="6:62" ph="..." />
-                <marker date="1591216461902" expanded="true" signature="64:261" ph="/// Configuration related class ... " />
-                <marker date="1591216461902" expanded="true" signature="297:5332" ph="{...}" />
-                <marker date="1591216461902" expanded="true" signature="301:516" ph="Private Variables" />
-                <marker date="1591216461902" expanded="true" signature="519:559" ph="Public Variables" />
-                <marker date="1591216461902" expanded="true" signature="562:697" ph="Properties" />
-                <marker date="1591216461902" expanded="true" signature="700:1277" ph="MonoBehaviour" />
-                <marker date="1591216461902" expanded="true" signature="744:1143" ph="{...}" />
-                <marker date="1591216461902" expanded="true" signature="797:840" ph="{...}" />
-                <marker date="1591216461902" expanded="true" signature="1167:1261" ph="{...}" />
-                <marker date="1591216461902" expanded="true" signature="1283:5285" ph="Public Methods" />
-                <marker date="1591216461902" expanded="true" signature="1311:1644" ph="/// Tries to get the config if there is some. If you wanna load config call LoadJengaConfig. ... " />
-                <marker date="1591216461902" expanded="true" signature="1689:1767" ph="{...}" />
-                <marker date="1591216461902" expanded="true" signature="1777:2003" ph="/// Loads jenga data so when we are in the gameplay scene ... " />
-                <marker date="1591216461902" expanded="true" signature="2058:2089" ph="{...}" />
-                <marker date="1591216461902" expanded="true" signature="2100:2220" ph="/// Will start saving the jenga game in another thread. ... " />
-                <marker date="1591216461902" expanded="true" signature="2278:3118" ph="{...}" />
-                <marker date="1591216461902" expanded="true" signature="2361:2426" ph="{...}" />
-                <marker date="1591216461902" expanded="true" signature="2486:2564" ph="{...}" />
-                <marker date="1591216461902" expanded="true" signature="2670:2898" ph="{...}" />
-                <marker date="1591216461902" expanded="true" signature="2727:2890" ph="{...}" />
-                <marker date="1591216461902" expanded="true" signature="3124:3260" ph="/// Keeps going with the saving of the jenga game ... " />
-                <marker date="1591216461902" expanded="true" signature="3299:4933" ph="{...}" />
-                <marker date="1591216461902" expanded="true" signature="3434:3618" ph="{...}" />
-                <marker date="1591216461902" expanded="true" signature="3514:3611" ph="{...}" />
-                <marker date="1591216461902" expanded="true" signature="3758:3786" ph="{...}" />
-                <marker date="1591216461902" expanded="true" signature="3825:3918" ph="{...}" />
-                <marker date="1591216461902" expanded="true" signature="3959:3987" ph="{...}" />
-                <marker date="1591216461902" expanded="true" signature="3993:4101" ph="/* This means that the GameData finished loading, so we must modify it ... */" />
-                <marker date="1591216461902" expanded="true" signature="4307:4414" ph="{...}" />
-                <marker date="1591216461902" expanded="true" signature="4484:4627" ph="{...}" />
-                <marker date="1591216461902" expanded="true" signature="4655:4722" ph="{...}" />
-                <marker date="1591216461902" expanded="true" signature="5004:5095" ph="{...}" />
-                <marker date="1591216461902" expanded="true" signature="5184:5264" ph="{...}" />
-                <marker date="1591216461902" expanded="true" signature="5291:5330" ph="Private Methods" />
+                <marker date="1591229596555" expanded="true" signature="6:32" ph="..." />
+                <marker date="1591229596555" expanded="true" signature="82:1674" ph="{...}" />
+                <marker date="1591229596555" expanded="true" signature="86:252" ph="Private Variables" />
+                <marker date="1591229596555" expanded="true" signature="255:322" ph="Public Variables" />
+                <marker date="1591229596555" expanded="true" signature="325:429" ph="Properties" />
+                <marker date="1591229596555" expanded="true" signature="432:1044" ph="MonoBehaviour" />
+                <marker date="1591229596555" expanded="true" signature="479:532" ph="{...}" />
+                <marker date="1591229596555" expanded="true" signature="556:1028" ph="{...}" />
+                <marker date="1591229596555" expanded="true" signature="864:931" ph="{...}" />
+                <marker date="1591229596555" expanded="true" signature="1050:1089" ph="Public Methods" />
+                <marker date="1591229596555" expanded="true" signature="1095:1672" ph="Private Methods" />
+                <marker date="1591229596555" expanded="true" signature="1161:1220" ph="{...}" />
+                <marker date="1591229596555" expanded="true" signature="1268:1364" ph="{...}" />
+                <marker date="1591229596555" expanded="true" signature="1321:1358" ph="{...}" />
+                <marker date="1591229596555" expanded="true" signature="1394:1656" ph="{...}" />
+                <marker date="1591229596555" expanded="true" signature="1419:1473" ph="{...}" />
+                <marker date="1591229596555" expanded="true" signature="1495:1552" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -277,51 +222,51 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/Player/ColocationBehaviour.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="42">
-              <caret line="276" column="52" selection-start-line="276" selection-start-column="52" selection-end-line="276" selection-end-column="52" />
+              <caret line="276" column="48" selection-start-line="276" selection-start-column="48" selection-end-line="276" selection-end-column="48" />
               <folding>
-                <marker date="1591229276227" expanded="false" signature="6:148" ph="..." />
-                <marker date="1591229276227" expanded="true" signature="198:8812" ph="{...}" />
-                <marker date="1591229276227" expanded="true" signature="202:1038" ph="Private Variables" />
-                <marker date="1591229276227" expanded="true" signature="864:927" ph="/// TODO Set this via a function ... " />
-                <marker date="1591229276227" expanded="true" signature="1041:1078" ph="Public Variables" />
-                <marker date="1591229276227" expanded="true" signature="1081:1152" ph="Properties" />
-                <marker date="1591229276227" expanded="true" signature="1155:1659" ph="MonoBehaviour" />
-                <marker date="1591229276227" expanded="true" signature="1199:1391" ph="{...}" />
-                <marker date="1591229276227" expanded="true" signature="1415:1646" ph="{...}" />
-                <marker date="1591229276227" expanded="true" signature="1421:1595" ph="/* This is only testing, the Tick() method will be called in another State Machine ... */" />
-                <marker date="1591229276227" expanded="true" signature="1662:3866" ph="Public Methods" />
-                <marker date="1591229276227" expanded="true" signature="1687:1846" ph="/// TODO GABI: Get the material of the last extracted piece ... " />
-                <marker date="1591229276227" expanded="true" signature="1866:3026" ph="{...}" />
-                <marker date="1591229276227" expanded="true" signature="2123:2208" ph="{...}" />
-                <marker date="1591229276227" expanded="true" signature="2319:2344" ph="{...}" />
-                <marker date="1591229276227" expanded="true" signature="2413:2687" ph="{...}" />
-                <marker date="1591229276227" expanded="true" signature="2480:2665" ph="/* _posX = ClampOver( ... */" />
-                <marker date="1591229276227" expanded="true" signature="2748:2965" ph="{...}" />
-                <marker date="1591229276227" expanded="true" signature="2756:2943" ph="/* _posX = _posX = ClampOver( ... */" />
-                <marker date="1591229276227" expanded="true" signature="3029:3144" ph="/// Call it when you are gonna stop using ColocationBehaviour or things will bug out ... " />
-                <marker date="1591229276227" expanded="true" signature="3171:3853" ph="{...}" />
-                <marker date="1591229276227" expanded="true" signature="3255:3284" ph="{...}" />
-                <marker date="1591229276227" expanded="true" signature="3869:8810" ph="Private Methods" />
-                <marker date="1591229276227" expanded="true" signature="3895:3952" ph="/// Logic of the new piece ... " />
-                <marker date="1591229276227" expanded="true" signature="3983:7581" ph="{...}" />
-                <marker date="1591229276227" expanded="true" signature="4015:4327" ph="{...}" />
-                <marker date="1591229276227" expanded="true" signature="4023:4279" ph="/* NOTE: (GABI) ... */" />
-                <marker date="1591229276227" expanded="true" signature="4352:4972" ph="{...}" />
-                <marker date="1591229276227" expanded="true" signature="5199:5536" ph="{...}" />
-                <marker date="1591229276227" expanded="true" signature="5562:5772" ph="{...}" />
-                <marker date="1591229276227" expanded="true" signature="6292:6576" ph="{...}" />
-                <marker date="1591229276227" expanded="true" signature="6936:6986" ph="{...}" />
-                <marker date="1591229276227" expanded="true" signature="6990:7197" ph="/* Check if there is overlapping in x or z axis with another piece in the same row ... */" />
-                <marker date="1591229276227" expanded="true" signature="7584:7745" ph="/// Applies ClampOver to x and z positions, adding localScale and having ... " />
-                <marker date="1591229276227" expanded="true" signature="7773:8199" ph="{...}" />
-                <marker date="1591229276227" expanded="true" signature="8203:8601" ph="/// Clamps the value. If &lt;param name=&quot;n&quot;&gt;&lt;/param&gt; is more than &lt;param name=&quot;max&quot;&gt;&lt;/param&gt; ... " />
-                <marker date="1591229276227" expanded="true" signature="8677:8798" ph="{...}" />
-                <marker date="1591229276227" expanded="true" signature="8704:8737" ph="{...}" />
-                <marker date="1591229276227" expanded="true" signature="8762:8782" ph="{...}" />
+                <marker date="1591230208771" expanded="false" signature="6:148" ph="..." />
+                <marker date="1591230208771" expanded="true" signature="198:8815" ph="{...}" />
+                <marker date="1591230208771" expanded="true" signature="202:1038" ph="Private Variables" />
+                <marker date="1591230208771" expanded="true" signature="864:927" ph="/// TODO Set this via a function ... " />
+                <marker date="1591230208771" expanded="true" signature="1041:1078" ph="Public Variables" />
+                <marker date="1591230208771" expanded="true" signature="1081:1152" ph="Properties" />
+                <marker date="1591230208771" expanded="true" signature="1155:1659" ph="MonoBehaviour" />
+                <marker date="1591230208771" expanded="true" signature="1199:1391" ph="{...}" />
+                <marker date="1591230208771" expanded="true" signature="1415:1646" ph="{...}" />
+                <marker date="1591230208771" expanded="true" signature="1421:1595" ph="/* This is only testing, the Tick() method will be called in another State Machine ... */" />
+                <marker date="1591230208771" expanded="true" signature="1662:3866" ph="Public Methods" />
+                <marker date="1591230208771" expanded="true" signature="1687:1846" ph="/// TODO GABI: Get the material of the last extracted piece ... " />
+                <marker date="1591230208771" expanded="true" signature="1866:3026" ph="{...}" />
+                <marker date="1591230208771" expanded="true" signature="2123:2208" ph="{...}" />
+                <marker date="1591230208771" expanded="true" signature="2319:2344" ph="{...}" />
+                <marker date="1591230208771" expanded="true" signature="2413:2687" ph="{...}" />
+                <marker date="1591230208771" expanded="true" signature="2480:2665" ph="/* _posX = ClampOver( ... */" />
+                <marker date="1591230208771" expanded="true" signature="2748:2965" ph="{...}" />
+                <marker date="1591230208771" expanded="true" signature="2756:2943" ph="/* _posX = _posX = ClampOver( ... */" />
+                <marker date="1591230208771" expanded="true" signature="3029:3144" ph="/// Call it when you are gonna stop using ColocationBehaviour or things will bug out ... " />
+                <marker date="1591230208771" expanded="true" signature="3171:3853" ph="{...}" />
+                <marker date="1591230208771" expanded="true" signature="3255:3284" ph="{...}" />
+                <marker date="1591230208771" expanded="true" signature="3869:8813" ph="Private Methods" />
+                <marker date="1591230208771" expanded="true" signature="3895:3952" ph="/// Logic of the new piece ... " />
+                <marker date="1591230208771" expanded="true" signature="3983:7581" ph="{...}" />
+                <marker date="1591230208771" expanded="true" signature="4015:4327" ph="{...}" />
+                <marker date="1591230208771" expanded="true" signature="4023:4279" ph="/* NOTE: (GABI) ... */" />
+                <marker date="1591230208771" expanded="true" signature="4352:4972" ph="{...}" />
+                <marker date="1591230208771" expanded="true" signature="5199:5536" ph="{...}" />
+                <marker date="1591230208771" expanded="true" signature="5562:5772" ph="{...}" />
+                <marker date="1591230208771" expanded="true" signature="6292:6576" ph="{...}" />
+                <marker date="1591230208771" expanded="true" signature="6936:6986" ph="{...}" />
+                <marker date="1591230208771" expanded="true" signature="6990:7197" ph="/* Check if there is overlapping in x or z axis with another piece in the same row ... */" />
+                <marker date="1591230208771" expanded="true" signature="7584:7745" ph="/// Applies ClampOver to x and z positions, adding localScale and having ... " />
+                <marker date="1591230208771" expanded="true" signature="7773:8202" ph="{...}" />
+                <marker date="1591230208771" expanded="true" signature="8206:8604" ph="/// Clamps the value. If &lt;param name=&quot;n&quot;&gt;&lt;/param&gt; is more than &lt;param name=&quot;max&quot;&gt;&lt;/param&gt; ... " />
+                <marker date="1591230208771" expanded="true" signature="8680:8801" ph="{...}" />
+                <marker date="1591230208771" expanded="true" signature="8707:8740" ph="{...}" />
+                <marker date="1591230208771" expanded="true" signature="8765:8785" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -330,49 +275,65 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/Tower.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="344">
-              <caret line="227" column="36" selection-start-line="227" selection-start-column="36" selection-end-line="227" selection-end-column="36" />
+            <state relative-caret-position="184">
+              <caret line="219" column="32" selection-start-line="219" selection-start-column="32" selection-end-line="219" selection-end-column="32" />
               <folding>
-                <marker date="1591229108898" expanded="false" signature="6:186" ph="..." />
-                <marker date="1591229108898" expanded="true" signature="189:312" ph="/// The idea of this script is to hold the pieces in order (from bottom to top, left to right) ... " />
-                <marker date="1591229108898" expanded="true" signature="347:6244" ph="{...}" />
-                <marker date="1591229108898" expanded="true" signature="353:540" ph="Private Variables" />
-                <marker date="1591229108898" expanded="true" signature="543:742" ph="Public Variables" />
-                <marker date="1591229108898" expanded="true" signature="571:627" ph="/// Variable will be true ... " />
-                <marker date="1591229108898" expanded="true" signature="745:856" ph="Properties" />
-                <marker date="1591229108898" expanded="true" signature="859:1357" ph="MonoBehaviour" />
-                <marker date="1591229108898" expanded="true" signature="903:945" ph="{...}" />
-                <marker date="1591229108898" expanded="true" signature="994:1344" ph="{...}" />
-                <marker date="1591229108898" expanded="true" signature="1000:1160" ph="/* if (added &gt; 5 || !canBuild) ... */" />
-                <marker date="1591229108898" expanded="true" signature="1164:1341" ph="/* if (Time.time % 5 &lt; 0.1f) ... */" />
-                <marker date="1591229108898" expanded="true" signature="1363:6192" ph="Public Methods" />
-                <marker date="1591229108898" expanded="true" signature="1425:1458" ph="{...}" />
-                <marker date="1591229108898" expanded="true" signature="1466:1656" ph="/// Removes piece from the tower (FROM THE LIST) ... " />
-                <marker date="1591229108898" expanded="true" signature="1704:1755" ph="{...}" />
-                <marker date="1591229108898" expanded="true" signature="1761:1926" ph="/// Puts on top and orders it. (THE PIECE MUST BE PHYSICALLY PUT ON THE TOP OF THE JENGA TOWER) ... " />
-                <marker date="1591229108898" expanded="true" signature="1965:2869" ph="{...}" />
-                <marker date="1591229108898" expanded="true" signature="2098:2274" ph="{...}" />
-                <marker date="1591229108898" expanded="true" signature="2215:2267" ph="{...}" />
-                <marker date="1591229108898" expanded="true" signature="2355:2584" ph="/* TODO Use this when we can, but i won't do it for the moment because implementing IComparer would require break ... */" />
-                <marker date="1591229108898" expanded="true" signature="2875:3157" ph="/// Gets a piece starting from the offset, and will move x times horizontal and x times vertical. ... " />
-                <marker date="1591229108898" expanded="true" signature="3237:3892" ph="{...}" />
-                <marker date="1591229108898" expanded="true" signature="3286:3330" ph="{...}" />
-                <marker date="1591229108898" expanded="true" signature="3400:3596" ph="{...}" />
-                <marker date="1591229108898" expanded="true" signature="3743:3782" ph="{...}" />
-                <marker date="1591229108898" expanded="true" signature="3940:3978" ph="{...}" />
-                <marker date="1591229108898" expanded="true" signature="4038:4091" ph="{...}" />
-                <marker date="1591229108898" expanded="true" signature="4155:4250" ph="{...}" />
-                <marker date="1591229108898" expanded="true" signature="4261:4591" ph="/// Get top pieces (will get ONLY the last row) So for example we have a jenga like ... " />
-                <marker date="1591229108898" expanded="true" signature="4634:5039" ph="{...}" />
-                <marker date="1591229108898" expanded="true" signature="4746:4932" ph="{...}" />
-                <marker date="1591229108898" expanded="true" signature="4873:4925" ph="{...}" />
-                <marker date="1591229108898" expanded="true" signature="5102:5194" ph="{...}" />
-                <marker date="1591229108898" expanded="true" signature="5228:5338" ph="{...}" />
-                <marker date="1591229108898" expanded="true" signature="5430:6175" ph="{...}" />
-                <marker date="1591229108898" expanded="true" signature="5613:6147" ph="{...}" />
-                <marker date="1591229108898" expanded="true" signature="5804:5954" ph="{...}" />
-                <marker date="1591229108898" expanded="true" signature="5989:6139" ph="{...}" />
-                <marker date="1591229108898" expanded="false" signature="6198:6237" ph="Private Methods" />
+                <marker date="1591230387990" expanded="false" signature="6:186" ph="..." />
+                <marker date="1591230387990" expanded="true" signature="189:312" ph="/// The idea of this script is to hold the pieces in order (from bottom to top, left to right) ... " />
+                <marker date="1591230387990" expanded="true" signature="347:6244" ph="{...}" />
+                <marker date="1591230387990" expanded="true" signature="353:540" ph="Private Variables" />
+                <marker date="1591230387990" expanded="true" signature="543:742" ph="Public Variables" />
+                <marker date="1591230387990" expanded="true" signature="571:627" ph="/// Variable will be true ... " />
+                <marker date="1591230387990" expanded="true" signature="745:856" ph="Properties" />
+                <marker date="1591230387990" expanded="true" signature="859:1357" ph="MonoBehaviour" />
+                <marker date="1591230387990" expanded="true" signature="903:945" ph="{...}" />
+                <marker date="1591230387990" expanded="true" signature="994:1344" ph="{...}" />
+                <marker date="1591230387990" expanded="true" signature="1000:1160" ph="/* if (added &gt; 5 || !canBuild) ... */" />
+                <marker date="1591230387990" expanded="true" signature="1164:1341" ph="/* if (Time.time % 5 &lt; 0.1f) ... */" />
+                <marker date="1591230387990" expanded="true" signature="1363:6192" ph="Public Methods" />
+                <marker date="1591230387990" expanded="true" signature="1425:1458" ph="{...}" />
+                <marker date="1591230387990" expanded="true" signature="1466:1656" ph="/// Removes piece from the tower (FROM THE LIST) ... " />
+                <marker date="1591230387990" expanded="true" signature="1704:1755" ph="{...}" />
+                <marker date="1591230387990" expanded="true" signature="1761:1926" ph="/// Puts on top and orders it. (THE PIECE MUST BE PHYSICALLY PUT ON THE TOP OF THE JENGA TOWER) ... " />
+                <marker date="1591230387990" expanded="true" signature="1965:2869" ph="{...}" />
+                <marker date="1591230387990" expanded="true" signature="2098:2274" ph="{...}" />
+                <marker date="1591230387990" expanded="true" signature="2215:2267" ph="{...}" />
+                <marker date="1591230387990" expanded="true" signature="2355:2584" ph="/* TODO Use this when we can, but i won't do it for the moment because implementing IComparer would require break ... */" />
+                <marker date="1591230387990" expanded="true" signature="2875:3157" ph="/// Gets a piece starting from the offset, and will move x times horizontal and x times vertical. ... " />
+                <marker date="1591230387990" expanded="true" signature="3237:3892" ph="{...}" />
+                <marker date="1591230387990" expanded="true" signature="3286:3330" ph="{...}" />
+                <marker date="1591230387990" expanded="true" signature="3400:3596" ph="{...}" />
+                <marker date="1591230387990" expanded="true" signature="3743:3782" ph="{...}" />
+                <marker date="1591230387990" expanded="true" signature="3940:3978" ph="{...}" />
+                <marker date="1591230387990" expanded="true" signature="4038:4091" ph="{...}" />
+                <marker date="1591230387990" expanded="true" signature="4155:4250" ph="{...}" />
+                <marker date="1591230387990" expanded="true" signature="4261:4591" ph="/// Get top pieces (will get ONLY the last row) So for example we have a jenga like ... " />
+                <marker date="1591230387990" expanded="true" signature="4634:5039" ph="{...}" />
+                <marker date="1591230387990" expanded="true" signature="4746:4932" ph="{...}" />
+                <marker date="1591230387990" expanded="true" signature="4873:4925" ph="{...}" />
+                <marker date="1591230387990" expanded="true" signature="5102:5194" ph="{...}" />
+                <marker date="1591230387990" expanded="true" signature="5228:5338" ph="{...}" />
+                <marker date="1591230387990" expanded="true" signature="5430:6175" ph="{...}" />
+                <marker date="1591230387990" expanded="true" signature="5613:6147" ph="{...}" />
+                <marker date="1591230387990" expanded="true" signature="5804:5954" ph="{...}" />
+                <marker date="1591230387990" expanded="true" signature="5989:6139" ph="{...}" />
+                <marker date="1591230387990" expanded="false" signature="6198:6237" ph="Private Methods" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assets/Shader/Waves.shader">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="103">
+              <caret line="19" column="64" selection-start-line="19" selection-start-column="64" selection-end-line="19" selection-end-column="64" />
+              <folding>
+                <marker date="1591230967528" expanded="true" signature="22:4786" ph="{...}" />
+                <marker date="1591230967528" expanded="true" signature="36:755" ph="{...}" />
+                <marker date="1591230967528" expanded="true" signature="332:520" ph="/* _Amplitude (&quot;Amplitude&quot;, Float) = 1 ... */" />
+                <marker date="1591230967528" expanded="true" signature="767:4764" ph="{...}" />
+                <marker date="1591230967528" expanded="true" signature="952:4756" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -427,6 +388,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Pieces/PieceOriginalMaterial.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Big Plane.asset" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/TowerGenerator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Camera/SelectionScript.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/ColocationBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
@@ -473,7 +435,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/SaveSystem/Hex.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SaveSystem/AESEncrypt.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Arrow/ArrowScript.cs" />
-        <option value="$PROJECT_DIR$/Assets/Shader/Waves.shader" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Pieces/PieceShoot.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Config/JengaPieceData.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Config/JengaData.cs" />
@@ -490,10 +451,11 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Pieces/PieceOriginalMaterial.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/SelectionBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Camera/SelectionScript.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Pieces/PieceCheckCollision.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/TowerGenerator.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Tower.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Pieces/PieceCheckCollision.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/ColocationBehaviour.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Tower.cs" />
+        <option value="$PROJECT_DIR$/Assets/Shader/Waves.shader" />
       </list>
     </option>
   </component>
@@ -532,19 +494,7 @@
             <path>
               <item name="" type="e068e287:UnityExplorerRootNode" />
               <item name="Assets" type="8711f2a6:AssetsRoot" />
-              <item name="Scripts" type="1045f7f1:UnityExplorerNode" />
-            </path>
-            <path>
-              <item name="" type="e068e287:UnityExplorerRootNode" />
-              <item name="Assets" type="8711f2a6:AssetsRoot" />
-              <item name="Scripts" type="1045f7f1:UnityExplorerNode" />
-              <item name="Camera" type="1045f7f1:UnityExplorerNode" />
-            </path>
-            <path>
-              <item name="" type="e068e287:UnityExplorerRootNode" />
-              <item name="Assets" type="8711f2a6:AssetsRoot" />
-              <item name="Scripts" type="1045f7f1:UnityExplorerNode" />
-              <item name="Player" type="1045f7f1:UnityExplorerNode" />
+              <item name="Shader" type="1045f7f1:UnityExplorerNode" />
             </path>
           </expand>
           <select />
@@ -638,12 +588,12 @@
       <workItem from="1591019985553" duration="9060000" />
       <workItem from="1591114270018" duration="13704000" />
       <workItem from="1591197831761" duration="16873000" />
-      <workItem from="1591223451721" duration="4785000" />
+      <workItem from="1591223451721" duration="5304000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53550000" />
+    <option name="totallyTimeSpent" value="54069000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -838,20 +788,6 @@
             <marker date="1591040032608" expanded="true" signature="300:321" ph="{...}" />
             <marker date="1591040032608" expanded="true" signature="379:826" ph="{...}" />
             <marker date="1591040032608" expanded="true" signature="583:820" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Shader/Waves.shader">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2120">
-          <caret line="106" column="6" selection-start-line="106" selection-start-column="8" selection-end-line="110" selection-end-column="8" />
-          <folding>
-            <marker date="1591118383857" expanded="true" signature="22:4748" ph="{...}" />
-            <marker date="1591118383857" expanded="true" signature="36:755" ph="{...}" />
-            <marker date="1591118383857" expanded="true" signature="332:520" ph="/* _Amplitude (&quot;Amplitude&quot;, Float) = 1 ... */" />
-            <marker date="1591118383857" expanded="true" signature="767:4726" ph="{...}" />
-            <marker date="1591118383857" expanded="true" signature="914:4718" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1206,49 +1142,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Player/PlayerInGame.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="799">
-          <caret line="224" column="65" selection-start-line="224" selection-start-column="65" selection-end-line="224" selection-end-column="65" />
-          <folding>
-            <marker date="1591224624022" expanded="true" signature="6:104" ph="..." />
-            <marker date="1591224624022" expanded="true" signature="242:7220" ph="{...}" />
-            <marker date="1591224624022" expanded="true" signature="263:390" ph="{...}" />
-            <marker date="1591224624022" expanded="true" signature="416:472" ph="{...}" />
-            <marker date="1591224624022" expanded="true" signature="474:1255" ph="Private Variables" />
-            <marker date="1591224624022" expanded="true" signature="505:624" ph="/// The current state of this component ... " />
-            <marker date="1591224624022" expanded="false" signature="1258:1295" ph="Public Variables" />
-            <marker date="1591224624022" expanded="false" signature="1298:1675" ph="Properties" />
-            <marker date="1591224624022" expanded="true" signature="1319:1431" ph="/// Always use this Property to change state of this component or it will bug out ... " />
-            <marker date="1591224624022" expanded="true" signature="1462:1663" ph="{...}" />
-            <marker date="1591224624022" expanded="true" signature="1471:1623" ph="{...}" />
-            <marker date="1591224624022" expanded="true" signature="1531:1581" ph="{...}" />
-            <marker date="1591224624022" expanded="true" signature="1678:5285" ph="MonoBehaviour" />
-            <marker date="1591224624022" expanded="true" signature="1725:2260" ph="{...}" />
-            <marker date="1591224624022" expanded="true" signature="2288:5269" ph="{...}" />
-            <marker date="1591224624022" expanded="true" signature="2506:2593" ph="/* Test ... */" />
-            <marker date="1591224624022" expanded="true" signature="2636:5254" ph="{...}" />
-            <marker date="1591224624022" expanded="true" signature="2784:2932" ph="{...}" />
-            <marker date="1591224624022" expanded="true" signature="3078:3192" ph="{...}" />
-            <marker date="1591224624022" expanded="true" signature="3436:3583" ph="{...}" />
-            <marker date="1591224624022" expanded="true" signature="3957:4050" ph="{...}" />
-            <marker date="1591224624022" expanded="true" signature="4656:4749" ph="{...}" />
-            <marker date="1591224624022" expanded="true" signature="5111:5183" ph="{...}" />
-            <marker date="1591224624022" expanded="true" signature="5291:6556" ph="Public Methods" />
-            <marker date="1591224624022" expanded="true" signature="5319:5766" ph="/// Change the state if the conditions are met. ... " />
-            <marker date="1591224624022" expanded="true" signature="5842:6526" ph="{...}" />
-            <marker date="1591224624022" expanded="true" signature="6070:6139" ph="{...}" />
-            <marker date="1591224624022" expanded="true" signature="6161:6220" ph="{...}" />
-            <marker date="1591224624022" expanded="true" signature="6270:6316" ph="{...}" />
-            <marker date="1591224624022" expanded="true" signature="6562:7218" ph="Private Methods" />
-            <marker date="1591224624022" expanded="true" signature="6625:7193" ph="{...}" />
-            <marker date="1591224624022" expanded="true" signature="6696:6743" ph="{...}" />
-            <marker date="1591224624022" expanded="true" signature="6771:6834" ph="{...}" />
-            <marker date="1591224624022" expanded="true" signature="6907:6985" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/Pieces/PieceOriginalMaterial.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="580">
@@ -1293,32 +1186,6 @@
             <marker date="1591226369746" expanded="true" signature="5019:5431" ph="{...}" />
             <marker date="1591226369746" expanded="true" signature="5514:5755" ph="{...}" />
             <marker date="1591226369746" expanded="true" signature="6117:6512" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Pieces/PieceCheckCollision.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="85" column="9" selection-start-line="85" selection-start-column="9" selection-end-line="85" selection-end-column="9" />
-          <folding>
-            <marker date="1591226433377" expanded="true" signature="6:32" ph="..." />
-            <marker date="1591226433377" expanded="true" signature="82:1670" ph="{...}" />
-            <marker date="1591226433377" expanded="true" signature="86:252" ph="Private Variables" />
-            <marker date="1591226433377" expanded="true" signature="255:322" ph="Public Variables" />
-            <marker date="1591226433377" expanded="true" signature="325:429" ph="Properties" />
-            <marker date="1591226433377" expanded="true" signature="432:1040" ph="MonoBehaviour" />
-            <marker date="1591226433377" expanded="true" signature="479:532" ph="{...}" />
-            <marker date="1591226433377" expanded="true" signature="556:1024" ph="{...}" />
-            <marker date="1591226433377" expanded="true" signature="860:927" ph="{...}" />
-            <marker date="1591226433377" expanded="true" signature="1046:1085" ph="Public Methods" />
-            <marker date="1591226433377" expanded="true" signature="1091:1668" ph="Private Methods" />
-            <marker date="1591226433377" expanded="true" signature="1157:1216" ph="{...}" />
-            <marker date="1591226433377" expanded="true" signature="1264:1360" ph="{...}" />
-            <marker date="1591226433377" expanded="true" signature="1317:1354" ph="{...}" />
-            <marker date="1591226433377" expanded="true" signature="1390:1652" ph="{...}" />
-            <marker date="1591226433377" expanded="true" signature="1415:1469" ph="{...}" />
-            <marker date="1591226433377" expanded="true" signature="1491:1548" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1378,51 +1245,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Tower.cs">
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Pieces/PieceCheckCollision.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="227" column="36" selection-start-line="227" selection-start-column="36" selection-end-line="227" selection-end-column="36" />
+        <state relative-caret-position="64">
+          <caret line="41" column="38" selection-start-line="41" selection-start-column="38" selection-end-line="41" selection-end-column="38" />
           <folding>
-            <marker date="1591229108898" expanded="false" signature="6:186" ph="..." />
-            <marker date="1591229108898" expanded="true" signature="189:312" ph="/// The idea of this script is to hold the pieces in order (from bottom to top, left to right) ... " />
-            <marker date="1591229108898" expanded="true" signature="347:6244" ph="{...}" />
-            <marker date="1591229108898" expanded="true" signature="353:540" ph="Private Variables" />
-            <marker date="1591229108898" expanded="true" signature="543:742" ph="Public Variables" />
-            <marker date="1591229108898" expanded="true" signature="571:627" ph="/// Variable will be true ... " />
-            <marker date="1591229108898" expanded="true" signature="745:856" ph="Properties" />
-            <marker date="1591229108898" expanded="true" signature="859:1357" ph="MonoBehaviour" />
-            <marker date="1591229108898" expanded="true" signature="903:945" ph="{...}" />
-            <marker date="1591229108898" expanded="true" signature="994:1344" ph="{...}" />
-            <marker date="1591229108898" expanded="true" signature="1000:1160" ph="/* if (added &gt; 5 || !canBuild) ... */" />
-            <marker date="1591229108898" expanded="true" signature="1164:1341" ph="/* if (Time.time % 5 &lt; 0.1f) ... */" />
-            <marker date="1591229108898" expanded="true" signature="1363:6192" ph="Public Methods" />
-            <marker date="1591229108898" expanded="true" signature="1425:1458" ph="{...}" />
-            <marker date="1591229108898" expanded="true" signature="1466:1656" ph="/// Removes piece from the tower (FROM THE LIST) ... " />
-            <marker date="1591229108898" expanded="true" signature="1704:1755" ph="{...}" />
-            <marker date="1591229108898" expanded="true" signature="1761:1926" ph="/// Puts on top and orders it. (THE PIECE MUST BE PHYSICALLY PUT ON THE TOP OF THE JENGA TOWER) ... " />
-            <marker date="1591229108898" expanded="true" signature="1965:2869" ph="{...}" />
-            <marker date="1591229108898" expanded="true" signature="2098:2274" ph="{...}" />
-            <marker date="1591229108898" expanded="true" signature="2215:2267" ph="{...}" />
-            <marker date="1591229108898" expanded="true" signature="2355:2584" ph="/* TODO Use this when we can, but i won't do it for the moment because implementing IComparer would require break ... */" />
-            <marker date="1591229108898" expanded="true" signature="2875:3157" ph="/// Gets a piece starting from the offset, and will move x times horizontal and x times vertical. ... " />
-            <marker date="1591229108898" expanded="true" signature="3237:3892" ph="{...}" />
-            <marker date="1591229108898" expanded="true" signature="3286:3330" ph="{...}" />
-            <marker date="1591229108898" expanded="true" signature="3400:3596" ph="{...}" />
-            <marker date="1591229108898" expanded="true" signature="3743:3782" ph="{...}" />
-            <marker date="1591229108898" expanded="true" signature="3940:3978" ph="{...}" />
-            <marker date="1591229108898" expanded="true" signature="4038:4091" ph="{...}" />
-            <marker date="1591229108898" expanded="true" signature="4155:4250" ph="{...}" />
-            <marker date="1591229108898" expanded="true" signature="4261:4591" ph="/// Get top pieces (will get ONLY the last row) So for example we have a jenga like ... " />
-            <marker date="1591229108898" expanded="true" signature="4634:5039" ph="{...}" />
-            <marker date="1591229108898" expanded="true" signature="4746:4932" ph="{...}" />
-            <marker date="1591229108898" expanded="true" signature="4873:4925" ph="{...}" />
-            <marker date="1591229108898" expanded="true" signature="5102:5194" ph="{...}" />
-            <marker date="1591229108898" expanded="true" signature="5228:5338" ph="{...}" />
-            <marker date="1591229108898" expanded="true" signature="5430:6175" ph="{...}" />
-            <marker date="1591229108898" expanded="true" signature="5613:6147" ph="{...}" />
-            <marker date="1591229108898" expanded="true" signature="5804:5954" ph="{...}" />
-            <marker date="1591229108898" expanded="true" signature="5989:6139" ph="{...}" />
-            <marker date="1591229108898" expanded="false" signature="6198:6237" ph="Private Methods" />
+            <marker date="1591229596555" expanded="true" signature="6:32" ph="..." />
+            <marker date="1591229596555" expanded="true" signature="82:1674" ph="{...}" />
+            <marker date="1591229596555" expanded="true" signature="86:252" ph="Private Variables" />
+            <marker date="1591229596555" expanded="true" signature="255:322" ph="Public Variables" />
+            <marker date="1591229596555" expanded="true" signature="325:429" ph="Properties" />
+            <marker date="1591229596555" expanded="true" signature="432:1044" ph="MonoBehaviour" />
+            <marker date="1591229596555" expanded="true" signature="479:532" ph="{...}" />
+            <marker date="1591229596555" expanded="true" signature="556:1028" ph="{...}" />
+            <marker date="1591229596555" expanded="true" signature="864:931" ph="{...}" />
+            <marker date="1591229596555" expanded="true" signature="1050:1089" ph="Public Methods" />
+            <marker date="1591229596555" expanded="true" signature="1095:1672" ph="Private Methods" />
+            <marker date="1591229596555" expanded="true" signature="1161:1220" ph="{...}" />
+            <marker date="1591229596555" expanded="true" signature="1268:1364" ph="{...}" />
+            <marker date="1591229596555" expanded="true" signature="1321:1358" ph="{...}" />
+            <marker date="1591229596555" expanded="true" signature="1394:1656" ph="{...}" />
+            <marker date="1591229596555" expanded="true" signature="1419:1473" ph="{...}" />
+            <marker date="1591229596555" expanded="true" signature="1495:1552" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1458,47 +1302,156 @@
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/Player/ColocationBehaviour.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="42">
-          <caret line="276" column="52" selection-start-line="276" selection-start-column="52" selection-end-line="276" selection-end-column="52" />
+          <caret line="276" column="48" selection-start-line="276" selection-start-column="48" selection-end-line="276" selection-end-column="48" />
           <folding>
-            <marker date="1591229276227" expanded="false" signature="6:148" ph="..." />
-            <marker date="1591229276227" expanded="true" signature="198:8812" ph="{...}" />
-            <marker date="1591229276227" expanded="true" signature="202:1038" ph="Private Variables" />
-            <marker date="1591229276227" expanded="true" signature="864:927" ph="/// TODO Set this via a function ... " />
-            <marker date="1591229276227" expanded="true" signature="1041:1078" ph="Public Variables" />
-            <marker date="1591229276227" expanded="true" signature="1081:1152" ph="Properties" />
-            <marker date="1591229276227" expanded="true" signature="1155:1659" ph="MonoBehaviour" />
-            <marker date="1591229276227" expanded="true" signature="1199:1391" ph="{...}" />
-            <marker date="1591229276227" expanded="true" signature="1415:1646" ph="{...}" />
-            <marker date="1591229276227" expanded="true" signature="1421:1595" ph="/* This is only testing, the Tick() method will be called in another State Machine ... */" />
-            <marker date="1591229276227" expanded="true" signature="1662:3866" ph="Public Methods" />
-            <marker date="1591229276227" expanded="true" signature="1687:1846" ph="/// TODO GABI: Get the material of the last extracted piece ... " />
-            <marker date="1591229276227" expanded="true" signature="1866:3026" ph="{...}" />
-            <marker date="1591229276227" expanded="true" signature="2123:2208" ph="{...}" />
-            <marker date="1591229276227" expanded="true" signature="2319:2344" ph="{...}" />
-            <marker date="1591229276227" expanded="true" signature="2413:2687" ph="{...}" />
-            <marker date="1591229276227" expanded="true" signature="2480:2665" ph="/* _posX = ClampOver( ... */" />
-            <marker date="1591229276227" expanded="true" signature="2748:2965" ph="{...}" />
-            <marker date="1591229276227" expanded="true" signature="2756:2943" ph="/* _posX = _posX = ClampOver( ... */" />
-            <marker date="1591229276227" expanded="true" signature="3029:3144" ph="/// Call it when you are gonna stop using ColocationBehaviour or things will bug out ... " />
-            <marker date="1591229276227" expanded="true" signature="3171:3853" ph="{...}" />
-            <marker date="1591229276227" expanded="true" signature="3255:3284" ph="{...}" />
-            <marker date="1591229276227" expanded="true" signature="3869:8810" ph="Private Methods" />
-            <marker date="1591229276227" expanded="true" signature="3895:3952" ph="/// Logic of the new piece ... " />
-            <marker date="1591229276227" expanded="true" signature="3983:7581" ph="{...}" />
-            <marker date="1591229276227" expanded="true" signature="4015:4327" ph="{...}" />
-            <marker date="1591229276227" expanded="true" signature="4023:4279" ph="/* NOTE: (GABI) ... */" />
-            <marker date="1591229276227" expanded="true" signature="4352:4972" ph="{...}" />
-            <marker date="1591229276227" expanded="true" signature="5199:5536" ph="{...}" />
-            <marker date="1591229276227" expanded="true" signature="5562:5772" ph="{...}" />
-            <marker date="1591229276227" expanded="true" signature="6292:6576" ph="{...}" />
-            <marker date="1591229276227" expanded="true" signature="6936:6986" ph="{...}" />
-            <marker date="1591229276227" expanded="true" signature="6990:7197" ph="/* Check if there is overlapping in x or z axis with another piece in the same row ... */" />
-            <marker date="1591229276227" expanded="true" signature="7584:7745" ph="/// Applies ClampOver to x and z positions, adding localScale and having ... " />
-            <marker date="1591229276227" expanded="true" signature="7773:8199" ph="{...}" />
-            <marker date="1591229276227" expanded="true" signature="8203:8601" ph="/// Clamps the value. If &lt;param name=&quot;n&quot;&gt;&lt;/param&gt; is more than &lt;param name=&quot;max&quot;&gt;&lt;/param&gt; ... " />
-            <marker date="1591229276227" expanded="true" signature="8677:8798" ph="{...}" />
-            <marker date="1591229276227" expanded="true" signature="8704:8737" ph="{...}" />
-            <marker date="1591229276227" expanded="true" signature="8762:8782" ph="{...}" />
+            <marker date="1591230208771" expanded="false" signature="6:148" ph="..." />
+            <marker date="1591230208771" expanded="true" signature="198:8815" ph="{...}" />
+            <marker date="1591230208771" expanded="true" signature="202:1038" ph="Private Variables" />
+            <marker date="1591230208771" expanded="true" signature="864:927" ph="/// TODO Set this via a function ... " />
+            <marker date="1591230208771" expanded="true" signature="1041:1078" ph="Public Variables" />
+            <marker date="1591230208771" expanded="true" signature="1081:1152" ph="Properties" />
+            <marker date="1591230208771" expanded="true" signature="1155:1659" ph="MonoBehaviour" />
+            <marker date="1591230208771" expanded="true" signature="1199:1391" ph="{...}" />
+            <marker date="1591230208771" expanded="true" signature="1415:1646" ph="{...}" />
+            <marker date="1591230208771" expanded="true" signature="1421:1595" ph="/* This is only testing, the Tick() method will be called in another State Machine ... */" />
+            <marker date="1591230208771" expanded="true" signature="1662:3866" ph="Public Methods" />
+            <marker date="1591230208771" expanded="true" signature="1687:1846" ph="/// TODO GABI: Get the material of the last extracted piece ... " />
+            <marker date="1591230208771" expanded="true" signature="1866:3026" ph="{...}" />
+            <marker date="1591230208771" expanded="true" signature="2123:2208" ph="{...}" />
+            <marker date="1591230208771" expanded="true" signature="2319:2344" ph="{...}" />
+            <marker date="1591230208771" expanded="true" signature="2413:2687" ph="{...}" />
+            <marker date="1591230208771" expanded="true" signature="2480:2665" ph="/* _posX = ClampOver( ... */" />
+            <marker date="1591230208771" expanded="true" signature="2748:2965" ph="{...}" />
+            <marker date="1591230208771" expanded="true" signature="2756:2943" ph="/* _posX = _posX = ClampOver( ... */" />
+            <marker date="1591230208771" expanded="true" signature="3029:3144" ph="/// Call it when you are gonna stop using ColocationBehaviour or things will bug out ... " />
+            <marker date="1591230208771" expanded="true" signature="3171:3853" ph="{...}" />
+            <marker date="1591230208771" expanded="true" signature="3255:3284" ph="{...}" />
+            <marker date="1591230208771" expanded="true" signature="3869:8813" ph="Private Methods" />
+            <marker date="1591230208771" expanded="true" signature="3895:3952" ph="/// Logic of the new piece ... " />
+            <marker date="1591230208771" expanded="true" signature="3983:7581" ph="{...}" />
+            <marker date="1591230208771" expanded="true" signature="4015:4327" ph="{...}" />
+            <marker date="1591230208771" expanded="true" signature="4023:4279" ph="/* NOTE: (GABI) ... */" />
+            <marker date="1591230208771" expanded="true" signature="4352:4972" ph="{...}" />
+            <marker date="1591230208771" expanded="true" signature="5199:5536" ph="{...}" />
+            <marker date="1591230208771" expanded="true" signature="5562:5772" ph="{...}" />
+            <marker date="1591230208771" expanded="true" signature="6292:6576" ph="{...}" />
+            <marker date="1591230208771" expanded="true" signature="6936:6986" ph="{...}" />
+            <marker date="1591230208771" expanded="true" signature="6990:7197" ph="/* Check if there is overlapping in x or z axis with another piece in the same row ... */" />
+            <marker date="1591230208771" expanded="true" signature="7584:7745" ph="/// Applies ClampOver to x and z positions, adding localScale and having ... " />
+            <marker date="1591230208771" expanded="true" signature="7773:8202" ph="{...}" />
+            <marker date="1591230208771" expanded="true" signature="8206:8604" ph="/// Clamps the value. If &lt;param name=&quot;n&quot;&gt;&lt;/param&gt; is more than &lt;param name=&quot;max&quot;&gt;&lt;/param&gt; ... " />
+            <marker date="1591230208771" expanded="true" signature="8680:8801" ph="{...}" />
+            <marker date="1591230208771" expanded="true" signature="8707:8740" ph="{...}" />
+            <marker date="1591230208771" expanded="true" signature="8765:8785" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Player/PlayerInGame.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="799">
+          <caret line="224" column="65" selection-start-line="224" selection-start-column="65" selection-end-line="224" selection-end-column="65" />
+          <folding>
+            <marker date="1591224624022" expanded="true" signature="6:104" ph="..." />
+            <marker date="1591224624022" expanded="true" signature="242:7220" ph="{...}" />
+            <marker date="1591224624022" expanded="true" signature="263:390" ph="{...}" />
+            <marker date="1591224624022" expanded="true" signature="416:472" ph="{...}" />
+            <marker date="1591224624022" expanded="true" signature="474:1255" ph="Private Variables" />
+            <marker date="1591224624022" expanded="true" signature="505:624" ph="/// The current state of this component ... " />
+            <marker date="1591224624022" expanded="false" signature="1258:1295" ph="Public Variables" />
+            <marker date="1591224624022" expanded="false" signature="1298:1675" ph="Properties" />
+            <marker date="1591224624022" expanded="true" signature="1319:1431" ph="/// Always use this Property to change state of this component or it will bug out ... " />
+            <marker date="1591224624022" expanded="true" signature="1462:1663" ph="{...}" />
+            <marker date="1591224624022" expanded="true" signature="1471:1623" ph="{...}" />
+            <marker date="1591224624022" expanded="true" signature="1531:1581" ph="{...}" />
+            <marker date="1591224624022" expanded="true" signature="1678:5285" ph="MonoBehaviour" />
+            <marker date="1591224624022" expanded="true" signature="1725:2260" ph="{...}" />
+            <marker date="1591224624022" expanded="true" signature="2288:5269" ph="{...}" />
+            <marker date="1591224624022" expanded="true" signature="2506:2593" ph="/* Test ... */" />
+            <marker date="1591224624022" expanded="true" signature="2636:5254" ph="{...}" />
+            <marker date="1591224624022" expanded="true" signature="2784:2932" ph="{...}" />
+            <marker date="1591224624022" expanded="true" signature="3078:3192" ph="{...}" />
+            <marker date="1591224624022" expanded="true" signature="3436:3583" ph="{...}" />
+            <marker date="1591224624022" expanded="true" signature="3957:4050" ph="{...}" />
+            <marker date="1591224624022" expanded="true" signature="4656:4749" ph="{...}" />
+            <marker date="1591224624022" expanded="true" signature="5111:5183" ph="{...}" />
+            <marker date="1591224624022" expanded="true" signature="5291:6556" ph="Public Methods" />
+            <marker date="1591224624022" expanded="true" signature="5319:5766" ph="/// Change the state if the conditions are met. ... " />
+            <marker date="1591224624022" expanded="true" signature="5842:6526" ph="{...}" />
+            <marker date="1591224624022" expanded="true" signature="6070:6139" ph="{...}" />
+            <marker date="1591224624022" expanded="true" signature="6161:6220" ph="{...}" />
+            <marker date="1591224624022" expanded="true" signature="6270:6316" ph="{...}" />
+            <marker date="1591224624022" expanded="true" signature="6562:7218" ph="Private Methods" />
+            <marker date="1591224624022" expanded="true" signature="6625:7193" ph="{...}" />
+            <marker date="1591224624022" expanded="true" signature="6696:6743" ph="{...}" />
+            <marker date="1591224624022" expanded="true" signature="6771:6834" ph="{...}" />
+            <marker date="1591224624022" expanded="true" signature="6907:6985" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Big Plane.asset">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Tower.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="219" column="32" selection-start-line="219" selection-start-column="32" selection-end-line="219" selection-end-column="32" />
+          <folding>
+            <marker date="1591230387990" expanded="false" signature="6:186" ph="..." />
+            <marker date="1591230387990" expanded="true" signature="189:312" ph="/// The idea of this script is to hold the pieces in order (from bottom to top, left to right) ... " />
+            <marker date="1591230387990" expanded="true" signature="347:6244" ph="{...}" />
+            <marker date="1591230387990" expanded="true" signature="353:540" ph="Private Variables" />
+            <marker date="1591230387990" expanded="true" signature="543:742" ph="Public Variables" />
+            <marker date="1591230387990" expanded="true" signature="571:627" ph="/// Variable will be true ... " />
+            <marker date="1591230387990" expanded="true" signature="745:856" ph="Properties" />
+            <marker date="1591230387990" expanded="true" signature="859:1357" ph="MonoBehaviour" />
+            <marker date="1591230387990" expanded="true" signature="903:945" ph="{...}" />
+            <marker date="1591230387990" expanded="true" signature="994:1344" ph="{...}" />
+            <marker date="1591230387990" expanded="true" signature="1000:1160" ph="/* if (added &gt; 5 || !canBuild) ... */" />
+            <marker date="1591230387990" expanded="true" signature="1164:1341" ph="/* if (Time.time % 5 &lt; 0.1f) ... */" />
+            <marker date="1591230387990" expanded="true" signature="1363:6192" ph="Public Methods" />
+            <marker date="1591230387990" expanded="true" signature="1425:1458" ph="{...}" />
+            <marker date="1591230387990" expanded="true" signature="1466:1656" ph="/// Removes piece from the tower (FROM THE LIST) ... " />
+            <marker date="1591230387990" expanded="true" signature="1704:1755" ph="{...}" />
+            <marker date="1591230387990" expanded="true" signature="1761:1926" ph="/// Puts on top and orders it. (THE PIECE MUST BE PHYSICALLY PUT ON THE TOP OF THE JENGA TOWER) ... " />
+            <marker date="1591230387990" expanded="true" signature="1965:2869" ph="{...}" />
+            <marker date="1591230387990" expanded="true" signature="2098:2274" ph="{...}" />
+            <marker date="1591230387990" expanded="true" signature="2215:2267" ph="{...}" />
+            <marker date="1591230387990" expanded="true" signature="2355:2584" ph="/* TODO Use this when we can, but i won't do it for the moment because implementing IComparer would require break ... */" />
+            <marker date="1591230387990" expanded="true" signature="2875:3157" ph="/// Gets a piece starting from the offset, and will move x times horizontal and x times vertical. ... " />
+            <marker date="1591230387990" expanded="true" signature="3237:3892" ph="{...}" />
+            <marker date="1591230387990" expanded="true" signature="3286:3330" ph="{...}" />
+            <marker date="1591230387990" expanded="true" signature="3400:3596" ph="{...}" />
+            <marker date="1591230387990" expanded="true" signature="3743:3782" ph="{...}" />
+            <marker date="1591230387990" expanded="true" signature="3940:3978" ph="{...}" />
+            <marker date="1591230387990" expanded="true" signature="4038:4091" ph="{...}" />
+            <marker date="1591230387990" expanded="true" signature="4155:4250" ph="{...}" />
+            <marker date="1591230387990" expanded="true" signature="4261:4591" ph="/// Get top pieces (will get ONLY the last row) So for example we have a jenga like ... " />
+            <marker date="1591230387990" expanded="true" signature="4634:5039" ph="{...}" />
+            <marker date="1591230387990" expanded="true" signature="4746:4932" ph="{...}" />
+            <marker date="1591230387990" expanded="true" signature="4873:4925" ph="{...}" />
+            <marker date="1591230387990" expanded="true" signature="5102:5194" ph="{...}" />
+            <marker date="1591230387990" expanded="true" signature="5228:5338" ph="{...}" />
+            <marker date="1591230387990" expanded="true" signature="5430:6175" ph="{...}" />
+            <marker date="1591230387990" expanded="true" signature="5613:6147" ph="{...}" />
+            <marker date="1591230387990" expanded="true" signature="5804:5954" ph="{...}" />
+            <marker date="1591230387990" expanded="true" signature="5989:6139" ph="{...}" />
+            <marker date="1591230387990" expanded="false" signature="6198:6237" ph="Private Methods" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Shader/Waves.shader">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="103">
+          <caret line="19" column="64" selection-start-line="19" selection-start-column="64" selection-end-line="19" selection-end-column="64" />
+          <folding>
+            <marker date="1591230967528" expanded="true" signature="22:4786" ph="{...}" />
+            <marker date="1591230967528" expanded="true" signature="36:755" ph="{...}" />
+            <marker date="1591230967528" expanded="true" signature="332:520" ph="/* _Amplitude (&quot;Amplitude&quot;, Float) = 1 ... */" />
+            <marker date="1591230967528" expanded="true" signature="767:4764" ph="{...}" />
+            <marker date="1591230967528" expanded="true" signature="952:4756" ph="{...}" />
           </folding>
         </state>
       </provider>

@@ -274,7 +274,7 @@ public class ColocationBehaviour : MonoBehaviour
 	/// <returns></returns>
 	private bool ClampOverXZ()
 	{
-		float r = UnityEngine.Random.Range(0f, 0.075f);
+		float r = UnityEngine.Random.Range(-0.01f, 0.05f);
 		Vector3 localScale = _imaginaryJenga.transform.localScale;
 		_pos.x = ClampOver(_pos.x + _tower.PieceWidth + r,
 			_tower.TowerCenter.x - _tower.PieceWidth - r,
