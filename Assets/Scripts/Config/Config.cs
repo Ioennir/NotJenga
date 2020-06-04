@@ -107,7 +107,7 @@ public class Config : MonoBehaviour
 	    _instance._loadingData = true;
 	    if (_data == null)
 	    {
-		    _data = new JengaData { id = _instance.GetInstanceID() };
+		    _data = new JengaData { id = UnityEngine.Random.Range(-100000, 100000) };
 	    }
 	    _data.jengas = new JengaPieceData[pieces.Length];
 	    _data.date = DateTime.Now.Ticks;

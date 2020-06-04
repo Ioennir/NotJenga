@@ -20,10 +20,11 @@ public class GameActivator : MonoBehaviour
 
     private SaveSystem.Informer<SavedGamesData> _informerGames;
     private SavedGamesData _currentData = null;
+    private PlayerInGame _player;
     
     private void Start()
     {
-        
+        _player = FindObjectOfType<PlayerInGame>();
     }
 
     private void Update()
@@ -61,6 +62,11 @@ public class GameActivator : MonoBehaviour
 
     public void SelectGame()
     {
+        if (dropdownGames.value == 0 || 
+            _player.StateCurrentTurn == PlayerInGame.State.WaitingForGameToStart ||
+            !Tower.GetComponent<Tower>().towerAlreadyBuilt
+        ) return;
+        
         Tower.GetComponent<TowerGenerator>().ResetWithLoad(_currentData.games[dropdownGames.value-1]);
     }
     
