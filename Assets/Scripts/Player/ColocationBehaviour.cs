@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Serialization;
+using Random = System.Random;
 
 public class ColocationBehaviour : MonoBehaviour
 {
@@ -29,6 +30,8 @@ public class ColocationBehaviour : MonoBehaviour
 	private int _currentJenga = 0;
 
 	private TurnController _turnController;
+
+	private int _currentJengaMaterial = 0;
 	
 
 	private Vector3 _pos = new Vector3();
@@ -147,7 +150,8 @@ public class ColocationBehaviour : MonoBehaviour
 		Rigidbody rb = _imaginaryJenga.GetComponent<Rigidbody>();
 		rb.isKinematic = false;
 		MeshRenderer rend = _imaginaryJenga.GetComponent<MeshRenderer>();
-		rend.material = originalMaterial;
+		rend.material = _tower.pieceMaterials[_currentJengaMaterial++];
+		_currentJengaMaterial %= 2;
 		_towerData.PutOnTop(_imaginaryJenga);
 		_imaginaryJenga.name = $"Piece put by player {_turnController.CurrentPlayer}";
 		_imaginaryJenga = null;
@@ -221,19 +225,39 @@ public class ColocationBehaviour : MonoBehaviour
 		float rot = Math.Abs(_imaginaryJenga.transform.rotation.eulerAngles.y);
 		// If we need to move in Z axis or X axis.
 		bool conditionForUsingMovementInZAxis = rot > 80f && rot < 170 || rot > 260 && rot < 290;
+
+		Tower.MinimumPiece currentPiece = new Tower.MinimumPiece();
+		currentPiece.diff = float.MinValue;
+		Tower.MinimumPiece currentMinimumPiece = new Tower.MinimumPiece();
+		currentMinimumPiece.diff = float.MinValue;
+		int iterationSecurity = 0;
+		
 		do
 		{
+			
+			if (iterationSecurity > 16)
+			{
+				Debug.Log("No suficiente...");
+				imaginaryJengaPosition.z = conditionForUsingMovementInZAxis ? currentPiece.position.z : _tower.TowerCenter.z;
+				imaginaryJengaPosition.x = conditionForUsingMovementInZAxis ? _tower.TowerCenter.x : currentPiece.position.x;
+				break;
+			}
 			imaginaryJengaPosition.z = conditionForUsingMovementInZAxis ? _pos.z : _tower.TowerCenter.z;
-			imaginaryJengaPosition.x =conditionForUsingMovementInZAxis ? _tower.TowerCenter.x : _pos.x;
+			imaginaryJengaPosition.x = conditionForUsingMovementInZAxis ? _tower.TowerCenter.x : _pos.x;
 			// Update position
 			_imaginaryJenga.transform.localPosition = imaginaryJengaPosition;
+			iterationSecurity++;
+			if (currentMinimumPiece.diff < currentPiece.diff)
+			{
+				currentMinimumPiece = currentPiece;
+			}
 			// Check if there is overlapping in x or z axis with another piece in the same row
 			// (only for rows that have less than 3 pieces, because if
 			// there are 3 pieces you are putting the new piece on top)
-		} while (Tower.SamePlace(
+		} while (!(currentPiece = Tower.SamePlace(
 			         _imaginaryJenga, 
 			         _topPieces, 
-			         !conditionForUsingMovementInZAxis) && 
+			         !conditionForUsingMovementInZAxis)).sufficientDifference && 
 					 _topPieces.Count != 3 &&
 		         // update pos in another iteration if the conditions are met.
 		             ClampOverXZ()
@@ -250,13 +274,14 @@ public class ColocationBehaviour : MonoBehaviour
 	/// <returns></returns>
 	private bool ClampOverXZ()
 	{
+		float r = UnityEngine.Random.Range(-0.01f, 0.05f);
 		Vector3 localScale = _imaginaryJenga.transform.localScale;
-		_pos.x = ClampOver(_pos.x + localScale.x,
-			_tower.TowerCenter.x - localScale.x,
-			_tower.TowerCenter.x + localScale.x);
-		_pos.z = ClampOver(_pos.z + localScale.z,
-			_tower.TowerCenter.z - localScale.z,
-			_tower.TowerCenter.z + localScale.z);
+		_pos.x = ClampOver(_pos.x + _tower.PieceWidth + r,
+			_tower.TowerCenter.x - _tower.PieceWidth - r,
+			_tower.TowerCenter.x + _tower.PieceWidth + r);
+		_pos.z = ClampOver(_pos.z + _tower.PieceWidth + r,
+			_tower.TowerCenter.z - localScale.z - r,
+			_tower.TowerCenter.z + localScale.z + r);
 		return true;
 	}
 	

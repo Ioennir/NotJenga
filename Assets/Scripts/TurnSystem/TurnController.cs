@@ -98,6 +98,7 @@ public class TurnController : MonoBehaviour
     {
         CurrentPlayer++;
         CurrentPlayer %= _playerCounter;
+        CurrentTurnTimer = 0.0f;
         CurrentTurn++;
         Debug.Log("[TURN CONTROLLER]: Changing to turn number: " + CurrentTurn);
         UI.UpdateUI(CurrentPlayer, CurrentTurn);

@@ -93,6 +93,14 @@ public class SelectionScript : MonoBehaviour
         }
         if (chosenFromStateMachine)
         {
+            if (selection)
+            {
+                Renderer selectionRendererSelection = selection.GetComponent<Renderer>();
+                PieceOriginalMaterial pom = PieceOriginalMaterial.Get(selection.gameObject);
+                selectionRendererSelection.material = pom.originalMaterial;    
+            }
+            Renderer chosenRenderer = chosenFromStateMachine.GetComponent<Renderer>();
+            chosenRenderer.material = mat;
             HandleSelectionFromStateMachine(chosenFromStateMachine);
             return selection.gameObject;
         }
@@ -106,7 +114,8 @@ public class SelectionScript : MonoBehaviour
         if (selection)
         {
             Renderer selectionRendererSelection = selection.GetComponent<Renderer>();
-            selectionRendererSelection.material = previousMaterial;
+            PieceOriginalMaterial pom = PieceOriginalMaterial.Get(selection.gameObject);
+            selectionRendererSelection.material = pom.originalMaterial;
         }
 
         selection = null;
@@ -156,20 +165,11 @@ public class SelectionScript : MonoBehaviour
     private void HandleSelectionFromStateMachine(GameObject chosenFromStateMachine)
     {
         selection = chosenFromStateMachine.transform;
-        Renderer selectionRenderer = selection.GetComponent<Renderer>();
         PieceShoot scriptShoot = selection.GetComponent<PieceShoot>();
         GameObject arrowInst = Instantiate(arrow);
         scriptShoot.shootMode = true;
         arrowInst.transform.position = chosenFromStateMachine.transform.position;
         arrowInst.GetComponent<ArrowScript>().cube = chosenFromStateMachine.transform;
-        if (!previousMaterial)
-        {
-            previousMaterial = selectionRenderer.material;
-        }
-        if (!selectionRenderer)
-        {
-            selectionRenderer.material = mat;
-        }
     }
 }
     

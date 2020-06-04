@@ -17,7 +17,7 @@
 		_RefractionStrength ("Refraction Strength", Range(0, 1)) = 0.25
 	}
 	SubShader {
-        Tags { "RenderType"="Transparent" "Queue"="Transparent" }
+        Tags { "RenderType"="Transparent" "Queue"="Transparent" "RenderPipeline" = "HDRenderPipeline" }
 		LOD 200
         
         GrabPass { "_WaterBackground" }

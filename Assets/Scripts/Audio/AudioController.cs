@@ -118,7 +118,6 @@ public class AudioController : MonoBehaviour
 	    bool success = _soundsDict.TryGetValue(name, out Sound value);
 	    if (!success) return null;
 	    if (value.Source.isPlaying || value.Playing) return value;
-	    Debug.Log("PLAYING");
 	    action(value);
 	    value.UpdateSource();
 	    value.Play();

@@ -50,6 +50,7 @@
             <e p="PieceDragAndDropScript.cs" t="Include" />
             <e p="PieceFriction.cs" t="Include" />
             <e p="PieceNormalMove.cs" t="Include" />
+            <e p="PieceOriginalMaterial.cs" t="Include" />
             <e p="PieceShoot.cs" t="Include" />
             <e p="SoundCollisionScript.cs" t="Include" />
           </e>

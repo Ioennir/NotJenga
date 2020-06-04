@@ -15,6 +15,7 @@ public class PlayerInGame : MonoBehaviour
 		PullingPiece,
 		PlacingPiece,
 		WaitingForNextTurn,
+		WaitingForEnd,
 		End,
 	}
 
@@ -168,7 +169,24 @@ public class PlayerInGame : MonoBehaviour
 
 	        case State.PlacingPiece:
 	        {
-		        ChangeStateIf(_colocationBehaviour.Tick(), State.SelectingPiece, true);
+		        ChangeStateIf(_colocationBehaviour.Tick(), State.WaitingForEnd, false);
+		        
+		        break;
+	        }
+
+	        case State.WaitingForEnd:
+	        {
+		        if (_tower.PiecesOnTheFloor().Count > 0 || _tower.badPlaced.Count > 0 && !_tower.badPlaced.Contains(_currentJenga))
+		        {
+			        ChangeStateIf(true, State.End, false);
+			        return;
+		        }
+		        _deltaUntilNextTurn += Time.deltaTime;
+		        ChangeStateIf(
+			        _deltaUntilNextTurn >= waitingUntilColocation && 
+			        (_deltaUntilNextTurn = 0.01f) > -1f, 
+			        State.SelectingPiece, 
+			        true);
 		        break;
 	        }
 
@@ -203,8 +221,16 @@ public class PlayerInGame : MonoBehaviour
     {
 	    if (state == StateCurrentTurn) return false;
 	    if (!condition) return false;
+	    Debug.Log("next STATE. FROM " + StateCurrentTurn + " TO " + state);
+	    if (changeTurn && StateCurrentTurn != State.WaitingForEnd)
+	    {
+		    StateCurrentTurn = State.End;
+		    return true;
+	    }
+
 	    if (changeTurn)
 	    {
+		    
 		    _turnController.MoveNextTurn();
 	    }
 
@@ -213,14 +239,9 @@ public class PlayerInGame : MonoBehaviour
 		    _pullBehaviour.Dispose();
 	    }
 
-	    if (changeTurn && StateCurrentTurn != State.PlacingPiece)
-	    {
-		    Debug.Log("lost");
-	    }
-	    
+	  
 	    if (StateCurrentTurn == State.SelectingPiece)
 		    _selectionWithMouse.DisposeTurn();
-	    
 	    currentState.player = _turnController.CurrentPlayer;
 	    StateCurrentTurn = state;
 	    return true;

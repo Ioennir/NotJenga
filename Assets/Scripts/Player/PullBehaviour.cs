@@ -65,13 +65,13 @@ public class PullBehaviour : MonoBehaviour
 	    if (_tower.badPlaced.Count > 0 && !_tower.badPlaced.Contains(_currentPiece))
 	    {
 		    Debug.Log("LOSE");
-		    return false;
+		    return true;
 	    }
 	    
 		if (floorPieces.Count > 1 || floorPieces.Count == 1 && floorPieces.IndexOf(_currentPiece) <= -1)
 		{	
 			Debug.Log("LOSE");
-			return false;
+			return true;
 		}
 
 		if (floorPieces.Count == 1)

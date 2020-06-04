@@ -20,6 +20,7 @@ GameObject:
   - component: {fileID: -3218892517871874918}
   - component: {fileID: 1987725469287384700}
 <<<<<<< HEAD
+<<<<<<< HEAD
   - component: {fileID: -757888978080009723}
   - component: {fileID: 2740656345699566357}
   - component: {fileID: -2922734844645398261}
@@ -35,6 +36,9 @@ GameObject:
   - component: {fileID: -1956344706599710996}
 =======
 >>>>>>> edfee153ddea4586b206d637b44b0638dd370335
+=======
+  - component: {fileID: -8344381829821078682}
+>>>>>>> 4a016b0a3c16dc491c3953fabb86ff98c3ee4ed4
   m_Layer: 0
   m_Name: JengaPiece
   m_TagString: Selectable
@@ -161,6 +165,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a89973f3219b5492b8d0f18255216596, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  prevMaterial: {fileID: 0}
 --- !u!114 &8325297288019146644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -221,14 +226,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!82 &-757888978080009723
 AudioSource:
+=======
+--- !u!114 &-8344381829821078682
+MonoBehaviour:
+>>>>>>> 4a016b0a3c16dc491c3953fabb86ff98c3ee4ed4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 959481774545258232}
   m_Enabled: 1
+<<<<<<< HEAD
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: fcc5a61f83928c64799df2df6abade6f, type: 3}
@@ -1471,3 +1482,10 @@ AudioSource:
     m_RotationOrder: 4
 =======
 >>>>>>> edfee153ddea4586b206d637b44b0638dd370335
+=======
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab89911c2865c4f08bc35bbdee423cb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  originalMaterial: {fileID: 0}
+>>>>>>> 4a016b0a3c16dc491c3953fabb86ff98c3ee4ed4
