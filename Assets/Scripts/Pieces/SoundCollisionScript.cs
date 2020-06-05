@@ -9,6 +9,21 @@ public class SoundCollisionScript : MonoBehaviour
 
     public void Start()
     {
+<<<<<<< HEAD
+        controller = GameObject.Find("AudioController").GetComponent<AudioController>();
+        sound = this.GetComponent<Sound>();
+        sound.Init();
+    }
+    public void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("Selectable"))
+        {
+            float volume = Mathf.Clamp01(other.relativeVelocity.magnitude / 20);
+            sound.volume = volume;
+            sound.UpdateSource();
+            sound.Play();
+
+=======
         _controller = FindObjectOfType<AudioController>();
     }
 
@@ -28,7 +43,8 @@ public class SoundCollisionScript : MonoBehaviour
                 sound1.volume = volume;
                 sound1.transform.position = transform.position;
             });
+>>>>>>> edfee153ddea4586b206d637b44b0638dd370335
         }
     }
-    
+   
 }
