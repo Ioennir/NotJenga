@@ -67,6 +67,9 @@ public class PlayerInGame : MonoBehaviour
 	private SaveSystem.Informer<SavedGamesData> _informer;
 
 	private GameActivator _activator;
+
+	private float _delayInputPullTimer = 0.3f;
+	private float _delayInputPull = 0.0f;
 	
 	#endregion
 
@@ -145,6 +148,7 @@ public class PlayerInGame : MonoBehaviour
 	        
 	        case State.SelectingPiece:
 	        {
+		        _delayInputPull = 0.0f;
 		        if (Input.GetKey(KeyCode.P) && !Config.SavingData)
 		        {
 			        Debug.Log("Starting save...");
@@ -157,7 +161,7 @@ public class PlayerInGame : MonoBehaviour
 		        if (ChangeStateIf(r, State.PullingPiece, false))
 		        {
 			        _cameraController.Target = r.transform;
-			        _selectionBehaviour.Dispose();
+			        _selectionBehaviour.Dispose(r);
 			        _currentJenga = r;
 		        }
 		        break;
@@ -165,6 +169,11 @@ public class PlayerInGame : MonoBehaviour
 
 	        case State.PullingPiece:
 	        {
+		        if (_delayInputPullTimer >= _delayInputPull)
+		        {
+			        _delayInputPull += Time.deltaTime;
+			        return;
+		        }
 		        ChangeStateIf(_pullBehaviour.Tick(_currentJenga), State.WaitingForNextTurn, false);
 		        break;
 	        }
@@ -241,7 +250,7 @@ public class PlayerInGame : MonoBehaviour
 	    if (destroyGameData) 
 			DestroyGameFromSave();
 	    ChangeStateIf(true, State.WaitingForGameToStart, false);
-	    _selectionBehaviour.Dispose();
+	    _selectionBehaviour.Dispose(_currentJenga);
 	    _selectionWithMouse.DisposeTurn();
 	    
     }
@@ -271,15 +280,21 @@ public class PlayerInGame : MonoBehaviour
 		    
 		    _turnController.MoveNextTurn();
 	    }
+	    
+	    
 
 	    if (StateCurrentTurn == State.PullingPiece)
 	    {
 		    _pullBehaviour.Dispose();
 	    }
 
-	  
+
 	    if (StateCurrentTurn == State.SelectingPiece)
+	    {
 		    _selectionWithMouse.DisposeTurn();
+		    _selectionBehaviour.Dispose(_currentJenga);
+	    }
+
 	    currentState.player = _turnController.CurrentPlayer;
 	    StateCurrentTurn = state;
 	    return true;

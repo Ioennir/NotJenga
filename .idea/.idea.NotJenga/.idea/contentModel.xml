@@ -26,6 +26,7 @@
           </e>
           <e p="Audio" t="Include">
             <e p="AudioController.cs" t="Include" />
+            <e p="Music.cs" t="Include" />
             <e p="Sound.cs" t="Include" />
             <e p="Test" t="Include">
               <e p="TestCube.cs" t="Include" />

@@ -11,7 +11,7 @@ public class SelectionScript : MonoBehaviour
     #endregion
     #region Private Variables
     private string selectableTag = "Selectable";
-    private Material previousMaterial;
+    // sprivate Material previousMaterial;
     private bool alreadySelected = false;
     private Transform selection;
     private Tower _tower;
@@ -102,7 +102,7 @@ public class SelectionScript : MonoBehaviour
             Renderer chosenRenderer = chosenFromStateMachine.GetComponent<Renderer>();
             chosenRenderer.material = mat;
             HandleSelectionFromStateMachine(chosenFromStateMachine);
-            return selection.gameObject;
+            return chosenFromStateMachine;
         }
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
@@ -128,11 +128,10 @@ public class SelectionScript : MonoBehaviour
         {
             return null;
         }
-        if (selection && previousMaterial && hit.transform != selection.transform)
+        if (selection && hit.transform != selection.transform)
         {
             Renderer selectionRenderer = selection.GetComponent<Renderer>();
-            selectionRenderer.material = previousMaterial;
-            previousMaterial = null;
+            selectionRenderer.material = selection.GetComponent<PieceOriginalMaterial>().originalMaterial;
             selection = hit.transform;
             return null;
         }
@@ -156,8 +155,6 @@ public class SelectionScript : MonoBehaviour
         }
         selection = hit.transform;
         Renderer selectionRendererEnd = selection.GetComponent<Renderer>();
-        if (!previousMaterial) 
-            previousMaterial = selectionRendererEnd.material;
         selectionRendererEnd.material = mat;
         return null;
     }

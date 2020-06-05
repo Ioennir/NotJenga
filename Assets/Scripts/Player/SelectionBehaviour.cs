@@ -63,17 +63,17 @@ public class SelectionBehaviour : MonoBehaviour
 	    if (_currentPiece)
 	    {
 		    MeshRenderer rend = _currentPiece.GetComponent<MeshRenderer>();
-		    PieceOriginalMaterial originalPiece = PieceOriginalMaterial.Get(nextPiece);
+		    PieceOriginalMaterial originalPiece = PieceOriginalMaterial.Get(_currentPiece);
 		    rend.material = originalPiece.originalMaterial;
 	    }
 	    MeshRenderer rendNext = nextPiece.GetComponent<MeshRenderer>();
 	    _prevMaterial = rendNext.material;
 	    rendNext.material = selectionMaterial;
 	    _currentPiece = nextPiece;
-	    return select > 0.5f && (rendNext.material = _prevMaterial) ? _currentPiece : null;
+	    return select > 0.5f && (rendNext.material = selectionMaterial) ? _currentPiece : null;
     }
 
-    public void Dispose()
+    public void Dispose(GameObject selected)
     {
 	    if (!_currentPiece)
 	    {
@@ -81,8 +81,12 @@ public class SelectionBehaviour : MonoBehaviour
 		    _prevMaterial = null;
 		    return;
 	    }
-	    MeshRenderer rend = _currentPiece.GetComponent<MeshRenderer>();
-	    rend.material = _prevMaterial;
+
+	    if (selected != _currentPiece)
+	    {
+		    _currentPiece.GetComponent<MeshRenderer>().material = _currentPiece.GetComponent<PieceOriginalMaterial>().originalMaterial;
+		    
+	    }
 	    _currentPiece = null;
 	    
     }

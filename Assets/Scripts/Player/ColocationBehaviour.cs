@@ -83,7 +83,7 @@ public class ColocationBehaviour : MonoBehaviour
 	#region Public Methods
 
 	/// <summary>
-	/// TODO GABI: Get the material of the last extracted piece
+	/// 
 	///
 	/// </summary>
 	/// <returns>If the player is done placing the piece</returns>
@@ -201,7 +201,8 @@ public class ColocationBehaviour : MonoBehaviour
 			_imaginaryJenga.name = "Imaginary Jenga [CHOOSING POSITION]";
 			// NOTE (GABI): This adds it into the tower jerarchy so we don't have to change coordinates below
 			_tower.AddPiece(_imaginaryJenga);
-			
+			ClampOverXZ();
+
 		}
 		Vector3 imaginaryJengaPosition = _imaginaryJenga.transform.position;
 		Vector3 currentJengaPosition = _topPieces[_currentJenga].transform.position;
