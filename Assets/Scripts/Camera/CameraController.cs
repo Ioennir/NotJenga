@@ -97,7 +97,7 @@ public class CameraController : MonoBehaviour
 
         _camera = GetComponent<Camera>();
         
-        _cameraState.currentState = CameraState.FreeMovement;
+        _cameraState.currentState = CameraState.MovingAroundTower;
 
         _coordinates = new CylindricalCoordinates(_target.position, horizontalDistance, 0f, 0f);
 
@@ -135,6 +135,11 @@ public class CameraController : MonoBehaviour
             case CameraState.MovingAroundTower:
             {
                 MovingAroundTowerBehaviour(delta);
+                
+                if (Input.GetKeyUp(KeyCode.F))
+                {
+                    _cameraState.currentState = CameraState.FreeMovement;
+                }
             }
                 break;
             
@@ -149,6 +154,11 @@ public class CameraController : MonoBehaviour
             case CameraState.FreeMovement:
             {
                 FreeCameraBehaviour(delta);
+                
+                if (Input.GetKeyUp(KeyCode.F))
+                {
+                    _cameraState.currentState = CameraState.MovingAroundTower;
+                }
             }
                 break;
         }
@@ -186,8 +196,8 @@ public class CameraController : MonoBehaviour
     private void FreelyMoveCamera(float dt, CameraInputs inputs)
     {
         float advance = inputs.goUp * verticalSpeed * dt;
-        float horRotation = inputs.axes.x * rotationSpeed * dt;
-        float verRotation = inputs.axes.y * rotationSpeed * dt;
+        float horRotation = inputs.axes.y * -rotationSpeed * 20f * dt;
+        float verRotation = inputs.axes.x * rotationSpeed * 20f * dt;
 
         // Movement
         transform.position += transform.forward * advance;
