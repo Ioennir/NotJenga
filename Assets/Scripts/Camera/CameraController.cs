@@ -97,7 +97,7 @@ public class CameraController : MonoBehaviour
 
         _camera = GetComponent<Camera>();
         
-        _cameraState.currentState = CameraState.MovingAroundTower;
+        _cameraState.currentState = CameraState.FreeMovement;
 
         _coordinates = new CylindricalCoordinates(_target.position, horizontalDistance, 0f, 0f);
 
@@ -128,24 +128,27 @@ public class CameraController : MonoBehaviour
         //transform.rotation = UpdateCameraRotation();
         
         // New version XDD /////////////////////////////////////////////////////////////////////////////////////////
+        float delta = Time.deltaTime;
 
         switch (_cameraState.currentState)
         {
             case CameraState.MovingAroundTower:
             {
-                MovingAroundTowerBehaviour();
+                MovingAroundTowerBehaviour(delta);
             }
                 break;
             
             case CameraState.MovingAroundPiece:
-            {
-                MovingAroundPieceBehaviour();
-            }
+            { }
                 break;
             
             case CameraState.TravellingToDestination:
+            { }
+                break;
+
+            case CameraState.FreeMovement:
             {
-                TravellingToDestinationBehaviour();
+                FreeCameraBehaviour(delta);
             }
                 break;
         }
@@ -173,22 +176,34 @@ public class CameraController : MonoBehaviour
 
     #region Private Methods
 
-    private void MovingAroundTowerBehaviour()
+    private void FreeCameraBehaviour(float dt)
     {
-        float delta = Time.deltaTime;
         _cameraInputs = GetInputs();
-        
-        MoveCamera(delta, _cameraInputs);
-        
-        MoveOffset(delta, _cameraInputs);
+
+        FreelyMoveCamera(dt, _cameraInputs);
     }
 
-    private void MovingAroundPieceBehaviour()
+    private void FreelyMoveCamera(float dt, CameraInputs inputs)
     {
-        
+        float advance = inputs.goUp * verticalSpeed * dt;
+        float horRotation = inputs.axes.x * rotationSpeed * dt;
+        float verRotation = inputs.axes.y * rotationSpeed * dt;
+
+        // Movement
+        transform.position += transform.forward * advance;
+        transform.eulerAngles += (Vector3.right * horRotation) + (Vector3.up * verRotation);
     }
-    
-    private void MoveCamera(float dt, CameraInputs inputs)
+
+    private void MovingAroundTowerBehaviour(float dt)
+    {
+        _cameraInputs = GetInputs();
+        
+        CylindricallyMoveCamera(dt, _cameraInputs);
+        
+        MoveOffset(dt, _cameraInputs);
+    }
+
+    private void CylindricallyMoveCamera(float dt, CameraInputs inputs)
     {
         // Movement around tower
         float rotSpeed = inputs.axes.x * (rotationSpeed * dt);
@@ -221,13 +236,6 @@ public class CameraController : MonoBehaviour
         offset.y += verSpeed;
         offset.y = Mathf.Clamp(offset.y, 0f, 15f);
     }
-
-    private void TravellingToDestinationBehaviour()
-    {
-        
-    }
-
-    
 
     private CameraInputs GetInputs()
     {

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Resources;
 #if UNITY_EDITOR
 using UnityEditor.UIElements;
 #endif
@@ -20,6 +21,7 @@ public class TowerGenerator : MonoBehaviour
     private Tower _towerData;
     private Vector3 towerCenter;
     private JengaData _dataLoaded;
+    private GameActivator _activator;
     
     #endregion
 
@@ -62,45 +64,71 @@ public class TowerGenerator : MonoBehaviour
             StartCoroutine("BuildTower", buildInterval);
             return;
         }
+        // Inject configuration again because 
+        // When you get jenga config it deletes 
+        // it because safety measures
+        Config.LoadJengaConfig(_dataLoaded);
         StartCoroutine(SpawnLoad());
-        _towerData.towerAlreadyBuilt = true;
     }
 
     #endregion
 
     #region Public Methods
 
+    public void ResetWithLoad(JengaData data)
+    {
+        _towerData.towerAlreadyBuilt = false;
+        _piecePool.DeactivateAll();
+        _dataLoaded = data;
+        Config.LoadJengaConfig(data);
+        StartCoroutine(SpawnLoad());
+        FindObjectOfType<PlayerInGame>().Reset(false);
+    }
+
     public void Reset(int rows)
     {
+        _towerData.towerAlreadyBuilt = false;
         _piecePool.DeactivateAll();
         towerHeight = (uint)rows;
-        if (_dataLoaded == null)
-        {
-            StartCoroutine("BuildTower", buildInterval);
-            return;
-        }
-        StartCoroutine(SpawnLoad());
-        _towerData.towerAlreadyBuilt = true;
+        StartCoroutine("BuildTower", buildInterval);
+        FindObjectOfType<PlayerInGame>().Reset();
     }
 
     private IEnumerator SpawnLoad()
     { 
+        _towerData.ResetTower();
+        Rigidbody[] bodies = new Rigidbody[_dataLoaded.jengas.Length];
         for (int i = 0; i < _dataLoaded.jengas.Length; ++i)
         {
+            
             JengaPieceData piece = _dataLoaded.jengas[i];
+            if (Math.Abs(piece.position.x) < .001f && 
+                Math.Abs(piece.position.y) < .001f && 
+                Math.Abs(piece.position.z) < .001f
+            ) 
+                continue;
             GameObject instance = _piecePool.Instantiate();
             Transform transformPiece = instance.transform;
             instance.transform.parent = _tower.transform;
-            transformPiece.position = piece.position;
-            transformPiece.rotation = Quaternion.Euler(piece.rotation);
+            transformPiece.localPosition = piece.position;
+            transformPiece.localRotation = Quaternion.Euler(piece.rotation);
             transformPiece.localScale = piece.scale;
             pieceHeight = piece.scale.y + 0.05f;
             pieceWidth = piece.scale.x + 0.05f;
-            instance.GetComponent<MeshRenderer>().material = pieceMaterials[i % 2];
+            Material material = pieceMaterials[i % 2];
+            instance.GetComponent<PieceOriginalMaterial>().originalMaterial = material;
+            instance.GetComponent<MeshRenderer>().material = material;
+            bodies[i] = instance.GetComponent<Rigidbody>();
+            bodies[i].isKinematic = true;
             _towerData.AddPiece(instance);
         }
         yield return new WaitForSeconds(2f);
+        foreach (Rigidbody body in bodies)
+        {
+            body.isKinematic = false;
+        }
         _towerData.towerAlreadyBuilt = true;
+        
     }
 
     public float CalculateTop(float y)
@@ -110,6 +138,7 @@ public class TowerGenerator : MonoBehaviour
 
     /// <summary>
     /// Adds jenga piece into the tower jerarchy
+    /// and apply material
     /// </summary>
     /// <param name="jenga"></param>
     public void AddPiece(GameObject jenga)
@@ -123,6 +152,7 @@ public class TowerGenerator : MonoBehaviour
 
     private IEnumerator BuildTower(float secondInterval)
     {
+        _towerData.ResetTower();
         for(int y = 0; y < towerHeight; y++)
         {
             for (int x = 0; x < 3; x++)

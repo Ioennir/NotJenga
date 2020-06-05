@@ -17,6 +17,7 @@ public class PlayerInGame : MonoBehaviour
 		WaitingForNextTurn,
 		WaitingForEnd,
 		End,
+		MenuAgain
 	}
 
 	public struct StateTurn
@@ -64,6 +65,8 @@ public class PlayerInGame : MonoBehaviour
 	private bool _end = false;
 
 	private SaveSystem.Informer<SavedGamesData> _informer;
+
+	private GameActivator _activator;
 	
 	#endregion
 
@@ -99,7 +102,7 @@ public class PlayerInGame : MonoBehaviour
 	    _colocationBehaviour = GetComponent<ColocationBehaviour>();
 	    _pullBehaviour = GetComponent<PullBehaviour>();
 	    _selectionWithMouse = GetComponent<SelectionScript>();
-	    
+	    _activator = FindObjectOfType<GameActivator>();
 	    _selectionBehaviour = GetComponent<SelectionBehaviour>();
 	    _turnController = FindObjectOfType<TurnController>();
 	    _tower = FindObjectOfType<Tower>();
@@ -110,13 +113,28 @@ public class PlayerInGame : MonoBehaviour
 	private void Update()
     {
 	    // Change the state if turn != this turn
-        ChangeStateIf(_turnController.CurrentPlayer != currentState.player && StateCurrentTurn != State.WaitingForGameToStart, State.SelectingPiece, false);
+        ChangeStateIf(_turnController.CurrentPlayer != currentState.player && 
+                      StateCurrentTurn != State.WaitingForGameToStart && 
+						StateCurrentTurn != State.End &&
+						StateCurrentTurn != State.MenuAgain, 
+			State.SelectingPiece, false);
         // Test 
         // ChangeStateIf(_tower.towerAlreadyBuilt, State.PlacingPiece, false);
         switch (currentState.currentState)
         {
 	        case State.WaitingForGameToStart:
 	        {
+		        if (_end)
+		        {
+			        _end = false;
+		        }
+				if (_informer != null) 
+					DestroyGameFromSave();
+		        if (_informer != null && !_informer.loaded)
+		        {
+			        return;
+		        }
+		        _activator.LoadGames();
 		        if (ChangeStateIf(_tower.towerAlreadyBuilt, State.SelectingPiece, false))
 		        {
 			        List<GameObject> top = _tower.GetTopPieces();
@@ -195,9 +213,16 @@ public class PlayerInGame : MonoBehaviour
 		        if (_end && _informer != null && _informer.loaded)
 		        {
 			        Debug.Log("END");
+			        _activator.LoadGames();
+			        ChangeStateIf(true, State.MenuAgain, false);
 			        return;
 		        }
 		        DestroyGameFromSave();
+		        break;
+	        }
+
+	        case State.MenuAgain:
+	        {
 		        break;
 	        }
         }
@@ -207,6 +232,19 @@ public class PlayerInGame : MonoBehaviour
     #endregion
 
     #region Public Methods
+
+    public void Reset(bool destroyGameData = true)
+    {
+	    _turnController.CurrentTurnTimer = 0.0f;
+	    _turnController.CurrentTurn = 1;
+	    _end = false;
+	    if (destroyGameData) 
+			DestroyGameFromSave();
+	    ChangeStateIf(true, State.WaitingForGameToStart, false);
+	    _selectionBehaviour.Dispose();
+	    _selectionWithMouse.DisposeTurn();
+	    
+    }
 
     /// <summary>
     /// Change the state if the conditions are met.
@@ -221,7 +259,7 @@ public class PlayerInGame : MonoBehaviour
     {
 	    if (state == StateCurrentTurn) return false;
 	    if (!condition) return false;
-	    Debug.Log("next STATE. FROM " + StateCurrentTurn + " TO " + state);
+	    Debug.Log(StateCurrentTurn + " -> " + state);
 	    if (changeTurn && StateCurrentTurn != State.WaitingForEnd)
 	    {
 		    StateCurrentTurn = State.End;
@@ -256,7 +294,8 @@ public class PlayerInGame : MonoBehaviour
     private void DestroyGameFromSave()
     {
 	    if (_end) return;
-	    if (Config.GetJengaConfig() == null)
+	    var config = Config.GetJengaConfig();
+	    if (config == null)
 	    {
 		    _end = true;
 		    return;
@@ -264,9 +303,9 @@ public class PlayerInGame : MonoBehaviour
 	    if (_informer == null)
 	    {
 		    _informer = Config.LoadGamesData();
-		    
 	    }
-	    JengaData data = Config.GetJengaConfig();
+	    Config.LoadJengaConfig(config);
+	    JengaData data = config;
 	    if (_informer.error)
 	    {
 		    _end = true;
@@ -274,6 +313,7 @@ public class PlayerInGame : MonoBehaviour
 		    return;
 	    }
 	    if (!_informer.loaded) return;
+	    Config.GetJengaConfig();
 	    _informer.data.games = _informer.data.games.Where(game => game.id != data.id).ToArray();
 	    _informer = Config.SaveGameData(_informer.data);
 	    _end = true;

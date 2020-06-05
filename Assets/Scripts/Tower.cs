@@ -78,7 +78,14 @@ public class Tower : MonoBehaviour
 	    _pieces.Add(p);
     }
 
- 
+    public void ResetTower()
+    {
+	    _pieces = new List<GameObject>();
+	    badPlaced = new List<GameObject>();
+	    _floorPieces = new List<GameObject>();
+    }
+
+
     /// <summary>
     /// Removes piece from the tower (FROM THE LIST)
     /// so you can put it again on the top.
@@ -163,6 +170,7 @@ public class Tower : MonoBehaviour
 
     public void DestroyPieceOnFloor(PieceCheckCollision piece)
     {
+	    Debug.Log("REMOVED PIECE");
 	    _floorPieces.Remove(piece.gameObject);
 	    _pieces.Remove(piece.gameObject);
     }
@@ -186,7 +194,7 @@ public class Tower : MonoBehaviour
 	    int countOfPiecesInTheSameRow = 0;
 	    for (int i = _pieces.Count - 1; i >= _pieces.Count - 3; i--)
 	    {
-		    if (Math.Abs(_pieces[_pieces.Count - 1].transform.localPosition.y - _pieces[i].transform.localPosition.y) < 0.1f)
+		    if (Math.Abs(_pieces[_pieces.Count - 1].transform.localPosition.y - _pieces[i].transform.localPosition.y) < 0.2f)
 		    {
 			    countOfPiecesInTheSameRow++;
 		    }

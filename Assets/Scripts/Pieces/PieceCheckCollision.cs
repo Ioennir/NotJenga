@@ -8,7 +8,7 @@ public class PieceCheckCollision : MonoBehaviour
 	private bool _addedToList = false;
 	private Tower _tower;
 	private bool _badPlaced = false;
-	
+	private Rigidbody _rb;
 	
 	#endregion
 
@@ -21,11 +21,19 @@ public class PieceCheckCollision : MonoBehaviour
 	public bool InFloor => _inFloor;
 
 	public bool BadPlaced => _badPlaced;
+
+	public Rigidbody Rb => _rb;
+	
 	#endregion
 
 	#region MonoBehaviour
 
-    private void Start()
+	private void Awake()
+	{
+		_rb = GetComponent<Rigidbody>();
+	}
+
+	private void Start()
     {
 	    _tower = FindObjectOfType<Tower>();
     }
@@ -85,7 +93,7 @@ public class PieceCheckCollision : MonoBehaviour
 		    _tower.badPlaced.Remove(gameObject);
 	    }
 	    GetComponent<Renderer>().material = PieceOriginalMaterial.Get(gameObject).originalMaterial;
-
+	    gameObject.tag = "Finish";
     }
 
     #endregion
